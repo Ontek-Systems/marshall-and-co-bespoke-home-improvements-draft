@@ -1,5 +1,105 @@
 <header id="site-header"
     class="fixed w-full top-0 left-0 z-50 transition-all duration-150 bg-transparent text-white border-b border-transparent">
+
+    <style>
+      .tb-outer { overflow: hidden; width: 100%; }
+      .tb-scroll { display: flex; align-items: center; justify-content: center; }
+      .tb-content { display: flex; align-items: center; gap: 1.5rem; }
+      .tb-sep { color: rgba(255,255,255,0.3); }
+      @media (max-width: 1023px) {
+        .tb-scroll { width: max-content; justify-content: flex-start; animation: tbMarquee 25s linear infinite; }
+        .tb-content { gap: 1.5rem; padding-right: 1.5rem; }
+        .tb-sep { display: inline-block; }
+        @keyframes tbMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      }
+      @media (min-width: 1024px) {
+        .tb-content-dup { display: none !important; }
+        .tb-content { gap: 3.5rem; padding: 0; }
+        .tb-scroll { animation: none; transform: none; width: 100%; }
+      }
+    </style>
+    <div id="top-banner" class="w-full py-2.5 text-center transition-all duration-150 tb-outer" style="background:#5b4a36;">
+      <div class="tb-scroll font-body text-[10px] sm:text-xs text-white/90 tracking-widest uppercase">
+        
+        <!-- Main Content -->
+        <div class="tb-content">
+          <!-- Facebook -->
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            Follow Us
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+          
+          <!-- Email -->
+          <a href="mailto:info@marshallandco.uk" class="flex items-center gap-1.5 hover:text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            info@marshallandco.uk
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+          
+          <!-- 5-Star Google Service -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            5-Star Google Service
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Free Quotes -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Free Quotes
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Opening Days/Time -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Mon-Sat 8am-6pm
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Phone -->
+          <a href="tel:07940568877" class="flex items-center gap-1.5 hover:text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.45 15.45 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+            07940 568877
+          </a>
+        </div>
+
+        <!-- Duplicated Content for Seamless Mobile Marquee -->
+        <div class="tb-content tb-content-dup" aria-hidden="true">
+          <a href="https://facebook.com/" tabindex="-1" class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            Follow Us
+          </a>
+          <span class="tb-sep">|</span>
+          <a href="mailto:info@marshallandco.uk" tabindex="-1" class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            info@marshallandco.uk
+          </a>
+          <span class="tb-sep">|</span>
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            5-Star Google Service
+          </span>
+          <span class="tb-sep">|</span>
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Free Quotes
+          </span>
+          <span class="tb-sep">|</span>
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Mon-Sat 8am-6pm
+          </span>
+          <span class="tb-sep">|</span>
+          <a href="tel:07940568877" tabindex="-1" class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.45 15.45 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+            07940 568877
+          </a>
+        </div>
+
+      </div>
+    </div>
     <div id="header-container"
         class="container mx-auto px-4 md:px-8 py-5 md:py-6 flex justify-between items-center transition-all duration-150">
 
@@ -8,7 +108,7 @@
                 class="logo-white w-[109px] md:w-[136px] lg:w-[200px] h-auto object-contain">
         </a>
 
-        <nav class="hidden xl:flex items-center gap-8 font-body text-[17px] font-semibold tracking-wide">
+        <nav class="hidden xl:flex items-center gap-12 font-body text-[17px] font-semibold tracking-wide">
             <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap">About Us</a>
             <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap">Services</a>
             <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap">Gallery</a>

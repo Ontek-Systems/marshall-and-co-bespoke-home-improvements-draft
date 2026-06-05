@@ -447,7 +447,8 @@ span.pill-dark-bg:hover {
     .btn-primary, .btn-primary-white, .btn-ghost, .btn-adaptive {
         align-self: center !important;
         display: block !important;
-        width: fit-content !important;
+        width: 100% !important;
+        text-align: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
