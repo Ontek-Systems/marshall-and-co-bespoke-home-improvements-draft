@@ -13,42 +13,42 @@
    Cormorant — Self-hosted Font (Section Headings)
    ============================================================ */
 @font-face {
-    font-family: 'Marcus Traianus';
+    font-family: 'Cormorant';
     src: url('assets/fonts/Cormorant/Cormorant-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Marcus Traianus';
+    font-family: 'Cormorant';
     src: url('assets/fonts/Cormorant/Cormorant-RegularItalic.otf') format('opentype');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Marcus Traianus';
+    font-family: 'Cormorant';
     src: url('assets/fonts/Cormorant/Cormorant-Semi.otf') format('opentype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Marcus Traianus';
+    font-family: 'Cormorant';
     src: url('assets/fonts/Cormorant/Cormorant-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Marcus Traianus';
+    font-family: 'Cormorant';
     src: url('assets/fonts/Cormorant/Cormorant-BoldItalic.otf') format('opentype');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Marcus Traianus';
+    font-family: 'Cormorant';
     src: url('assets/fonts/Cormorant/Cormorant-Bold.otf') format('opentype');
     font-weight: 800;
     font-style: normal;
@@ -73,13 +73,38 @@
     --color-brand-alice:  #ffffff;
     --color-brand-beige:  #fff9eb;
     --color-brand-text:   #303030;
-    --font-heading: 'Marcus Traianus', Georgia, serif;
+    --font-heading: 'Cormorant', Georgia, serif;
     --font-body:    'Montserrat', sans-serif;
 }
 
 body  { font-family: var(--font-body); background-color: #ffffff; color: #303030; }
 h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); transition: color 0.3s ease; cursor: default; }
 h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover { color: #e8b238; }
+
+/* ── Mobile/Tablet: centre section content below xl (1280px) ── */
+@media (max-width: 1279px) {
+  /* Headings */
+  section h1, section h2, section h3 { text-align: center; }
+  /* Kickers & script accents */
+  .gs-tagline, .gs-heading, .font-script { text-align: center; }
+  #gallery-section-num { text-align: center; }
+  /* Body paragraphs in sections */
+  section p.gs-body,
+  section .gs-body p { text-align: center; }
+  /* word-mask spans stay inline */
+  section .word-mask { display: inline-block; }
+  /* Button rows */
+  section .flex.flex-row.items-center { justify-content: center; }
+  /* Standalone CTA buttons */
+  section .btn-primary,
+  section .btn-ghost,
+  section .btn-adaptive {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 img {
     --img-saturate: 1.05;
     --img-contrast: 1.05;

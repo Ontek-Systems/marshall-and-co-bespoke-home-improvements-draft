@@ -47,9 +47,19 @@
       --color-brand-alice: #ffffff;
       --color-brand-beige: #fff9eb;
       --color-brand-text:  #303030;
-      --font-heading: 'Marcus Traianus', Georgia, serif;
+      --font-heading: 'Cormorant', Georgia, serif;
       --font-body:    'Montserrat', sans-serif;
       --font-script:  'Elicit Script', cursive;
+    }
+
+    @media (min-width: 1280px) { #slide3-quote-btn { display: none !important; } }
+
+    /* Laptop / Mac — reduce hero top padding so content is visible */
+    @media (min-width: 1024px) and (max-height: 900px) {
+      .hero-section-wrapper { padding-top: 140px !important; padding-bottom: 2rem !important; }
+    }
+    @media (min-width: 1024px) and (max-height: 780px) {
+      .hero-section-wrapper { padding-top: 110px !important; padding-bottom: 1rem !important; }
     }
 
     /* PAGE-WIDE: Solid buttons — gold resting, dark hover */
@@ -113,7 +123,7 @@
     <!-- ================================================
          HERO — FULL-SCREEN SLIDESHOW
     ================================================ -->
-    <section class="relative flex flex-col min-h-svh pt-[210px] sm:pt-[220px] md:pt-[230px] pb-16 lg:pt-[240px] lg:pb-20 overflow-hidden z-0 bg-[#303030]">
+    <section class="hero-section-wrapper relative flex flex-col min-h-svh pt-[210px] sm:pt-[220px] md:pt-[230px] pb-16 lg:pt-[240px] lg:pb-20 overflow-hidden z-0 bg-[#303030]">
 
       <div id="hero-slideshow" class="absolute inset-0 w-full h-full z-0 overflow-hidden bg-[#303030]">
         <style>
@@ -161,6 +171,30 @@
           .hero-content-panel[data-anim="right"].active { transform: translateX(0); }
           .hero-dot.dot-active { background: #e8b238; transform: scale(1.35); }
 
+          /* Mouse scroll indicator */
+          @keyframes mouseFloat {
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-8px); }
+          }
+          #hero-scroll-mouse { transition: opacity 0.5s ease; }
+          #hero-scroll-mouse-inner { animation: mouseFloat 2.2s ease-in-out infinite; }
+          #hero-scroll-mouse.hidden-scroll {
+            opacity: 0 !important;
+            pointer-events: none;
+          }
+          #hero-scroll-mouse.hidden-scroll #hero-scroll-mouse-inner {
+            animation-play-state: paused;
+          }
+          @keyframes mouseDot {
+            0%   { transform: translateY(0px);  opacity: 1; }
+            55%  { transform: translateY(14px); opacity: 0.35; }
+            100% { transform: translateY(0px);  opacity: 1; }
+          }
+          #hero-mouse-dot {
+            animation: mouseDot 1.8s ease-in-out infinite;
+            transform-origin: center;
+          }
+
           .split-left, .split-right {
             opacity: 0;
             transition: opacity 0.7s ease, transform 0.7s ease;
@@ -188,8 +222,8 @@
 
         <!-- Slide 1: Welcome (text slides in from left) -->
         <div class="hero-content-panel" data-anim="left">
-          <div class="flex flex-col justify-center max-w-2xl" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
-            <div class="flex items-center gap-1.5 mb-6">
+          <div class="flex flex-col justify-center max-w-2xl mx-auto xl:mx-0 items-center xl:items-start text-center xl:text-left" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
+            <div class="flex items-center justify-center xl:justify-start gap-1.5 mb-6">
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -204,17 +238,25 @@
             <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 drop-shadow-md">
               Transforming Perthshire's finest properties. We blend architectural vision with master craftsmanship to create spaces that perfectly reflect your lifestyle.
             </p>
+            <div class="flex flex-row items-center gap-5 sm:gap-8">
+              <a href="contact.html" class="btn-ghost" style="font-size:0.85rem; background:rgba(0,0,0,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.55);">Get a Free Quote</a>
+              <a href="tel:07940568877"
+                class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap"
+                style="text-shadow:0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9);">
+                or Call Lee
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Slide 2: Craftsmanship (text slides in from right, right-aligned) -->
         <div class="hero-content-panel" data-anim="right">
-          <div class="flex flex-col justify-center items-end ml-auto max-w-2xl" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
-            <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2 text-right" style="transform: rotate(-2deg);">Excellence Without Compromise</p>
-            <h2 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl text-right">
+          <div class="flex flex-col justify-center items-center xl:items-end mx-auto xl:ml-auto xl:mr-0 max-w-2xl text-center xl:text-right" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
+            <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2" style="transform: rotate(-2deg);">Excellence Without Compromise</p>
+            <h2 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl">
               Unrivaled<br>Craftsmanship
             </h2>
-            <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 drop-shadow-md text-right">
+            <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 drop-shadow-md">
               From seamless structural extensions to precision-crafted bespoke joinery, our in-house team executes every phase of your project with uncompromising standards.
             </p>
           </div>
@@ -222,11 +264,11 @@
 
         <!-- Slide 3: Conversion (2-column layout with form — fades in, slider pauses permanently) -->
         <div class="hero-content-panel" data-anim="fade">
-          <div class="flex flex-col lg:flex-row items-start lg:items-stretch gap-8 lg:gap-10 xl:gap-16 w-full">
+          <div class="flex flex-col xl:flex-row items-center xl:items-stretch gap-8 xl:gap-16 w-full">
 
             <!-- Left: headline + copy + CTAs -->
-            <div class="w-full lg:w-3/5 flex flex-col justify-center split-left" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
-              <div class="flex items-center gap-1.5 mb-6">
+            <div class="w-full xl:w-3/5 flex flex-col justify-center items-center xl:items-start text-center xl:text-left split-left" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
+              <div class="flex items-center justify-center xl:justify-start gap-1.5 mb-6">
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -244,18 +286,18 @@
                 Ready to unlock your home's true potential? Share the details of your upcoming project with us, and our team will be in touch to arrange a comprehensive consultation.
               </p>
 
-              <div class="flex flex-col sm:flex-row items-start gap-5 sm:gap-8">
-                <a href="#hero-form" class="btn-ghost" style="font-size:0.85rem; background:rgba(0,0,0,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.55);">Get a Free Quote</a>
+              <div class="flex flex-row items-center gap-5 sm:gap-8">
+                <a href="contact.html" class="btn-ghost" id="slide3-quote-btn" style="font-size:0.85rem; background:rgba(0,0,0,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.55);">Get a Free Quote</a>
                 <a href="tel:07940568877"
-                  class="font-body font-bold text-base sm:text-sm text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap pt-2 sm:pt-0"
+                  class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap"
                   style="text-shadow:0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9);">
                   or Call Lee
                 </a>
               </div>
             </div>
 
-            <!-- Right: Contact Form card -->
-            <div id="hero-form" class="w-full lg:w-2/5 flex flex-col justify-center split-right">
+            <!-- Right: Contact Form card (desktop only — hides on mobile/tablet to prevent overflow) -->
+            <div id="hero-form" class="hidden xl:flex xl:w-2/5 flex-col justify-center split-right">
               <div class="backdrop-blur-sm shadow-2xl" style="background:rgba(20,18,16,0.82); border-top: 2px solid #e8b238; padding: 2rem 2.25rem;">
                 <h3 class="font-heading font-bold text-2xl text-white mb-1">Start Your Project</h3>
                 <p class="font-body text-white/50 text-xs uppercase tracking-widest mb-6">Free consultation. No obligation.</p>
@@ -298,6 +340,17 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Mouse scroll indicator -->
+      <div id="hero-scroll-mouse" class="absolute bottom-20 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
+      <div id="hero-scroll-mouse-inner" class="flex flex-col items-center gap-2">
+        <svg width="26" height="40" viewBox="0 0 26 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="24" height="38" rx="12" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+          <circle id="hero-mouse-dot" cx="13" cy="10" r="3" fill="#e8b238"/>
+        </svg>
+        <span class="font-body text-[10px] tracking-[0.2em] uppercase text-white/35">Scroll</span>
+      </div>
       </div>
 
       <!-- Carousel navigation dots -->
@@ -364,6 +417,18 @@
             formCard.addEventListener("mouseenter", function() { if (!locked) { clearInterval(timer); timer = null; } });
             formCard.addEventListener("mouseleave", function() { if (!locked) { startTimer(); } });
           }
+
+          // Fade out scroll mouse on scroll
+          var scrollMouse = document.getElementById("hero-scroll-mouse");
+          if (scrollMouse) {
+            window.addEventListener("scroll", function() {
+              if (window.scrollY > 80) {
+                scrollMouse.classList.add("hidden-scroll");
+              } else {
+                scrollMouse.classList.remove("hidden-scroll");
+              }
+            }, { passive: true });
+          }
         });
       </script>
     </section>
@@ -418,7 +483,7 @@
     <!-- ================================================
          ABOUT / TRUST SECTION
     ================================================ -->
-    <section id="about-parallax-section" class="relative py-16 lg:py-24 flex flex-col items-center justify-center overflow-hidden" style="background:#fff9eb;">
+    <section id="about-parallax-section" class="relative py-16 lg:py-20 xl:py-24 flex flex-col items-center justify-center overflow-hidden" style="background:#fff9eb;">
       <style>
         .word-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
         .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
@@ -570,10 +635,19 @@
         #gallery-sticky {
           position: sticky; top: 0; height: 100vh; overflow: hidden;
           display: flex; flex-direction: column; align-items: center; justify-content: center;
-          gap: 2rem; padding: 5.5rem 0 1.5rem;
+          gap: 1.5rem; padding: 8rem 0 1.5rem;
         }
         #gallery-card-stage {
           position: relative; width: 100%; height: 420px; flex-shrink: 0; overflow: hidden;
+        }
+        /* Laptop / smaller desktop — tighten layout so everything fits in viewport */
+        @media (min-width: 1024px) and (max-height: 860px) {
+          #gallery-sticky { gap: 1rem; padding: 7rem 0 1rem; }
+          #gallery-card-stage { height: 300px; }
+        }
+        @media (min-width: 1024px) and (max-height: 720px) {
+          #gallery-sticky { gap: 0.75rem; padding: 6rem 0 0.75rem; }
+          #gallery-card-stage { height: 240px; }
         }
         #gallery-card-stage::before, #gallery-card-stage::after {
           content: ''; position: absolute; top: 0; bottom: 0; width: 180px; z-index: 2; pointer-events: none;
@@ -648,7 +722,7 @@
             <h2 class="font-heading font-black text-4xl sm:text-5xl text-white leading-tight mb-4 cursor-default flex flex-wrap justify-center gap-x-3">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Our</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">Recent</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Work</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Works</span></span>
             </h2>
             <p class="font-body text-base text-white/55 max-w-lg leading-relaxed">
               A selection of completed projects across Perth and Perthshire, finished to the same uncompromising standard.
@@ -799,7 +873,7 @@
     <!-- ================================================
          SERVICES SECTION
     ================================================ -->
-    <section id="services-section" class="relative pt-16 lg:pt-24 pb-0 overflow-hidden" style="background:#fff9eb; border-top: 1px solid rgba(48,48,48,0.05);">
+    <section id="services-section" class="relative pt-16 lg:pt-20 xl:pt-24 pb-0 overflow-hidden" style="background:#fff9eb; border-top: 1px solid rgba(48,48,48,0.05);">
 
       <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20">
         <div class="flex flex-col items-center text-center mb-8 md:mb-12 reveal">
@@ -996,15 +1070,32 @@
           position: sticky; top: 0; height: 100vh;
           display: flex; flex-direction: column;
           align-items: center; justify-content: center;
-          overflow: hidden; padding: 0 1.5rem;
+          overflow: hidden; padding: 5rem 1.5rem 1.5rem;
         }
 
         /* ── Heading block ── */
         #stack-header {
           position: relative;
-          padding: 0 0 3rem 0;
+          padding: 0 0 2rem 0;
           display: flex; flex-direction: column; align-items: center; text-align: center;
           z-index: 20; pointer-events: auto;
+        }
+
+        /* Laptop / Mac — tighten process section for short viewports */
+        @media (min-width: 1024px) and (max-height: 860px) {
+          #stack-sticky { padding: 5rem 1.5rem 1rem; }
+          #stack-header { padding: 0 0 1.25rem 0; }
+          #stack-header .font-script { font-size: 1.75rem !important; margin-bottom: 0.5rem !important; }
+          #stack-header h2 { font-size: 2.5rem !important; margin-bottom: 0.5rem !important; }
+          #stack-card-stage { height: clamp(240px, 36vh, 340px); }
+        }
+        @media (min-width: 1024px) and (max-height: 720px) {
+          #stack-sticky { padding: 4.5rem 1.5rem 0.75rem; }
+          #stack-header { padding: 0 0 0.75rem 0; }
+          #stack-header .font-script { font-size: 1.5rem !important; margin-bottom: 0.4rem !important; }
+          #stack-header h2 { font-size: 2rem !important; margin-bottom: 0.4rem !important; }
+          #stack-header p { font-size: 0.8rem !important; }
+          #stack-card-stage { height: clamp(200px, 32vh, 280px); }
         }
 
         /* ── Card stage: where cards stack ── */
@@ -1058,9 +1149,15 @@
           transform: scale(1.12);
         }
 
+        /* Scroll hint — sits above the dots, never near the card */
+        #stack-scroll-hint {
+          position: absolute; bottom: 3.5rem; left: 50%; transform: translateX(-50%);
+          white-space: nowrap; z-index: 10;
+        }
+
         /* Progress dots */
         #stack-dots {
-          position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+          position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
           display: flex; gap: 10px; align-items: center; z-index: 10;
         }
         .stack-dot {
@@ -1089,6 +1186,7 @@
             margin-bottom: 1.25rem;
           }
           #stack-dots { display: none; }
+          #stack-scroll-hint { display: none; }
         }
       </style>
 
@@ -1101,14 +1199,11 @@
               <span class="border-b-[1.5px] border-current pb-0.5">05</span>
             </span>
             <span class="font-script text-3xl md:text-4xl text-[#e8b238] mb-3 inline-block" style="transform: rotate(-2deg);">Our Process</span>
-            <h2 class="font-heading font-black text-4xl sm:text-5xl text-white leading-tight mb-3 cursor-default flex flex-wrap justify-center gap-x-3">
+            <h2 class="font-heading font-black text-4xl sm:text-5xl text-white leading-tight mb-0 cursor-default flex flex-wrap justify-center gap-x-3">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">How</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">We</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Work</span></span>
             </h2>
-            <p class="title-underline-anim font-body text-base text-white/50 max-w-sm leading-relaxed" style="animation-delay:400ms;">
-              Scroll to see each stage of your project unfold.
-            </p>
           </div>
 
           <!-- Card stage -->
@@ -1139,6 +1234,9 @@
             </div>
 
           </div>
+
+          <!-- Scroll hint — anchored to bottom, never collides with card -->
+          <p id="stack-scroll-hint" class="font-body text-xs text-white/35 tracking-widest uppercase">Scroll to explore</p>
 
           <!-- Progress dots -->
           <div id="stack-dots">
@@ -1244,7 +1342,7 @@
     <!-- ================================================
          REVIEWS SECTION
     ================================================ -->
-    <section id="testimonials" class="relative py-16 lg:py-24 bg-white" style="border-top: 1px solid rgba(48,48,48,0.05);">
+    <section id="testimonials" class="relative py-16 lg:py-20 xl:py-24 bg-white" style="border-top: 1px solid rgba(48,48,48,0.05);">
       <style>
         .review-stars { display: flex; align-items: center; gap: 3px; margin-bottom: 1.25rem; }
         .review-stars span { color: #e8b238; font-size: 1.1rem; }
@@ -1565,13 +1663,13 @@
     <!-- ================================================
          FAQ SECTION
     ================================================ -->
-    <section id="faq" class="relative min-h-[100svh] py-16 lg:py-24 flex items-center justify-center" style="background:#fff9eb;">
+    <section id="faq" class="relative py-16 lg:py-20 xl:py-24 flex items-center justify-center" style="background:#fff9eb;">
       <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 relative w-full">
 
           <div class="w-full lg:w-1/3 relative">
-            <div class="lg:sticky lg:top-48 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-8 lg:mt-0">
+            <div class="lg:sticky lg:top-28 xl:top-48 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-8 lg:mt-0">
               <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">
                 <span class="border-b-[1.5px] border-current pb-0.5">08</span>
               </span>
