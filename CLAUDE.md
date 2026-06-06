@@ -74,7 +74,9 @@ Static HTML, Tailwind CSS, vanilla JavaScript. No React, no frameworks, no build
 - **Meta Tags:** Any new HTML page must include standard SEO meta title and description tags.
 
 ## Brand Guidelines & Vibe
-  - **Font Style:** Headings use **Marcus Traianus** (self-hosted OTF files in `assets/fonts/` — Regular 400, Bold 700, ExtraBold 800, Italic, declared in `style.css`). Body text uses **Montserrat** (Google Fonts CDN). Always ensure the Montserrat `<link>` tag is in the `<head>` of any HTML file you create or edit. Do NOT use any Google Font for headings — Marcus Traianus is the brand heading font.
+  - **Heading font (`font-heading`):** **Cormorant** — self-hosted OTF in `assets/fonts/Cormorant/`. Weights declared in `style.css`: 400 Regular, 400 Italic, 600 Semi, 700 Bold, 700 Bold Italic, 800 (mapped to Bold file). Token: `--font-heading: 'Cormorant', Georgia, serif`.
+  - **Body font (`font-body`):** **Montserrat** — Google Fonts CDN, weights 300–800. Token: `--font-body: 'Montserrat', sans-serif`. Always include the Montserrat CDN `<link>` in the `<head>` of any new HTML file.
+  - **Accent/script font (`font-script`):** **Elicit Script** — self-hosted `assets/fonts/ElicitScript-SemiBold.otf`. Used ONLY for section kickers and the Lee Marshall signature. Never apply to body text or headings. Token: `--font-script: 'Elicit Script', cursive`.
   - **Overall Vibe:** Luxury, Premium, Bespoke, High-end Craftsmanship.
 
 - **Color Scheme Palette:** (Apply these using Tailwind arbitrary values, e.g., `bg-[#fff9eb]`, `text-[#e8b238]`, or map them to custom CSS variables in style.css):
@@ -89,24 +91,28 @@ Static HTML, Tailwind CSS, vanilla JavaScript. No React, no frameworks, no build
 
 ```
 marshall-and-co-bespoke-home-improvements/
-├── index.html                  — Homepage (main entry point, ~1056 lines)
-├── style.css                   — Global styles, gs- token system, animations
-├── global.js                   — Component loader, scroll reveal, header scroll, nav
+├── index.html                  — Homepage (~1891 lines)
+├── style.css                   — Global styles, gs- token system, animations (~638 lines)
+├── global.js                   — Component loader, scroll reveal, header scroll, nav (~194 lines)
 ├── CLAUDE.md                   — Project rules & context
 │
 ├── components/
-│   ├── header.html             — Reusable nav (logo, links, mobile menu)
-│   └── footer.html             — Reusable footer (brand, contact, quick links)
+│   ├── header.html             — Fixed nav: top info banner + logo + links + mobile menu
+│   └── footer.html             — Brand, contact details, quick links, copyright
 │
 ├── assets/
+│   ├── fonts/
+│   │   ├── ElicitScript-SemiBold.otf   — Accent/script font (kickers, signature)
+│   │   └── Cormorant/                  — Heading font (Regular, RegularItalic, Semi, Bold, BoldItalic + subfamilies)
 │   └── imgs/
-│       ├── logo.png            — Company logo (used in header/footer)
-│       ├── qrcode.png          — Google review QR code
-│       ├── all_imgs/           — 109 raw client WhatsApp photos (source material)
-│       ├── general_imgs/       — Empty (general use)
-│       ├── hero_imgs/          — Empty (reserved for hero section)
-│       ├── location_imgs/      — Empty (reserved for location pages)
-│       └── service_imgs/       — Empty (reserved for service pages)
+│       ├── logo.png                    — Company logo
+│       ├── qrcode.png                  — Google review QR code
+│       ├── og-image.jpg                — Open Graph / social share image
+│       ├── all_imgs/                   — 109 raw client WhatsApp photos (source material)
+│       ├── general_imgs/               — about.jpg, about_bg.jpg, before.jpg, after.jpg
+│       ├── hero_imgs/                  — hero1.jpg, hero2.jpg, hero3.jpg
+│       ├── location_imgs/              — Empty (future location pages)
+│       └── service_imgs/               — service1.jpg – service4.jpg
 │
 └── pages/
     ├── location_pages/         — Empty (future location landing pages)
@@ -123,8 +129,9 @@ Dark mode via `.section-dark` on a `<section>`:
 - `--gs-fg` `#ffffff` | `--gs-bg` `#303030` | btn flips to outline style
 
 ### Typography
-- **Headings** (`font-heading`): `'Marcus Traianus'` — self-hosted in `assets/fonts/`, weights 400/700/800 declared in `style.css`. Token: `--font-heading: 'Marcus Traianus', Georgia, serif`
-- **Body** (`font-body`): `'Montserrat'` — Google Fonts CDN. Token: `--font-body: 'Montserrat', sans-serif`
+- **Headings** (`font-heading`): `'Cormorant'` — self-hosted in `assets/fonts/Cormorant/`. Token: `--font-heading: 'Cormorant', Georgia, serif`
+- **Body** (`font-body`): `'Montserrat'` — Google Fonts CDN, weights 300–800. Token: `--font-body: 'Montserrat', sans-serif`
+- **Script/Accent** (`font-script`): `'Elicit Script'` — self-hosted in `assets/fonts/`. Token: `--font-script: 'Elicit Script', cursive`. Use only for kickers and the Lee Marshall signature.
 
 ### Component Loading (global.js)
 
@@ -132,21 +139,19 @@ Dark mode via `.section-dark` on a `<section>`:
 
 ### Current Homepage Sections (index.html)
 
-1. Hero — full-screen slideshow (s1.png, s2.png, s3.png) with CTA
-2. Trust Banner — scrolling ticker of service keywords
-3. About — parallax image + stats counters
-4. Services — 4-card grid (Basement, Residential, New Build, Joinery)
-5. Process — horizontal scroll carousel (4 steps)
-6. Before/After — interactive drag slider
-7. Reviews — draggable horizontal scroll marquee
-8. Google Review CTA — QR code section
-9. FAQ — native `<details>` accordion with Schema.org markup
-10. Footer — injected via component
+1. **Hero** — 3-slide content carousel (lerp-free CSS transitions). Slides: Welcome / Craftsmanship / Conversion (form). Background images cycle independently. Animated mouse scroll indicator + slide dots. Timer stops permanently on slide 3 or form focus.
+2. **Trust Banner** — scrolling ticker of service keywords (marquee animation)
+3. **About** — parallax background image, two-column text + floating portrait image (desktop), stat counters (20+ years, 5-Star, 100% personally led), Lee Marshall script signature with underline
+4. **Gallery** (`#gallery-snippet`) — sticky lerp-scroll card carousel, mirrors Process section layout. Dark bg, fade gradients, dots, "View Full Gallery" button. Cards reference `all_imgs/` WhatsApp photos.
+5. **Services** (`#services-section`) — 4 alternating full-width rows (image + text), parallax on images, section number 03, sub-cards numbered 01–04 internally
+6. **Inspiration** (`#inspiration-banner-section`) — full-bleed bg image with parallax, frosted glass card anchored right, section number 04
+7. **Process** (`#process-section`) — sticky card stack ("How We Work"), 4 cards reveal on scroll, lerp JS, dots, "Scroll to explore" hint anchored at bottom. Section number 05.
+8. **Testimonials** (`#testimonials`) — review cards + Google QR code CTA. Section number 06/07.
+9. **FAQ** (`#faq`) — native `<details>` accordion, Schema.org FAQ markup. Section number 08.
+10. **Footer** — injected via component
 
-### Missing Assets (referenced in HTML, not yet in repo)
+### Known Outstanding Issues
 
-- `assets/imgs/s1.png`, `s2.png`, `s3.png` — hero slideshow
-- `assets/imgs/about_bg.jpg`, `about.jpg` — about section
-- `assets/imgs/service1_*.jpg` through `service4_*.jpg` — service cards
-- `assets/imgs/before.png`, `after.png` — before/after slider
-- `assets/imgs/og-image.jpg` — Open Graph share image
+- **Before/After slider JS exists** (`ba-slider`) but the HTML section was never built — dead code at bottom of file
+- **Unused Cormorant subfamilies** still in `assets/fonts/Cormorant/` (CormorantInfant, CormorantSC, CormorantUnicase, CormorantUpright + undeclared weights) — ~25 files, ~3.5MB unused
+- **Gallery scroll-wrapper height hardcoded** — `style="height: 420vh;"` inline on `#gallery-scroll-wrapper`
