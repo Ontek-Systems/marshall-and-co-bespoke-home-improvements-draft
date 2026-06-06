@@ -1915,12 +1915,21 @@
       #cta-section .cta-img-panel.left::after  { background: linear-gradient(to right,  transparent 60%, #303030 100%); }
       #cta-section .cta-img-panel.right::after { background: linear-gradient(to left,   transparent 60%, #303030 100%); }
       @media (max-width: 1023px) {
-        #cta-section .cta-img-panel { display: none; }
+        #cta-section .cta-img-panel.right { display: none; }
+        #cta-section .cta-img-panel.left {
+          width: 100%; left: 0; right: 0;
+        }
+        #cta-section .cta-img-panel.left img {
+          filter: brightness(0.35) saturate(1.1);
+        }
+        #cta-section .cta-img-panel.left::after {
+          background: linear-gradient(to bottom, transparent 40%, #303030 100%);
+        }
       }
     </style>
 
     <!-- Left image panel -->
-    <div class="cta-img-panel left hidden lg:block">
+    <div class="cta-img-panel left">
       <img src="assets/imgs/general_imgs/footer1.jpg" alt="Completed bespoke home extension by Marshall & Co. in Perthshire" loading="lazy">
     </div>
 
