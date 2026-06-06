@@ -1,32 +1,57 @@
 /* ============================================================
-   Marcus Traianus — Self-hosted Font (Section Headings)
+   Elicit Script — Self-hosted Font (Signature / Accent)
+   ============================================================ */
+@font-face {
+    font-family: 'Elicit Script';
+    src: url('assets/fonts/ElicitScript-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================================
+   Cormorant — Self-hosted Font (Section Headings)
    ============================================================ */
 @font-face {
     font-family: 'Marcus Traianus';
-    src: url('assets/fonts/MarcusTraianus.otf') format('opentype');
+    src: url('assets/fonts/Cormorant/Cormorant-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Marcus Traianus';
-    src: url('assets/fonts/MarcusTraianus-Bold.otf') format('opentype');
+    src: url('assets/fonts/Cormorant/Cormorant-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marcus Traianus';
+    src: url('assets/fonts/Cormorant/Cormorant-Semi.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Marcus Traianus';
+    src: url('assets/fonts/Cormorant/Cormorant-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Marcus Traianus';
-    src: url('assets/fonts/MarcusTraianus-ExtraBold.otf') format('opentype');
-    font-weight: 800;
-    font-style: normal;
+    src: url('assets/fonts/Cormorant/Cormorant-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
     font-display: swap;
 }
 @font-face {
     font-family: 'Marcus Traianus';
-    src: url('assets/fonts/MarcusTraianus-Italic.otf') format('opentype');
-    font-weight: 400;
-    font-style: italic;
+    src: url('assets/fonts/Cormorant/Cormorant-Bold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
     font-display: swap;
 }
 
@@ -53,7 +78,8 @@
 }
 
 body  { font-family: var(--font-body); background-color: #ffffff; color: #303030; }
-h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); }
+h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); transition: color 0.3s ease; cursor: default; }
+h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover { color: #e8b238; }
 img {
     --img-saturate: 1.05;
     --img-contrast: 1.05;

@@ -49,6 +49,7 @@
       --color-brand-text:  #303030;
       --font-heading: 'Marcus Traianus', Georgia, serif;
       --font-body:    'Montserrat', sans-serif;
+      --font-script:  'Elicit Script', cursive;
     }
 
     /* PAGE-WIDE: Solid buttons — gold resting, dark hover */
@@ -196,7 +197,7 @@
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <span class="font-body text-white/90 text-xs sm:text-sm ml-2 font-medium leading-none translate-y-[1px]">5-Star Google Rated</span>
             </div>
-            <p class="font-body text-[#e8b238] text-xs sm:text-sm uppercase tracking-[0.2em] font-bold mb-5">Perth's Premier Bespoke Home Improvements</p>
+            <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2" style="transform: rotate(-2deg);">Perth's Premier Builders</p>
             <h1 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl">
               Welcome to<br>Marshall &amp; Co.
             </h1>
@@ -209,7 +210,7 @@
         <!-- Slide 2: Craftsmanship (text slides in from right, right-aligned) -->
         <div class="hero-content-panel" data-anim="right">
           <div class="flex flex-col justify-center items-end ml-auto max-w-2xl" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
-            <p class="font-body text-[#e8b238] text-xs sm:text-sm uppercase tracking-[0.2em] font-bold mb-5 text-right">Excellence Without Compromise</p>
+            <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2 text-right" style="transform: rotate(-2deg);">Excellence Without Compromise</p>
             <h2 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl text-right">
               Unrivaled<br>Craftsmanship
             </h2>
@@ -234,6 +235,7 @@
                 <span class="font-body text-white/90 text-xs sm:text-sm ml-2 font-medium leading-none translate-y-[1px]">5-Star Google Rated</span>
               </div>
 
+              <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2" style="transform: rotate(-2deg);">Your Vision, Realised</p>
               <h1 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl">
                 Bespoke Home Improvements,<br>Crafted to the Highest Standard
               </h1>
@@ -465,6 +467,13 @@
             <p>That approach builds trust, and trust builds long-term relationships. The majority of work at Marshall & Co. comes through repeat clients and personal referrals. When you hand over your home for improvement, you deserve to know it is in the right hands.</p>
           </div>
 
+          <div class="mt-6 mb-10 w-full flex justify-end lg:justify-start pr-8 lg:pr-0">
+            <div class="inline-flex flex-col items-start transform -rotate-2">
+              <span class="font-script text-4xl text-[#303030] inline-block opacity-90">Lee Marshall</span>
+              <div class="h-px w-full mt-1 opacity-40" style="background:#303030;"></div>
+            </div>
+          </div>
+
           <div id="about-stats" class="title-underline-anim flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-10 lg:gap-12 mb-8 w-full max-w-lg mx-auto lg:mx-0" style="animation-delay: 800ms;">
             <div class="group flex flex-col items-center lg:items-start cursor-default">
               <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#303030] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#e8b238] whitespace-nowrap">
@@ -485,7 +494,7 @@
           </div>
 
           <div class="title-underline-anim" style="animation-delay: 900ms;">
-            <a href="javascript:void(0);" class="btn-adaptive">Our Story</a>
+            <a href="javascript:void(0);" class="btn-adaptive">Learn more about us</a>
           </div>
         </div>
 
@@ -794,9 +803,10 @@
 
       <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20">
         <div class="flex flex-col items-center text-center mb-8 md:mb-12 reveal">
-          <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">
+          <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-4 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">
             <span class="border-b-[1.5px] border-current pb-0.5">03</span>
           </span>
+          <span class="font-script text-3xl md:text-4xl text-[#e8b238] mb-3 inline-block" style="transform: rotate(-2deg);">What we do best</span>
           <h2 class="group font-heading font-black text-4xl sm:text-5xl text-[#303030] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full">
             <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Our</span></span>
@@ -917,9 +927,12 @@
 
         <hr class="border-0 h-[2px] w-12 mb-6" style="background:#e8b238; opacity:0.5;">
 
-        <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">
-          <span class="border-b-[1.5px] border-current pb-0.5">04</span>
-        </span>
+        <div class="flex flex-col items-start mb-1">
+          <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">
+            <span class="border-b-[1.5px] border-current pb-0.5">04</span>
+          </span>
+          <span class="font-script text-3xl md:text-4xl text-[#e8b238] mb-3 inline-block" style="transform: rotate(-2deg);">Inspired Living</span>
+        </div>
 
         <h2 class="gs-heading group mb-[22px] flex flex-col items-start w-full">
           <span class="flex flex-wrap justify-start gap-x-3 lg:gap-x-4 leading-tight">
@@ -1087,6 +1100,7 @@
             <span class="word-mask-inner inline-block font-body font-extrabold text-base tracking-widest uppercase mb-4 cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay:50ms;">
               <span class="border-b-[1.5px] border-current pb-0.5">05</span>
             </span>
+            <span class="font-script text-3xl md:text-4xl text-[#e8b238] mb-3 inline-block" style="transform: rotate(-2deg);">Our Process</span>
             <h2 class="font-heading font-black text-4xl sm:text-5xl text-white leading-tight mb-3 cursor-default flex flex-wrap justify-center gap-x-3">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">How</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">We</span></span>
