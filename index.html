@@ -669,17 +669,20 @@
         .gallery-card {
           flex-shrink: 0; width: 380px; height: 100%;
           position: relative; overflow: hidden; cursor: pointer;
-          transform: translateZ(0);
           transition: border-color 350ms ease;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -webkit-mask-image: -webkit-radial-gradient(white, black);
+          mask-image: radial-gradient(white, black);
         }
         .gc-border-gold  { border-bottom: 2px solid #e8b238; }
         .gc-border-brown { border-bottom: 2px solid #5b4a36; }
-        .gallery-card:hover { z-index: 3; border-bottom-color: transparent !important; }
         .gallery-card img {
           width: 100%; height: 100%; object-fit: cover; display: block;
           transition: transform 700ms cubic-bezier(0.25,0.46,0.45,0.94);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
         }
-        .gallery-card:hover img { transform: scale(1.06); }
         .gallery-card-overlay {
           position: absolute; inset: 0;
           background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 50%, transparent 100%);
@@ -689,16 +692,12 @@
           position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem 1.5rem;
           transition: opacity 250ms ease;
         }
-        .gallery-card:hover .gallery-card-label { opacity: 0; }
         .gallery-card-hover-content {
           position: absolute; bottom: 0; left: 0; right: 0;
           padding: 1.75rem; z-index: 1;
           opacity: 0; pointer-events: none;
           transform: translateY(14px);
           transition: opacity 260ms ease, transform 360ms cubic-bezier(0.25,0.46,0.45,0.94);
-        }
-        .gallery-card:hover .gallery-card-hover-content {
-          opacity: 1; pointer-events: auto; transform: translateY(0);
         }
         .gc-tag {
           display: block; font-family: var(--font-body);
@@ -717,7 +716,6 @@
           transform: scaleX(0); transform-origin: left;
           transition: transform 360ms 80ms cubic-bezier(0.25,0.46,0.45,0.94);
         }
-        .gallery-card:hover .gc-divider { transform: scaleX(1); }
         .gc-desc {
           font-family: var(--font-body); font-size: 0.695rem; font-weight: 400;
           color: rgba(255,255,255,0.92); line-height: 1.65; margin-bottom: 1rem;
@@ -731,7 +729,19 @@
           transition: gap 0.25s ease, border-color 0.25s ease;
           text-shadow: 0 1px 6px rgba(0,0,0,1), 0 2px 10px rgba(0,0,0,0.9);
         }
-        .gallery-card:hover .gc-cta { gap: 0.7rem; border-color: #e8b238; }
+        @media (min-width: 1024px) and (max-width: 1366px) {
+          .gc-tag, .gc-title { text-align: center; }
+          .gallery-card-hover-content { display: flex; flex-direction: column; align-items: center; }
+          .gc-desc { text-align: left; align-self: flex-start; }
+        }
+        @media (hover: hover) and (pointer: fine) {
+          .gallery-card:hover { border-bottom-color: transparent !important; }
+          .gallery-card:hover img { transform: scale(1.06); }
+          .gallery-card:hover .gallery-card-label { opacity: 0; }
+          .gallery-card:hover .gallery-card-hover-content { opacity: 1; pointer-events: auto; transform: translateY(0); }
+          .gallery-card:hover .gc-divider { transform: scaleX(1); }
+          .gallery-card:hover .gc-cta { gap: 0.7rem; border-color: #e8b238; }
+        }
         #gallery-section-num { color: rgba(255,255,255,0.35); transition: color 0.3s ease; }
         #gallery-section-num:hover { color: #e8b238; }
         .gallery-dot { transition: background 0.25s, transform 0.25s; }
@@ -764,8 +774,9 @@
           }
           .gallery-card { width: 100%; height: 260px; }
           #gallery-dots { display: none; }
-          .gallery-card-hover-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
-          .gc-divider { transform: scaleX(1); }
+          .gallery-card-hover-content { opacity: 0 !important; pointer-events: none !important; }
+          .gallery-card-label { opacity: 1 !important; }
+          .gallery-card:active img { transform: scale(1.06); }
         }
       </style>
 
