@@ -157,6 +157,8 @@
           .hero-content-panel {
             position: absolute;
             inset: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -165,6 +167,8 @@
             transition: opacity 0.7s ease, transform 0.7s ease;
           }
           .hero-content-panel.active { opacity: 1; pointer-events: auto; }
+          @media (min-width: 640px)  { .hero-content-panel { padding-left: 2rem;  padding-right: 2rem;  } }
+          @media (min-width: 1024px) { .hero-content-panel { padding-left: 3rem;  padding-right: 3rem;  } }
           .hero-content-panel[data-anim="left"]  { transform: translateX(-60px); }
           .hero-content-panel[data-anim="right"] { transform: translateX(60px); }
           .hero-content-panel[data-anim="left"].active,
