@@ -17,6 +17,8 @@
         .tb-content { gap: 3.5rem; padding: 0; }
         .tb-scroll { animation: none; transform: none; width: 100%; }
       }
+      .nav-link { transition: color 0.15s ease-in-out; }
+      .nav-link:hover { color: #e8b238 !important; }
     </style>
     <div id="top-banner" class="w-full py-2.5 text-center transition-all duration-150 tb-outer" style="background:#5b4a36;">
       <div class="tb-scroll font-body text-[10px] sm:text-xs text-white/90 tracking-widest uppercase">
@@ -109,12 +111,12 @@
         </a>
 
         <nav class="hidden xl:flex items-center gap-6 2xl:gap-10 font-body text-[15px] 2xl:text-[17px] font-semibold tracking-wide">
-            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap">About Us</a>
-            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap">Services</a>
-            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap">Gallery</a>
-            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap">FAQs</a>
-            <a href="contact.html" class="whitespace-nowrap">Contact</a>
-            <a href="javascript:void(0);" style="cursor: default;" class="group inline-flex items-center gap-1.5 whitespace-nowrap">
+            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap nav-link">About Us</a>
+            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap nav-link">Services</a>
+            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap nav-link">Gallery</a>
+            <a href="javascript:void(0);" style="cursor: default;" class="whitespace-nowrap nav-link">FAQs</a>
+            <a href="contact.html" class="whitespace-nowrap nav-link">Contact</a>
+            <a href="javascript:void(0);" style="cursor: default;" class="group inline-flex items-center gap-1.5 whitespace-nowrap nav-link">
                 Perth, Scotland
                 <svg class="w-4 h-4 shrink-0 group-hover:-translate-y-1 transition-transform duration-150"
                     fill="currentColor" viewBox="0 0 24 24">
