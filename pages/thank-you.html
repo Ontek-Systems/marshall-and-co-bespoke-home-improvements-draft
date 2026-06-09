@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Thank You | Marshall &amp; Co. Bespoke Home Improvements | Perth</title>
+  <meta name="description" content="Thank you for getting in touch with Marshall &amp; Co. Bespoke Home Improvements. We will be in touch shortly." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="../style.css">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-dark:  #303030;
+      --color-brand-ocean: #303030;
+      --color-brand-bronze:#e8b238;
+      --color-brand-alice: #ffffff;
+      --color-brand-beige: #fff9eb;
+      --color-brand-text:  #303030;
+      --font-heading: 'Ballantines Serial', Georgia, serif;
+      --font-body:    'Montserrat', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: #e8b238 !important;
+      color: #ffffff !important;
+      border-color: transparent !important;
+      width: auto !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #303030 !important;
+      color: #ffffff !important;
+    }
+    
+    /* Animation classes */
+    .word-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
+    .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2,0.8,0.2,1); will-change: transform; }
+    .reveal.active .word-mask-inner { transform: translateY(0); }
+    .title-underline-anim { opacity: 0; }
+    .reveal.active .title-underline-anim { animation: fadeUp 0.7s cubic-bezier(0.2,0.8,0.2,1) forwards; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen text-[#303030] antialiased bg-[#fff9eb]">
+
+    <div id="header-placeholder"></div>
+
+    <main class="flex-grow flex items-center justify-center py-24 md:py-32 pt-36 md:pt-52">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+
+            <div class="reveal flex flex-col items-center">
+                <!-- Checkmark Icon -->
+                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-10 border-2 border-[#e8b238] shadow-[0_0_40px_rgba(232,178,56,0.25)] title-underline-anim" style="animation-delay:100ms;">
+                    <svg class="w-12 h-12 text-[#e8b238]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+
+                <h1 class="font-heading font-black text-[3.45rem] md:text-[4.83rem] leading-tight text-[#303030] mb-4">
+                  <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">Thank You</span></span>
+                </h1>
+                
+                <span class="block w-20 h-1 bg-[#e8b238] rounded-full mx-auto mb-6 title-underline-anim" style="animation-delay:400ms;"></span>
+
+                <p class="font-body text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed text-[#303030]/80 title-underline-anim" style="animation-delay:500ms;">
+                    Lee Marshall will review your project details and be in touch shortly to arrange your free consultation.
+                </p>
+
+                <div class="title-underline-anim" style="animation-delay:600ms;">
+                  <a href="../index.html" class="btn-primary">
+                      Return to Homepage
+                  </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../global.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var reveals = document.querySelectorAll('.reveal');
+          reveals.forEach(function(reveal) {
+            reveal.classList.add('active');
+          });
+        }, 150);
+      });
+    </script>
+</body>
+</html>

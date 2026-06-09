@@ -145,6 +145,15 @@ function initHeaderScroll() {
     const isServicePage = window.location.pathname.match(/\/pages\/services\/.+\.html/);
 
     if (header && container) {
+        if (window.location.pathname.includes('thank-you.html')) {
+            header.classList.add('scrolled');
+            header.classList.remove('bg-transparent', 'border-transparent');
+            header.classList.add('bg-[#303030]', 'backdrop-blur-md', 'shadow-md', 'border-white/10');
+            container.classList.remove('py-5', 'md:py-6');
+            container.classList.add('py-2', 'md:py-3');
+            return;
+        }
+
         if (isServicePage) {
             header.classList.add('scrolled');
             return;
