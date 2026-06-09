@@ -189,15 +189,48 @@ img {
 .gs-tagline:hover { color: var(--gs-accent); }
 .gs-heading {
   font-family: var(--font-heading), serif;
-  font-weight: 400;
+  font-weight: 900;
   font-size: clamp(3.45rem, 8vw, 6.33rem);
-  line-height: 0.855;
+  line-height: 1.10;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   color: var(--gs-fg);
   cursor: default;
 }
+
+/* ── Unified section heading system ──
+   Use .section-tagline on the <span> above every section h2.
+   Use .section-heading on every section <h2>, then append only:
+   - text colour (text-white / text-[#303030])
+   - alignment (justify-center / lg:justify-start)
+   Any new section must use both classes. Do not redefine font sizes inline.
+*/
+.section-tagline {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  font-family: var(--font-heading), serif;
+  font-weight: 900;
+  font-size: 3.45rem;
+  line-height: 1.10;
+  margin-bottom: 1rem;
+  cursor: default;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.75rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+@media (min-width: 640px)  { .section-heading { font-size: 4.83rem; } }
+@media (min-width: 768px)  { .section-heading { font-size: 6.33rem; } }
 
 .gs-body {
   font-family: var(--font-body), sans-serif;
@@ -230,7 +263,7 @@ h1, h2, h3 {
   letter-spacing: 0.025em;
   border-radius: 1px;
   width: auto;
-  align-self: flex-start;
+  
   background-color: var(--gs-btn-bg);
   color: var(--gs-btn-fg);
   border-color: var(--gs-btn-border);
@@ -260,7 +293,7 @@ h1, h2, h3 {
     letter-spacing: 0.025em;
     border-radius: 1px;
     width: auto;
-    align-self: flex-start;
+    
 }
 
 .btn-primary {

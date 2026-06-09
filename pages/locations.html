@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Where We Work | Marshall &amp; Co. Bespoke Home Improvements | Perth &amp; Perthshire</title>
+  <meta name="description" content="Marshall &amp; Co. works across Perth, Perthshire, Dundee, and surrounding towns. Based in Perth, Lee Marshall carries out every project personally. Get a free site visit." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.marshallandco.uk/pages/locations.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.marshallandco.uk/pages/locations.html" />
+  <meta property="og:title" content="Where We Work | Marshall &amp; Co. Bespoke Home Improvements | Perth &amp; Perthshire" />
+  <meta property="og:description" content="Based in Perth, Lee Marshall carries out bespoke home improvements across Perthshire, Dundee, Kinross, Crieff, Blairgowrie, and beyond. Free site visits." />
+  <meta property="og:image" content="https://www.marshallandco.uk/assets/imgs/og-image.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Marshall &amp; Co. Bespoke Home Improvements" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Where We Work | Marshall &amp; Co. Bespoke Home Improvements | Perth &amp; Perthshire" />
+  <meta name="twitter:description" content="Based in Perth, Lee Marshall carries out bespoke home improvements across Perthshire and Dundee. Free site visits with no obligation." />
+  <meta name="twitter:image" content="https://www.marshallandco.uk/assets/imgs/og-image.jpg" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="../style.css">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-dark:  #303030;
+      --color-brand-bronze:#e8b238;
+      --color-brand-beige: #fff9eb;
+      --font-heading: 'Ballantines Serial', Georgia, serif;
+      --font-body:    'Montserrat', sans-serif;
+    }
+    .btn-primary {
+      background-color: #e8b238 !important;
+      color: #ffffff !important;
+      border-color: transparent !important;
+      
+      width: auto !important;
+    }
+    .btn-primary:hover {
+      background-color: #000000 !important;
+      border-color: transparent !important;
+      color: #ffffff !important;
+    }
+  </style>
+
+  <style>
+    /* ── Word-mask reveal ── */
+    .word-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
+    .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2,0.8,0.2,1); will-change: transform; }
+    .reveal.active .word-mask-inner { transform: translateY(0); }
+    .title-underline-anim { opacity: 0; }
+    .reveal.active .title-underline-anim { animation: fadeUp 0.7s cubic-bezier(0.2,0.8,0.2,1) forwards; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── Location cards ── */
+    .loc-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #1e1e1e;
+    }
+    .loc-img-wrap img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .loc-card:hover .loc-img-wrap img { transform: scale(1.07); }
+    .loc-card {
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.5s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+      will-change: transform;
+    }
+    .loc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.18);
+    }
+    .loc-card-body {
+      flex: 1;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-top: 3px solid transparent;
+      transition: border-color 0.35s ease, background 0.4s ease;
+    }
+    .loc-card:hover .loc-card-body {
+      border-top-color: #e8b238;
+      background: #303030;
+    }
+    .loc-card-title {
+      font-family: 'Ballantines Serial', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #303030;
+      transition: color 0.35s ease;
+      line-height: 1.2;
+    }
+    .loc-card:hover .loc-card-title { color: #ffffff; }
+    .loc-card-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(48,48,48,0.45);
+      margin-top: 0.2rem;
+      margin-bottom: 1rem;
+      transition: color 0.35s ease;
+    }
+    .loc-card:hover .loc-card-sub { color: rgba(255,255,255,0.55); }
+    .loc-card:hover .loc-card-desc { color: rgba(255,255,255,0.65); }
+
+    /* View Location link — adapts to dark card on hover */
+    .view-loc-btn { color: #303030; }
+    .loc-card:hover .view-loc-btn {
+      color: rgba(255,255,255,0.75);
+      text-decoration-color: rgba(255,255,255,0.25);
+    }
+    .loc-card:hover .view-loc-btn:hover {
+      color: #e8b238 !important;
+      text-decoration-color: #e8b238 !important;
+    }
+
+    /* Card button row: 2-col grid = always side-by-side at every screen size */
+    .loc-card-body .flex-nowrap {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.375rem;
+    }
+    .loc-card-body .flex-nowrap .btn-primary {
+      display: block !important;
+      width: 100% !important;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+      font-size: clamp(0.62rem, 1vw, 0.75rem) !important;
+    }
+
+    /* Gold pin icon overlay */
+    .loc-pin {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      background: #e8b238;
+      width: 2rem; height: 2rem;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+
+    /* ── Region intro strips ── */
+    .region-strip {
+      display: flex; align-items: flex-start; gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(48,48,48,0.07);
+    }
+    .region-strip:last-child { border-bottom: none; }
+
+    /* ── Map ── */
+    .map-frame { overflow: hidden; }
+
+    /* ── Trust pills ── */
+    .trust-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      background: rgba(232,178,56,0.09);
+      border: 1px solid rgba(232,178,56,0.22);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #303030; cursor: default; white-space: nowrap;
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+    }
+    .trust-pill:hover { background: #e8b238; border-color: #e8b238; color: #fff; }
+
+    /* Laptop / Mac height compression */
+    @media (min-width: 1024px) and (max-height: 860px) {
+      .section-heading { font-size: 3.78rem !important; line-height: 1.1 !important; }
+    }
+    @media (max-width: 767px) {
+      .loc-card-grid { grid-template-columns: repeat(1, minmax(0,1fr)); }
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen antialiased overflow-x-hidden bg-white text-[#303030]">
+
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Where We Work | Marshall & Co.",
+      "url": "https://www.marshallandco.uk/pages/locations.html",
+      "description": "Marshall & Co. bespoke home improvements covering Perth, Perthshire, Dundee and surrounding areas.",
+      "mainEntity": {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.marshallandco.uk/",
+        "name": "Marshall & Co. Bespoke Home Improvements",
+        "telephone": "07940568877",
+        "address": { "@type": "PostalAddress", "addressLocality": "Perth", "addressRegion": "Perthshire", "addressCountry": "GB" },
+        "areaServed": ["Perth","Perthshire","Dundee","Kinross","Crieff","Blairgowrie","Dunblane","Auchterarder","Coupar Angus","Scone","Bridge of Earn","Dunkeld","Aberfeldy","Comrie"]
+      }
+    }
+    </script>
+
+    <!-- ================================================
+         HERO
+    ================================================ -->
+    <section class="relative pt-[210px] pb-20 sm:pt-[220px] md:pt-[240px] md:pb-28 flex items-center justify-center overflow-hidden" style="background:#303030;">
+
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <img src="../assets/imgs/location_imgs/perthshire.jpg"
+          alt="Perthshire landscape, service area of Marshall &amp; Co."
+          class="absolute inset-0 w-full h-full object-cover opacity-20"
+          style="filter:saturate(0.4) brightness(0.5);">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#303030]/88 via-[#303030]/55 to-[#303030]/92"></div>
+      </div>
+
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
+
+        <span class="word-mask-inner inline-block section-tagline cursor-default text-white/50 hover:text-[#e8b238] transition-colors duration-300 mb-6" style="transition-delay:50ms;">Perth &amp; Perthshire</span>
+
+        <h1 class="section-heading text-white justify-center mb-8">
+          <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Where We Work</span></span>
+        </h1>
+
+        <p class="title-underline-anim font-body text-lg lg:text-xl mt-2 max-w-2xl mx-auto leading-relaxed text-white/65" style="animation-delay:480ms;">
+          Based in Perth. Every project carried out personally by Lee across Perthshire, Dundee, and the surrounding towns. If you do not see your area listed, just get in touch.
+        </p>
+
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 h-[3px]" style="background:linear-gradient(90deg,transparent 0%,#e8b238 30%,#e8b238 70%,transparent 100%);"></div>
+    </section>
+
+    <!-- ================================================
+         SCROLLING TRUST BANNER
+    ================================================ -->
+    <style>
+      .scrolling-wrapper-loc { overflow: hidden; white-space: nowrap; display: flex; width: 100%; cursor: default; }
+      .scrolling-track-loc { display: flex; width: max-content; animation: scrollBannerLoc 28s linear infinite; }
+      @keyframes scrollBannerLoc { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    </style>
+    <div style="background:#1e1e1e;" class="text-white py-4 border-y border-white/8 shadow-inner">
+      <div class="scrolling-wrapper-loc">
+        <div class="scrolling-track-loc flex items-center font-body font-medium tracking-wide text-sm">
+          <div class="flex items-center gap-10 md:gap-16 px-8">
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Perth Based</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Free Site Visit</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Owner on Site Every Day</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>No Subcontractors</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Over 20 Years Experience</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>All of Perthshire</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>5-Star Google Rated</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>AMT Accredited</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Dundee &amp; Angus</span>
+          </div>
+          <div class="flex items-center gap-10 md:gap-16 px-8">
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Perth Based</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Free Site Visit</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Owner on Site Every Day</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>No Subcontractors</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Over 20 Years Experience</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>All of Perthshire</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>5-Star Google Rated</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>AMT Accredited</span>
+            <span class="flex items-center gap-2.5 text-white/60"><span class="w-1.5 h-1.5 bg-[#e8b238] rounded-full inline-block"></span>Dundee &amp; Angus</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ================================================
+         INTRO + MAP
+    ================================================ -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
+
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 lg:items-stretch reveal reveal-up">
+
+          <!-- Copy left -->
+          <div class="w-full lg:w-2/5 flex flex-col justify-center">
+            <span class="section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300 mb-4 inline-block">The Area</span>
+            <h2 class="section-heading text-[#303030] justify-start mb-6">
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:80ms;">Perthshire &amp; Beyond</span></span>
+            </h2>
+            <p class="gs-body text-[#303030]/70 mb-5">
+              Lee is based in Perth and takes on projects across Perthshire, Dundee, Kinross, and the market towns in between. He works alone, so travel time is factored into how far he goes. Most projects are within a 30 to 35-mile radius of Perth city centre.
+            </p>
+            <p class="gs-body text-[#303030]/70 mb-5">
+              The towns listed on this page are areas where Lee works regularly. If yours is not listed, that does not rule it out. Call and he will give you a straight answer about whether the journey works for the job.
+            </p>
+            <p class="gs-body text-[#303030]/70 mb-8">
+              All site visits are free and come with no obligation. Lee arrives, looks at the project properly, and gives you a written estimate before he leaves.
+            </p>
+            <div class="w-full flex justify-center lg:justify-start mt-4">
+              <a href="contact.html" class="btn-primary text-center inline-block max-w-fit px-8 py-3">Book a Free Site Visit</a>
+            </div>
+          </div>
+
+          <!-- Map right -->
+          <div class="w-full lg:w-3/5 reveal reveal-up flex flex-col" style="transition-delay:80ms;">
+            <div class="map-frame w-full h-[360px] md:h-[460px] lg:h-full lg:flex-grow">
+              <iframe
+                width="100%" height="100%"
+                src="https://maps.google.com/maps?q=Perth,+Scotland,+UK&t=&z=9&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                class="w-full h-full"
+                title="Marshall &amp; Co. service area map centred on Perth, Scotland"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         LOCATION CARDS GRID
+    ================================================ -->
+    <section id="areas" class="py-16 md:py-24" style="background:#fff9eb;">
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
+
+        <div class="flex flex-col items-center text-center mb-14 reveal reveal-up">
+          <span class="section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300 mb-4 inline-block">All Areas</span>
+          <h2 class="section-heading text-[#303030] justify-center mb-5">
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay:80ms;">Areas We Cover</span></span>
+          </h2>
+          <p class="gs-body text-[#303030]/65 max-w-2xl">
+            These are the towns and areas where Lee works most often. Individual location pages with more detail are being added over time.
+          </p>
+        </div>
+
+        <!-- 4-col grid, 2-col on tablet, 1-col on mobile -->
+        <div class="loc-card-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+          <!-- Perth (Featured / full width on xl) -->
+          <div class="loc-card xl:col-span-2 reveal-card" style="transition-delay:0ms;">
+            <div class="loc-img-wrap" style="aspect-ratio:16/9;">
+              <img src="../assets/imgs/location_imgs/perth.jpg" alt="Perth city centre, main service base for Marshall &amp; Co." loading="eager">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+              <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#e8b238]"></div>
+            </div>
+            <div class="loc-card-body">
+              <p class="font-body text-[10px] font-bold uppercase tracking-[0.18em] text-[#e8b238] mb-1">Home Base</p>
+              <h3 class="loc-card-title">Perth</h3>
+              <p class="loc-card-sub">City centre &amp; all surrounding areas</p>
+              <p class="font-body text-sm text-[#303030]/65 leading-relaxed mb-4 loc-card-desc">Lee is based in Perth. He works across the city and the surrounding residential streets regularly. Most of his repeat clients are here.</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.8rem;">Get a Free Quote</a>
+              <a href="location_pages/perth.html" class="btn-primary" style="font-size:0.8rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Perthshire (Featured) -->
+          <div class="loc-card xl:col-span-2 reveal-card" style="transition-delay:60ms;">
+            <div class="loc-img-wrap" style="aspect-ratio:16/9;">
+              <img src="../assets/imgs/location_imgs/perthshire.jpg" alt="Perthshire countryside, service area of Marshall &amp; Co." loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <p class="font-body text-[10px] font-bold uppercase tracking-[0.18em] text-[#e8b238] mb-1">Primary Region</p>
+              <h3 class="loc-card-title">Perthshire</h3>
+              <p class="loc-card-sub">Rural properties across the county</p>
+              <p class="font-body text-sm text-[#303030]/65 leading-relaxed mb-4 loc-card-desc">Perthshire has a high proportion of older stone-built properties. Lee works on them regularly and understands how they behave across the seasons.</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.8rem;">Get a Free Quote</a>
+              <a href="location_pages/perthshire.html" class="btn-primary" style="font-size:0.8rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Dundee -->
+          <div class="loc-card reveal-card" style="transition-delay:80ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/dundee.jpg" alt="Dundee city, covered by Marshall &amp; Co." loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Dundee</h3>
+              <p class="loc-card-sub">City &amp; surrounding areas</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/dundee.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Scone -->
+          <div class="loc-card reveal-card" style="transition-delay:100ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/scone.jpg" alt="Scone, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Scone</h3>
+              <p class="loc-card-sub">Village &amp; surrounding areas</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/scone.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Kinross -->
+          <div class="loc-card reveal-card" style="transition-delay:120ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/kinross.jpg" alt="Kinross, covered by Marshall &amp; Co." loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Kinross</h3>
+              <p class="loc-card-sub">Town &amp; surrounding villages</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/kinross.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Crieff -->
+          <div class="loc-card reveal-card" style="transition-delay:140ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/crieff.jpg" alt="Crieff, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Crieff</h3>
+              <p class="loc-card-sub">Town &amp; surrounding areas</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/crieff.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Blairgowrie -->
+          <div class="loc-card reveal-card" style="transition-delay:160ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/blairgowrie.jpg" alt="Blairgowrie, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Blairgowrie</h3>
+              <p class="loc-card-sub">Town &amp; Rattray area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/blairgowrie.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Dunblane -->
+          <div class="loc-card reveal-card" style="transition-delay:180ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/dunblane.jpg" alt="Dunblane, covered by Marshall &amp; Co." loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Dunblane</h3>
+              <p class="loc-card-sub">Town &amp; surrounding villages</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/dunblane.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Auchterarder -->
+          <div class="loc-card reveal-card" style="transition-delay:200ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/auchterarder.jpg" alt="Auchterarder, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Auchterarder</h3>
+              <p class="loc-card-sub">Town &amp; Gleneagles area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/auchterarder.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Coupar Angus -->
+          <div class="loc-card reveal-card" style="transition-delay:220ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/coupar-angus.jpg" alt="Coupar Angus, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Coupar Angus</h3>
+              <p class="loc-card-sub">Town &amp; surrounding areas</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/coupar-angus.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Bridge of Earn -->
+          <div class="loc-card reveal-card" style="transition-delay:240ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/bridge-of-earn.jpg" alt="Bridge of Earn, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Bridge of Earn</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/bridge-of-earn.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Dunkeld -->
+          <div class="loc-card reveal-card" style="transition-delay:260ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/dunkeld.jpg" alt="Dunkeld, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Dunkeld</h3>
+              <p class="loc-card-sub">Town &amp; Birnam area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/dunkeld.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Abernethy -->
+          <div class="loc-card reveal-card" style="transition-delay:280ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/abernethy.jpg" alt="Abernethy, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Abernethy</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/abernethy.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Almondbank -->
+          <div class="loc-card reveal-card" style="transition-delay:300ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/almondbank.jpg" alt="Almondbank, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Almondbank</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/almondbank.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Alyth -->
+          <div class="loc-card reveal-card" style="transition-delay:320ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/alyth.jpg" alt="Alyth, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Alyth</h3>
+              <p class="loc-card-sub">Town &amp; surrounding villages</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/alyth.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Bankfoot -->
+          <div class="loc-card reveal-card" style="transition-delay:340ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/bankfoot.jpg" alt="Bankfoot, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Bankfoot</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/bankfoot.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Comrie -->
+          <div class="loc-card reveal-card" style="transition-delay:360ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/comrie.jpg" alt="Comrie, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Comrie</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/comrie.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Errol -->
+          <div class="loc-card reveal-card" style="transition-delay:380ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/errol.jpg" alt="Errol, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Errol</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/errol.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Inchture -->
+          <div class="loc-card reveal-card" style="transition-delay:400ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/inchture.jpg" alt="Inchture, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Inchture</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/inchture.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Luncarty -->
+          <div class="loc-card reveal-card" style="transition-delay:420ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/luncarty.jpg" alt="Luncarty, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Luncarty</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/luncarty.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Methven -->
+          <div class="loc-card reveal-card" style="transition-delay:440ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/methven.jpg" alt="Methven, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Methven</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/methven.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Milnathort -->
+          <div class="loc-card reveal-card" style="transition-delay:460ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/milnathort.jpg" alt="Milnathort, Kinross-shire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Milnathort</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/milnathort.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+          <!-- Stanley -->
+          <div class="loc-card reveal-card" style="transition-delay:480ms;">
+            <div class="loc-img-wrap">
+              <img src="../assets/imgs/location_imgs/stanley.jpg" alt="Stanley, Perthshire" loading="lazy">
+              <div class="loc-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            </div>
+            <div class="loc-card-body">
+              <h3 class="loc-card-title">Stanley</h3>
+              <p class="loc-card-sub">Village &amp; surrounding area</p>
+              <div class="flex flex-nowrap items-center gap-2 mt-1">
+              <a href="contact.html" class="btn-primary" style="font-size:0.75rem;">Get a Free Quote</a>
+              <a href="location_pages/stanley.html" class="btn-primary" style="font-size:0.75rem;">View Location</a>
+            </div>
+            </div>
+          </div>
+
+        </div><!-- /grid -->
+
+        <!-- Not listed CTA row -->
+        <div class="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 py-8 px-8 reveal reveal-up" style="background:#303030; transition-delay:100ms;">
+          <div>
+            <p class="font-heading text-white font-bold text-2xl md:text-3xl mb-1">Your town not listed?</p>
+            <p class="font-body text-white/60 text-sm">Get in touch. Lee will tell you straight whether the project and the travel work.</p>
+          </div>
+          <a href="contact.html" class="btn-primary shrink-0">Get in Touch</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         CTA BANNER
+    ================================================ -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 reveal reveal-up">
+          <div class="w-full lg:w-3/5">
+            <span class="section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300 mb-4 inline-block">Start the Process</span>
+            <h2 class="section-heading text-[#303030] justify-start mb-6">
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:80ms;">Get a Free Site Visit</span></span>
+            </h2>
+            <p class="gs-body text-[#303030]/70 mb-8 max-w-xl">
+              Lee comes to the property, looks at the work properly, and gives you a written estimate on the day. No cost, no commitment. Just a straight conversation about what you need.
+            </p>
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <a href="contact.html" class="btn-primary">Book a Visit</a>
+              <a href="tel:07940568877" class="font-body font-bold text-sm text-[#303030] tracking-wide underline underline-offset-[8px] decoration-2 decoration-[#303030]/25 hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300">07940 568877</a>
+            </div>
+          </div>
+          <div class="w-full lg:w-2/5 reveal reveal-up" style="transition-delay:80ms;">
+            <div class="overflow-hidden">
+              <img src="../assets/imgs/location_imgs/perth.jpg" alt="Perth city centre, Marshall &amp; Co. service base" class="w-full h-64 lg:h-80 object-cover" style="filter:brightness(0.85);" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card reveal JS -->
+    <script>
+    (function () {
+      var cards = document.querySelectorAll('.reveal-card');
+      var obs = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      cards.forEach(function (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(28px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.55s cubic-bezier(0.2,0.8,0.2,1)';
+        obs.observe(card);
+      });
+    })();
+    </script>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../global.js"></script>
+
+</body>
+</html>

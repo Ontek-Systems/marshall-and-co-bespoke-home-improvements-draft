@@ -68,11 +68,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadComponents() {
     const path = window.location.pathname;
-    const isPagesLocationsDir = path.includes('/pages/locations/');
-    const isPagesServiceDir = !isPagesLocationsDir && path.includes('/pages/services/');
-    const isPagesDir = !isPagesServiceDir && !isPagesLocationsDir && path.includes('/pages/');
+    const isPagesLocationPagesDir = path.includes('/pages/location_pages/');
+    const isPagesLocationsDir = !isPagesLocationPagesDir && path.includes('/pages/locations/');
+    const isPagesServiceDir = !isPagesLocationsDir && !isPagesLocationPagesDir && (path.includes('/pages/services/') || path.includes('/pages/service_pages/'));
+    const isPagesDir = !isPagesServiceDir && !isPagesLocationsDir && !isPagesLocationPagesDir && path.includes('/pages/');
     let basePath = '';
-    if (isPagesServiceDir || isPagesLocationsDir) basePath = '../../';
+    if (isPagesServiceDir || isPagesLocationsDir || isPagesLocationPagesDir) basePath = '../../';
     else if (isPagesDir) basePath = '../';
 
     const headerPlaceholder = document.getElementById('header-placeholder');
@@ -85,6 +86,10 @@ async function loadComponents() {
                     if (p2.startsWith('http') || p2.startsWith('mailto:') || p2.startsWith('tel:') || p2.startsWith('#') || p2.startsWith('/')) return match;
                     return `${p1}="${basePath + p2}"`;
                 });
+            }
+            
+            if (path.includes('contact.html')) {
+                html = html.replace(/href="[^"]*index\.html#faq"/g, 'href="#faq"');
             }
             headerPlaceholder.outerHTML = html;
         } catch (e) {
@@ -172,10 +177,10 @@ function setActiveNav() {
     const matchers = [
         { test: p => p === '/' || p.endsWith('index.html'), label: 'Home' },
         { test: p => p.includes('/pages/services'), label: 'Services' },
-        { test: p => p.includes('/pages/about'), label: 'About' },
+        { test: p => p.includes('/pages/about'), label: 'About Us' },
         { test: p => p.includes('/pages/gallery'), label: 'Gallery' },
         { test: p => p.includes('/pages/contact') || p.endsWith('contact.html'), label: 'Contact' },
-        { test: p => p.includes('/pages/locations/'), label: 'Where We Build' },
+        { test: p => p.includes('/pages/locations/') || p.includes('/pages/location_pages/'), label: 'Where We Build' },
     ];
 
     let activeLabel = null;

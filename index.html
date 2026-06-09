@@ -84,7 +84,7 @@
       background-color: #e8b238 !important;
       color: #ffffff !important;
       border-color: transparent !important;
-      align-self: flex-start;
+      
       width: auto !important;
     }
     .btn-primary:hover {
@@ -97,7 +97,7 @@
       background-color: transparent !important;
       color: #ffffff !important;
       border-color: #ffffff !important;
-      align-self: flex-start;
+      
       width: auto !important;
     }
     .btn-ghost:hover {
@@ -345,7 +345,7 @@
                   </label>
 
                   <button type="submit"
-                    class="btn-primary w-full font-body font-bold text-sm uppercase tracking-widest py-4 px-6 mt-1">
+                    class="btn-primary w-full font-body font-bold text-sm tracking-widest py-4 px-6 mt-1">
                     Send Enquiry
                   </button>
                 </form>
@@ -499,7 +499,7 @@
     <!-- ================================================
          GALLERY
     ================================================ -->
-    <section id="gallery-snippet">
+    <section id="gallery-snippet" class="min-h-screen flex flex-col justify-center">
 
       <style>
         /* ── Gallery: mirrors Process section layout ── */
@@ -597,7 +597,7 @@
         @media (min-width: 1024px) and (max-width: 1366px) {
           .gc-tag, .gc-title { text-align: center; }
           .gallery-card-hover-content { display: flex; flex-direction: column; align-items: center; }
-          .gc-desc { text-align: left; align-self: flex-start; }
+          .gc-desc { text-align: left;  }
         }
         @media (hover: hover) and (pointer: fine) {
           .gallery-card:hover img { transform: scale(1.06); }
@@ -638,8 +638,8 @@
 
           <!-- Centred heading block -->
           <div class="w-full max-w-3xl mx-auto px-8 flex flex-col items-center text-center flex-shrink-0 reveal">
-            <span id="gallery-section-num" class="font-body font-medium text-base tracking-widest uppercase mb-4 cursor-pointer">Our Gallery</span>
-            <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white leading-tight mb-4 cursor-default flex flex-wrap justify-center gap-x-3">
+            <span id="gallery-section-num" class="section-tagline cursor-pointer">Our Gallery</span>
+            <h2 class="section-heading text-white justify-center">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">What</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">We've</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Been</span></span>
@@ -819,7 +819,7 @@
     <!-- ================================================
          ABOUT / TRUST SECTION
     ================================================ -->
-    <section id="about-parallax-section" class="relative py-16 lg:py-20 xl:py-24 flex flex-col items-center justify-center overflow-hidden" style="background:#ffffff;">
+    <section id="about-parallax-section" class="relative py-16 lg:py-20 xl:py-24 flex flex-col items-center justify-center overflow-hidden min-h-screen" style="background:#ffffff;">
       <style>
         .word-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
         .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease; will-change: transform; }
@@ -847,18 +847,15 @@
 
       <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-        <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20">
+        <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20 px-8">
 
-          <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">Our Story</span>
-
-          <h2 class="gs-heading group mb-[22px] flex flex-col items-center lg:items-start w-full">
-            <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">The</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Craftsman</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Behind</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Every</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Project</span></span>
-            </span>
+          <span class="section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300">Our Story</span>
+          <h2 class="section-heading text-[#303030] justify-center lg:justify-start">
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">The</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Craftsman</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Behind</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Every</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Project</span></span>
           </h2>
 
           <div class="gs-body title-underline-anim space-y-5 mb-7 w-full max-w-xl mx-auto lg:mx-0" style="animation-delay: 700ms;">
@@ -966,17 +963,15 @@
     <!-- ================================================
          SERVICES SECTION
     ================================================ -->
-    <section id="services-section" class="relative pt-16 lg:pt-20 xl:pt-24 pb-0 overflow-hidden" style="background:#ffffff; border-top: 1px solid rgba(48,48,48,0.05);">
+    <section id="services-section" class="relative pt-16 lg:pt-20 xl:pt-24 pb-0 overflow-hidden min-h-screen flex flex-col justify-center" style="background:#ffffff; border-top: 1px solid rgba(48,48,48,0.05);">
 
       <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20">
         <div class="flex flex-col items-center text-center mb-8 md:mb-12 reveal">
-          <span class="word-mask-inner inline-block font-body font-medium text-base tracking-widest uppercase mb-4 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">What We Build</span>
-          <h2 class="gs-heading group mb-[22px] flex flex-col items-center text-center cursor-default w-full">
-            <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Our</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Core</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Services</span></span>
-            </span>
+          <span class="word-mask-inner inline-block section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">What We Build</span>
+          <h2 class="section-heading text-[#303030] justify-center">
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Our</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Core</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Services</span></span>
           </h2>
           <p class="title-underline-anim font-body text-lg md:text-xl text-[#303030]/80 max-w-2xl mx-auto leading-relaxed mt-2" style="animation-delay: 600ms;">
             From structural extensions and loft conversions to handcrafted joinery and bespoke garden rooms, Marshall & Co. covers the full spectrum of premium home improvement work across Perth and Perthshire.
@@ -997,7 +992,10 @@
             <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">01</span>
             <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">House Extensions</h3>
             <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Expand your home with a structurally sound extension that integrates seamlessly into your existing property. Our in-house team handles everything from planning approval and groundwork through to the final bespoke interior finish, with no subcontractors and no compromise on quality.</p>
-            <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
+            <div class="title-underline-anim flex flex-row items-center justify-center lg:justify-start gap-3 w-full lg:w-auto" style="animation-delay: 850ms;">
+              <a href="contact.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">Get a Quote</a>
+              <a href="pages/service_pages/house-extensions.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">View Details</a>
+            </div>
           </div>
         </div>
 
@@ -1012,7 +1010,10 @@
             <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">02</span>
             <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Loft Conversions</h3>
             <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Unlock the full potential of your roof space with a precision-engineered loft conversion that adds a genuine bedroom, office, or suite without sacrificing a square metre of your garden. Every conversion is structurally engineered, thermally efficient, and finished to the same standard as the rest of your home.</p>
-            <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
+            <div class="title-underline-anim flex flex-row items-center justify-center lg:justify-start gap-3 w-full lg:w-auto" style="animation-delay: 850ms;">
+              <a href="contact.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">Get a Quote</a>
+              <a href="pages/service_pages/loft-conversions.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">View Details</a>
+            </div>
           </div>
         </div>
 
@@ -1027,7 +1028,10 @@
             <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">03</span>
             <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Kitchen Renovations</h3>
             <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Transform the heart of your home with a fully bespoke kitchen renovation planned around how you actually live. Every cabinet, worktop, and fitting is specified to exact dimensions and installed with the precision craftsmanship Marshall & Co. is known for across Perthshire.</p>
-            <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
+            <div class="title-underline-anim flex flex-row items-center justify-center lg:justify-start gap-3 w-full lg:w-auto" style="animation-delay: 850ms;">
+              <a href="contact.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">Get a Quote</a>
+              <a href="pages/service_pages/kitchen-renovations.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">View Details</a>
+            </div>
           </div>
         </div>
 
@@ -1042,7 +1046,10 @@
             <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">04</span>
             <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Garden Rooms</h3>
             <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Purpose-built garden rooms designed for year-round use and finished to the same interior standard as your home. Whether you need a home office, a studio, or a private retreat, we build it fully insulated, wired, and ready to use from day one.</p>
-            <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
+            <div class="title-underline-anim flex flex-row items-center justify-center lg:justify-start gap-3 w-full lg:w-auto" style="animation-delay: 850ms;">
+              <a href="contact.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">Get a Quote</a>
+              <a href="pages/service_pages/garden-rooms.html" class="btn-primary flex-1 lg:flex-none text-center text-[11px] sm:text-base px-1 sm:px-8 whitespace-nowrap">View Details</a>
+            </div>
           </div>
         </div>
 
@@ -1076,7 +1083,7 @@
     <!-- ================================================
          HOW WE WORK — STICKY CARD STACK
     ================================================ -->
-    <section id="process-section" class="relative" style="background:#1e1e1e;">
+    <section id="process-section" class="relative min-h-screen flex flex-col justify-center" style="background:#1e1e1e;">
       <style>
         /* ── Stack wrapper: tall enough for 4 card reveals ── */
         #stack-scroll-wrapper { position: relative; height: 350vh; background: #1e1e1e; }
@@ -1246,8 +1253,8 @@
 
           <!-- Heading -->
           <div id="stack-header" class="reveal">
-            <span class="word-mask-inner inline-block font-body font-medium text-base tracking-widest uppercase mb-4 cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay:50ms;">How We Work</span>
-            <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white leading-tight mb-3 cursor-default flex flex-wrap justify-center gap-x-3">
+            <span class="word-mask-inner inline-block section-tagline cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay:50ms;">How We Work</span>
+            <h2 class="section-heading text-white justify-center">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">How</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">We</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Work</span></span>
@@ -1405,14 +1412,14 @@
     <!-- ================================================
          REVIEWS SECTION
     ================================================ -->
-    <section id="testimonials" class="relative py-16 lg:py-20 xl:py-24 bg-white" style="border-top: 1px solid rgba(48,48,48,0.05);">
+    <section id="testimonials" class="relative py-[20vh] bg-white min-h-screen flex flex-col justify-center" style="border-top: 1px solid rgba(48,48,48,0.05);">
 
       <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
         <!-- Section header -->
         <div class="flex flex-col items-center text-center mb-16 lg:mb-20 reveal w-full">
-          <span class="word-mask-inner inline-block font-body font-medium text-xl tracking-widest uppercase mb-8 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Happy Clients</span>
-          <h2 class="group font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-[#303030] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full">
+          <span class="word-mask-inner inline-block section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Happy Clients</span>
+          <h2 class="group section-heading text-[#303030] justify-center items-center text-center w-full">
             <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">What</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Our</span></span>
@@ -1623,8 +1630,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-28 items-center reveal reveal-up">
 
           <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
-            <span class="word-mask-inner inline-block font-body font-medium text-xl tracking-widest uppercase mb-8 cursor-default text-white hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Leave a Review</span>
-            <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white mb-7 leading-[1.15] flex flex-wrap items-center lg:items-start justify-center lg:justify-start gap-x-3 cursor-default">
+            <span class="word-mask-inner inline-block section-tagline cursor-default text-white hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Leave a Review</span>
+            <h2 class="section-heading text-white justify-center lg:justify-start items-center lg:items-start">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Leave</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Us</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">a</span></span>
@@ -1669,15 +1676,15 @@
     <!-- ================================================
          FAQ SECTION
     ================================================ -->
-    <section id="faq" class="relative py-16 lg:py-20 xl:py-24 flex items-center justify-center" style="background:#1a1a1a;">
+    <section id="faq" class="relative py-16 lg:py-20 xl:py-24 flex flex-col items-center justify-center min-h-screen" style="background:#1a1a1a;">
       <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 relative w-full">
 
           <div class="w-full lg:w-1/3 relative">
             <div class="lg:sticky lg:top-28 xl:top-48 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-8 lg:mt-0">
-              <span class="word-mask-inner inline-block font-body font-medium text-xl tracking-widest uppercase mb-8 cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Your Questions</span>
-              <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white leading-[1.15] flex flex-wrap items-center lg:items-start justify-center lg:justify-start gap-x-3 mb-8 cursor-default">
+              <span class="word-mask-inner inline-block section-tagline cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Your Questions</span>
+              <h2 class="section-heading text-white justify-center lg:justify-start items-center lg:items-start">
                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Frequently</span></span>
                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 250ms;">Asked</span></span>
                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Questions</span></span>
@@ -1897,7 +1904,7 @@
   <!-- ================================================
        PRE-FOOTER CTA
   ================================================ -->
-  <section id="cta-section" style="background:#303030;">
+  <section id="cta-section" class="min-h-screen flex flex-col justify-center" style="background:#303030;">
     <div class="w-full max-w-[96rem] mx-auto flex flex-col lg:flex-row">
 
       <!-- Left: sticky text content (matches FAQ container pattern) -->
@@ -1905,13 +1912,14 @@
         <div class="lg:sticky lg:top-28 xl:top-48">
           <div class="px-4 sm:px-8 lg:px-12 py-16 lg:py-20 xl:py-24 flex flex-col items-center text-center lg:items-start lg:text-left reveal">
           
-          <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[5.5rem] text-white leading-tight mb-5 cursor-default flex flex-wrap justify-center lg:justify-start gap-x-3">
+          <span class="word-mask-inner inline-block section-tagline cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay:50ms;">Start Your Project</span>
+          <h2 class="section-heading text-white justify-center lg:justify-start">
             <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Ready</span></span>
             <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">to</span></span>
             <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Transform</span></span>
             <span class="word-mask w-full mt-1"><span class="word-mask-inner" style="transition-delay:400ms;">Your Home?</span></span>
           </h2>
-          <p class="title-underline-anim font-body text-base sm:text-lg text-white/70 leading-relaxed max-w-md mb-10" style="animation-delay:600ms;">
+          <p class="title-underline-anim font-body text-base sm:text-lg text-white/55 leading-relaxed max-w-md mb-10" style="animation-delay:600ms;">
             Every project starts with a free, no-obligation consultation. Lee will visit your property, listen to your vision, and give you honest expert advice; no pressure, no obligation.
           </p>
           <div class="title-underline-anim flex flex-col sm:flex-row items-center gap-4 sm:gap-6" style="animation-delay:750ms;">

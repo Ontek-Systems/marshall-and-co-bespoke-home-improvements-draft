@@ -53,11 +53,59 @@ Static HTML, Tailwind CSS, vanilla JavaScript. No React, no frameworks, no build
 - Don't summarise what you're about to do before doing it. Just do it.
 
 ## Business Context (Marshall & Co.)
-- **Company:** Marshall & Co. Bespoke Home Improvements
-- **Owner:** Lee Marshall
 - **Vibe/Tone:** Luxury, premium, bespoke, high-end craftsmanship.
-- **Contact Info:** Phone: 07940 568877 | Email: info@marshallandco.uk | Location: Perth, Scotland.
 - **Always use real data:** Never use "Lorem Ipsum" or placeholder text for copy. If generating text, write high-converting, no em-dashes, text should flow naturally without em dashes, professional copy tailored to structural renovations and bespoke joinery.
+
+## Business Context (Marshall & Co.)
+
+- **Company Name**: Marshall & Co. Bespoke Home Improvements
+- **Owner**: Lee Marshall
+- **Industry**: Construction, Bespoke Joinery & Home Improvements
+- **Location**: 2 Talisker Place, Perth, PH1 3GW, Scotland
+- **Service Area**: 
+       -   Perth,
+       -   Dundee,
+       -   Perthshire,
+       -   Auchterarder,
+       -   Kinross,
+       -   Crieff,
+       -   Blairgowrie,
+       -   Dunblane,
+       -   Coupar Angus,
+       -  Scone,
+       -   Bridge of Earn,
+       -   Alyth,
+       -   Stanley,
+       -   Luncarty,
+       -   Almondbank,
+       -   Milnathort,
+       -   Abernethy,
+       -   Bankfoot,
+       -   Errol,
+       -   Methven,
+       -   Comrie,
+       -   Inchture,
+       -   Dunkeld
+- **Phone**: 07940 568877
+- **Facebook Link**: https://www.facebook.com/marshallandcohomeimprovements
+- **Email**: info@marshallandco.uk
+- **Credentials**: Over 20 years of industry experience managing specialized joinery and construction projects for a wide range of property types, from traditional sandstone homes to modern new builds.
+- **Service Summary**
+Marshall & Co. Bespoke Home Improvements, led by Lee Marshall, is a premier construction and bespoke joinery firm operating across Perth and the wider Perthshire region. Backed by over two decades of hands-on field experience, the company specializes in executing high-end structural renovations, interior remodeling, and custom carpentry projects tailored to each client's specific property needs.
+
+- **Services**
+        -  Home Renovations,
+        -  House Extensions,
+        -  Garage Conversions,
+        -  Loft Conversions,
+        -  Kitchen Renovations,
+        -  Bathroom Renovations,
+        -  Media Walls & Panelling,
+        -  Windows & Doors,
+        -  Garden Rooms,
+        -  Decking,
+        -  Insurance Repair Work,
+
 
 
 

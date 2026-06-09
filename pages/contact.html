@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact Us | Free Site Visit | Marshall &amp; Co. Bespoke Home Improvements | Perth</title>
+  <meta name="description" content="Get in touch with Lee Marshall for a free, no-obligation site visit across Perth, Perthshire, and Dundee. Call 07940 568877 or email info@marshallandco.uk." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.marshallandco.uk/pages/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.marshallandco.uk/pages/contact.html" />
+  <meta property="og:title" content="Contact Us | Free Site Visit | Marshall &amp; Co. Bespoke Home Improvements | Perth" />
+  <meta property="og:description" content="Get in touch with Lee Marshall for a free, no-obligation site visit. Call 07940 568877 or send an email. Serving Perth, Perthshire, and Dundee." />
+  <meta property="og:image" content="https://www.marshallandco.uk/assets/imgs/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Marshall &amp; Co. Bespoke Home Improvements, Perth" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Marshall &amp; Co. Bespoke Home Improvements" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Us | Free Site Visit | Marshall &amp; Co. Bespoke Home Improvements | Perth" />
+  <meta name="twitter:description" content="Get in touch with Lee Marshall for a free, no-obligation site visit across Perth, Perthshire, and Dundee." />
+  <meta name="twitter:image" content="https://www.marshallandco.uk/assets/imgs/og-image.jpg" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="../style.css">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-dark:  #303030;
+      --color-brand-ocean: #303030;
+      --color-brand-bronze:#e8b238;
+      --color-brand-alice: #ffffff;
+      --color-brand-beige: #fff9eb;
+      --color-brand-text:  #303030;
+      --font-heading: 'Ballantines Serial', Georgia, serif;
+      --font-body:    'Montserrat', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: #e8b238 !important;
+      color: #ffffff !important;
+      border-color: transparent !important;
+      
+      width: auto !important;
+    }
+    .btn-primary:hover {
+      background-color: #000000 !important;
+      border-color: transparent !important;
+      color: #ffffff !important;
+    }
+    .btn-ghost {
+      background-color: transparent !important;
+      color: #303030 !important;
+      border-color: #303030 !important;
+      
+      width: auto !important;
+    }
+    .btn-ghost:hover {
+      background-color: #000000 !important;
+      border-color: #000000 !important;
+      color: #ffffff !important;
+    }
+  </style>
+
+  <style>
+    /* ── Word-mask reveal animation ── */
+    .word-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
+    .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
+    .reveal.active .word-mask-inner { transform: translateY(0); }
+    .title-underline-anim { opacity: 0; }
+    .reveal.active .title-underline-anim { animation: revealUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes revealUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── Contact info card icon circle ── */
+    .contact-icon-wrap {
+      width: 3rem; height: 3rem;
+      background: rgba(232,178,56,0.10);
+      border: 1.5px solid rgba(232,178,56,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .contact-card:hover .contact-icon-wrap {
+      background: #e8b238;
+      border-color: #e8b238;
+    }
+    .contact-icon-wrap svg {
+      color: #e8b238;
+      transition: color 0.3s ease;
+    }
+    .contact-card:hover .contact-icon-wrap svg { color: #ffffff; }
+
+    /* ── Form field styling ── */
+    .form-field {
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      border: none;
+      border-bottom: 1.5px solid rgba(48,48,48,0.12);
+      background: #f5f5f5;
+      font-family: var(--font-body), sans-serif;
+      font-size: 0.95rem;
+      color: #303030;
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      border-radius: 0;
+      appearance: none;
+    }
+    .form-field::placeholder { color: rgba(48,48,48,0.32); }
+    .form-field:focus {
+      border-bottom-color: #e8b238;
+      background: #efefef;
+      box-shadow: 0 2px 0 0 rgba(232,178,56,0.35);
+    }
+    textarea.form-field { resize: vertical; min-height: 140px; }
+    select.form-field { cursor: pointer; }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-body), sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #303030;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── FAQ accordion ── */
+    .faq-item { border-bottom: 1px solid rgba(48,48,48,0.1); }
+    .faq-item summary { list-style: none; cursor: pointer; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-chevron { transition: transform 0.3s ease; flex-shrink: 0; }
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+
+    /* ── Dark contact sidebar ── */
+    .contact-sidebar { background: #303030; }
+
+    /* ── Map ── */
+    .map-wrap { overflow: hidden; }
+
+    /* ── Trust bar ── */
+    .trust-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1.1rem;
+      background: rgba(232,178,56,0.08);
+      border: 1px solid rgba(232,178,56,0.2);
+      font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #303030;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      cursor: default; white-space: nowrap;
+    }
+    .trust-pill:hover { background: #e8b238; border-color: #e8b238; color: #fff; }
+
+    /* Mobile centring overrides */
+    @media (max-width: 767px) {
+      .contact-btn-row { justify-content: center !important; }
+      .btn-primary { align-self: center !important; width: auto !important; }
+    }
+
+    /* Laptop / Mac height compression */
+    @media (min-width: 1024px) and (max-height: 860px) {
+      .section-heading { font-size: 3.78rem !important; line-height: 1.1 !important; }
+    }
+
+    /* ── CTA Img Grid ── */
+    .cta-img-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; height:360px; }
+    .cta-img-grid > div { overflow:hidden; }
+    .cta-img-grid img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+    .cta-img-grid > div:hover img { transform:scale(1.05); }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen antialiased overflow-x-hidden bg-white text-[#303030]">
+
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Marshall & Co. Bespoke Home Improvements",
+      "url": "https://www.marshallandco.uk/pages/contact.html",
+      "mainEntity": {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.marshallandco.uk/",
+        "name": "Marshall & Co. Bespoke Home Improvements",
+        "telephone": "07940568877",
+        "email": "info@marshallandco.uk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2 Talisker Place",
+          "addressLocality": "Perth",
+          "addressRegion": "Perthshire",
+          "postalCode": "PH1 3GW",
+          "addressCountry": "GB"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Perth"},
+          {"@type": "City", "name": "Dundee"},
+          {"@type": "State", "name": "Perthshire"}
+        ],
+        "openingHours": "Mo,Tu,We,Th,Fr,Sa 08:00-18:00"
+      }
+    }
+    </script>
+
+    <!-- ================================================
+         HERO
+    ================================================ -->
+    <section class="relative pt-[210px] pb-20 sm:pt-[220px] md:pt-[230px] md:pb-28 lg:pt-[240px] flex items-center justify-center overflow-hidden" style="background:#303030;">
+
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <img src="../assets/imgs/hero_imgs/hero3.jpg"
+          alt="Marshall &amp; Co. Bespoke Home Improvements contact page background"
+          class="absolute inset-0 w-full h-full object-cover opacity-15"
+          style="filter: saturate(0.5) brightness(0.4);">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#303030]/85 via-[#303030]/60 to-[#303030]/92"></div>
+      </div>
+
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
+
+        <span class="word-mask-inner inline-block section-tagline cursor-default text-white/50 hover:text-[#e8b238] transition-colors duration-300 mb-6" style="transition-delay:50ms;">Get in Touch</span>
+
+        <h1 class="section-heading text-white justify-center mb-8">
+          <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Start the Conversation</span></span>
+        </h1>
+
+        <p class="title-underline-anim font-body text-lg lg:text-xl mt-2 max-w-2xl mx-auto leading-relaxed text-white/65" style="animation-delay:500ms;">
+          Every project starts with a free site visit. Lee comes to your property, listens to what you need, and gives you a straight answer. No obligation, no sales pitch.
+        </p>
+
+      </div>
+
+      <!-- gold divider rule -->
+      <div class="absolute bottom-0 left-0 right-0 h-[3px]" style="background: linear-gradient(90deg, transparent 0%, #e8b238 30%, #e8b238 70%, transparent 100%);"></div>
+    </section>
+
+    <!-- ================================================
+         CONTACT FORM + SIDEBAR GRID
+    ================================================ -->
+    <section id="contact-form" class="py-16 md:py-24 lg:py-32 bg-white">
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
+
+        <div class="flex flex-col lg:flex-row shadow-xl overflow-hidden reveal reveal-up">
+
+          <!-- ── LEFT: FORM ──────────────────────────────── -->
+          <div class="lg:w-3/5 p-8 md:p-12 lg:p-16 bg-white">
+
+            <div class="mb-10">
+              <span class="section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300 mb-4 inline-block">Free Site Visit</span>
+              <h2 class="section-heading text-[#303030] justify-start mb-5">
+                <span class="word-mask"><span class="word-mask-inner" style="transition-delay:80ms;">Book a Consultation</span></span>
+              </h2>
+              <p class="gs-body text-[#303030]/70 max-w-lg">
+                Fill in the form below. Lee reads every message personally and will be back in touch within one working day to arrange a visit.
+              </p>
+            </div>
+
+            <form id="main-contact-form" class="space-y-7 font-body" novalidate>
+
+              <!-- Honeypot spam protection -->
+              <div style="display:none;" aria-hidden="true">
+                <label for="botcheck">Leave this field blank</label>
+                <input type="text" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off">
+              </div>
+
+              <!-- Name + Phone -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="contact-name" class="form-label">Full Name <span class="text-[#e8b238]">*</span></label>
+                  <input type="text" id="contact-name" name="name" required placeholder="e.g. John Smith"
+                    class="form-field" autocomplete="name">
+                </div>
+                <div>
+                  <label for="contact-phone" class="form-label">Phone Number <span class="text-[#e8b238]">*</span></label>
+                  <input type="tel" id="contact-phone" name="phone" required placeholder="07940 568877"
+                    class="form-field" autocomplete="tel">
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="contact-email" class="form-label">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="you@example.com"
+                  class="form-field" autocomplete="email">
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label for="contact-message" class="form-label">Tell Us About Your Project <span class="text-[#e8b238]">*</span></label>
+                <textarea id="contact-message" name="message" required
+                  placeholder="A brief description of the work you have in mind, where the property is, and any relevant details. No detail is too small."
+                  class="form-field" rows="5"></textarea>
+              </div>
+
+              <!-- Consent -->
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="contact-consent" name="consent" required
+                  class="custom-tick mt-0.5 w-5 h-5 shrink-0 cursor-pointer">
+                <label for="contact-consent" class="font-body text-sm text-[#303030]/70 leading-relaxed cursor-pointer">
+                  I agree to be contacted by Marshall &amp; Co. regarding this enquiry. We do not share your details with anyone.
+                </label>
+              </div>
+
+              <!-- Submit -->
+              <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-2">
+                <button id="contact-submit" type="submit" class="btn-primary cursor-pointer font-body">
+                  <span id="contact-submit-text">Send Message</span>
+                </button>
+                <p class="font-body text-xs text-[#303030]/45 leading-relaxed max-w-xs">
+                  Or call Lee directly on <a href="tel:07940568877" class="font-bold text-[#303030] hover:text-[#e8b238] transition-colors">07940 568877</a>. Mon to Sat, 8am to 6pm.
+                </p>
+              </div>
+
+              <p id="form-error" class="hidden font-body text-sm text-red-600 font-bold pt-1"></p>
+
+            </form>
+
+          </div>
+
+          <!-- ── RIGHT: SIDEBAR ──────────────────────────── -->
+          <div class="lg:w-2/5 contact-sidebar text-white p-8 md:p-12 lg:p-16 flex flex-col justify-between relative overflow-hidden">
+
+            <!-- decorative gold lines -->
+            <div class="absolute top-0 left-0 right-0 h-[2px]" style="background: linear-gradient(90deg, #e8b238 0%, rgba(232,178,56,0.2) 100%);"></div>
+
+            <div>
+              <h3 class="font-heading font-bold text-white mb-10" style="font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.15;">Direct Contact</h3>
+
+              <div class="space-y-8">
+
+                <!-- Phone -->
+                <div class="contact-card flex items-start gap-4 cursor-default">
+                  <div class="contact-icon-wrap">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-body text-[10px] uppercase tracking-[0.2em] font-bold text-white/40 mb-2">Phone</p>
+                    <a href="tel:07940568877" class="font-heading font-bold text-white text-2xl hover:text-[#e8b238] transition-colors duration-300 block">07940 568877</a>
+                    <p class="font-body text-sm text-white/50 mt-1">Mon to Sat, 8am to 6pm</p>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card flex items-start gap-4 cursor-default">
+                  <div class="contact-icon-wrap">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-body text-[10px] uppercase tracking-[0.2em] font-bold text-white/40 mb-2">Email</p>
+                    <a href="mailto:info@marshallandco.uk" class="font-body font-semibold text-white text-base hover:text-[#e8b238] transition-colors duration-300 break-all">info@marshallandco.uk</a>
+                    <p class="font-body text-sm text-white/50 mt-1">We reply within one working day</p>
+                  </div>
+                </div>
+
+                <!-- Address -->
+                <div class="contact-card flex items-start gap-4 cursor-default">
+                  <div class="contact-icon-wrap">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-body text-[10px] uppercase tracking-[0.2em] font-bold text-white/40 mb-2">Based In</p>
+                    <p class="font-body font-semibold text-white text-base leading-relaxed">2 Talisker Place<br>Perth, PH1 3GW</p>
+                    <p class="font-body text-sm text-white/50 mt-1">Serving Perth, Perthshire &amp; Dundee</p>
+                  </div>
+                </div>
+
+                <!-- Hours -->
+                <div class="contact-card flex items-start gap-4 cursor-default">
+                  <div class="contact-icon-wrap">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-body text-[10px] uppercase tracking-[0.2em] font-bold text-white/40 mb-2">Working Hours</p>
+                    <p class="font-body font-semibold text-white text-base">Monday to Saturday</p>
+                    <p class="font-body text-sm text-white/50 mt-0.5">8:00am to 6:00pm</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Lee's note -->
+            <div class="mt-12 pt-8 border-t border-white/10 relative z-10">
+              <p class="font-body text-sm text-white/60 leading-relaxed italic">
+                "I am usually on site during the day. If you call and I do not answer, please leave a voicemail or send a message. I will get back to you the same day where possible."
+              </p>
+              <span class="font-heading font-bold text-white text-lg block mt-3">Lee Marshall</span>
+              <span class="font-body text-xs text-white/40 tracking-wide uppercase">Owner, Marshall &amp; Co.</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         MAP + SERVICE AREA
+    ================================================ -->
+    <section id="service-area" class="py-16 md:py-24 bg-white">
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
+
+        <div class="flex flex-col items-center text-center mb-12 reveal reveal-up">
+          <span class="section-tagline cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300 mb-4 inline-block">Where We Work</span>
+          <h2 class="section-heading text-[#303030] justify-center mb-5">
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay:80ms;">Our Service Area</span></span>
+          </h2>
+          <p class="gs-body text-[#303030]/65 max-w-2xl">
+            Lee works across Perth, Perthshire, and Dundee. If you are just outside these areas, get in touch anyway. He considers each enquiry on its merits.
+          </p>
+        </div>
+
+        <!-- Scrolling location pills -->
+        <div class="relative mb-10 overflow-hidden reveal reveal-up" style="transition-delay:60ms;">
+          <div class="absolute inset-y-0 left-0 w-16 sm:w-24 z-10 pointer-events-none" style="background:linear-gradient(to right,#ffffff,transparent);"></div>
+          <div class="absolute inset-y-0 right-0 w-16 sm:w-24 z-10 pointer-events-none" style="background:linear-gradient(to left,#ffffff,transparent);"></div>
+          <div style="overflow:hidden;">
+            <div id="area-ticker" class="flex gap-3 py-2" style="width:max-content;"></div>
+          </div>
+        </div>
+
+        <!-- Embedded map -->
+        <div class="map-wrap w-full h-[380px] md:h-[480px] lg:h-[560px] reveal reveal-up" style="transition-delay:100ms;">
+          <iframe
+            width="100%" height="100%"
+            src="https://maps.google.com/maps?q=Perth,+Scotland,+UK&t=&z=10&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            class="w-full h-full"
+            title="Marshall &amp; Co. service area map centred on Perth, Scotland"
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         FAQ SECTION
+    ================================================ -->
+    <section id="faq" class="relative py-16 lg:py-20 xl:py-24 flex flex-col items-center justify-center min-h-screen" style="background:#1a1a1a;">
+      <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
+
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 relative w-full">
+
+          <div class="w-full lg:w-1/3 relative">
+            <div class="lg:sticky lg:top-28 xl:top-48 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-8 lg:mt-0">
+              <span class="word-mask-inner inline-block section-tagline cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Your Questions</span>
+              <h2 class="section-heading text-white justify-center lg:justify-start items-center lg:items-start">
+                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Frequently</span></span>
+                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 250ms;">Asked</span></span>
+                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Questions</span></span>
+              </h2>
+              <p class="title-underline-anim font-body text-base sm:text-lg md:text-xl text-white/55 mb-10 max-w-sm leading-relaxed" style="animation-delay: 700ms;">
+                Everything you need to know about working with Marshall & Co. Can't find your answer? Give Lee a call and he'll be happy to help.
+              </p>
+              <a href="#contact-form" class="title-underline-anim btn-primary" style="animation-delay: 900ms;">Get in Touch</a>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-2/3 reveal reveal-up" style="transition-delay: 150ms;" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="space-y-0 font-body border-t border-white/10">
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay: 200ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">What types of projects do you undertake?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Marshall & Co. undertakes a wide range of home improvement projects including structural extensions, loft conversions, full property renovations, bespoke joinery and interior fit-outs, and garden rooms. Whether it's a single-room transformation or a complete whole-house renovation, Lee has the expertise to deliver.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:320ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Do you work on both traditional and modern properties?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Yes. Over 20 years working across Perth and Perthshire means Lee has extensive experience with traditional sandstone properties, Victorian terraces, and modern new builds alike. Each property type has its own character and requirements, and Marshall & Co. has the knowledge to approach them correctly.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:440ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How is project pricing determined?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">All pricing is tailored to the specific scope of each project. Following an initial consultation and site visit, Lee provides a fully itemised, transparent quotation that covers all agreed works. There are no vague estimates and no hidden costs. Every charge is explained upfront before any work begins.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:560ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Can you assist with planning permission applications?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Marshall & Co. regularly works alongside architects and planning consultants and can guide you through the process or introduce you to trusted professionals. Lee understands local planning requirements in Perth and Perthshire and can advise on what approvals are likely needed before you commit to your project.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:680ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Are you fully insured?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Yes. Marshall & Co. carries full public liability insurance and all works are carried out in compliance with current building regulations and health and safety requirements. You can have complete confidence in the professional standards applied to every project.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:800ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How long does a typical project take?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Project duration varies depending on scope and complexity. A single-room renovation or joinery installation might take a few days to a couple of weeks. A full extension or whole-house renovation could take several months. A realistic, agreed programme is provided at the outset and progress is communicated clearly throughout.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:920ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Will Lee Marshall be on site personally?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Yes. Lee is personally involved in every project Marshall & Co. takes on. He is the person who quoted the job, the person doing or directly overseeing the work, and the person responsible for the finished result. You won't be passed to a stranger or left chasing someone you've never met.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:1040ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Which areas do you cover?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Marshall & Co. is based in Perth and regularly works throughout Perthshire and the surrounding region, including Dundee, Auchterarder, Kinross, Crieff, Blairgowrie, Dunblane, and Coupar Angus. If you are unsure whether your area is covered, call Lee directly and he will let you know.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:1160ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How quickly can work begin?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Start dates depend on the current programme and the scale of your project. Lee typically aims to provide a proposed start date within a few working days of completing the site visit and agreeing scope. For urgent projects, call directly and he will do his best to accommodate your timescale.</span>
+                </div>
+              </details>
+
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:1280ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How do I get a quote?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                </summary>
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">Simply call Lee on 07940 568877 or fill in the contact form on our contact page. He will get back to you promptly to arrange a free, no-obligation consultation. From there, a site visit and fully detailed written quotation follow. There is no commitment required at any stage.</span>
+                </div>
+              </details>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      details > div { animation-name: slideDown; animation-duration: 350ms; animation-timing-function: ease-out; }
+      @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+      details > summary::-webkit-details-marker { display: none; }
+      /* FAQ questions — Cormorant Garamond only */
+      #faq summary span.font-heading {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-weight: 600;
+      }
+    </style>
+
+
+    <!-- ================================================
+         CTA SECTION
+    ================================================ -->
+    <section class="py-16 md:py-24" style="background:#1e1e1e;">
+      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-10 reveal reveal-up">
+          <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left">
+            <p class="font-body text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#e8b238] mb-3 cursor-default">Start Your Project</p>
+            <h2 class="font-heading font-bold text-white mb-6 text-[2.25rem] sm:text-[3rem] lg:text-[4rem] leading-[1.15] lg:leading-[1.1]">Ready When You Are</h2>
+            <p class="font-body text-white/70 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-md">
+              Lee reads every enquiry personally and gets back within one working day. A site visit at your property at a time that suits you.
+            </p>
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <a href="#contact-form" class="btn-primary">Book a Free Site Visit</a>
+              <a href="tel:07940568877" class="font-body font-bold text-sm text-white/60 tracking-wide underline underline-offset-[8px] decoration-2 decoration-white/25 hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300">or Call Lee: 07940 568877</a>
+            </div>
+          </div>
+          <div class="w-full lg:w-5/12 cta-img-grid">
+            <div><img src="../assets/imgs/service_imgs/home_extensions/home_extensions_10.jpeg" alt="House extension by Marshall &amp; Co." loading="lazy"></div>
+            <div><img src="../assets/imgs/service_imgs/kitchen_renovations/kitchen_renovations_6.jpeg" alt="Kitchen renovation by Marshall &amp; Co." loading="lazy"></div>
+            <div><img src="../assets/imgs/service_imgs/loft_conversions/loft_conversions_2.jpeg" alt="Loft conversion by Marshall &amp; Co." loading="lazy"></div>
+            <div><img src="../assets/imgs/service_imgs/bathroom_renovations/bathroom_renovations_1.jpeg" alt="Bathroom renovation by Marshall &amp; Co." loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area ticker + form JS -->
+    <script>
+    (function () {
+      // Area ticker
+      var areas = [
+        'Perth', 'Dundee', 'Perthshire', 'Scone', 'Kinross', 'Blairgowrie',
+        'Pitlochry', 'Crieff', 'Auchterarder', 'Bridge of Earn', 'Coupar Angus',
+        'Aberfeldy', 'Dunkeld', 'Forfar', 'Kirriemuir', 'Brechin', 'Monifieth',
+        'Broughty Ferry', 'Carnoustie', 'Arbroath', 'Luncarty', 'Stanley',
+        'Methven', 'Comrie', 'St Andrews', 'Cupar'
+      ];
+      var pinPath = 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z';
+      var strip = document.getElementById('area-ticker');
+      if (strip) {
+        areas.concat(areas).forEach(function (area) {
+          var pill = document.createElement('span');
+          pill.style.cssText = 'display:inline-flex;align-items:center;gap:7px;padding:9px 20px;background:#e8b238;color:#fff;font-family:Montserrat,sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;cursor:default;transition:background 0.3s ease;';
+          pill.addEventListener('mouseenter', function(){ this.style.background='#303030'; });
+          pill.addEventListener('mouseleave', function(){ this.style.background='#e8b238'; });
+          var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          svg.setAttribute('width','10'); svg.setAttribute('height','10');
+          svg.setAttribute('viewBox','0 0 24 24'); svg.setAttribute('fill','white');
+          var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', pinPath);
+          svg.appendChild(path);
+          pill.appendChild(svg);
+          pill.appendChild(document.createTextNode(area));
+          strip.appendChild(pill);
+        });
+        var pos = 0, lastT = null;
+        var halfW = function(){ return strip.scrollWidth / 2; };
+        function tick(ts) {
+          if (!lastT) lastT = ts;
+          var dt = ts - lastT; lastT = ts;
+          pos += (halfW() / 52000) * dt;
+          if (pos >= halfW()) pos -= halfW();
+          strip.style.transform = 'translateX(-' + pos + 'px)';
+          requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      // Contact form submission
+      document.addEventListener('DOMContentLoaded', function () {
+        var form   = document.getElementById('main-contact-form');
+        var btn    = document.getElementById('contact-submit');
+        var btnTxt = document.getElementById('contact-submit-text');
+        var errEl  = document.getElementById('form-error');
+        if (!form || !btn) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Honeypot check
+          if (document.getElementById('botcheck').value !== '') {
+            window.location.href = '../thank-you.html';
+            return;
+          }
+
+          btn.disabled = true;
+          btnTxt.textContent = 'Sending...';
+          btn.style.opacity = '0.7';
+          errEl.classList.add('hidden');
+
+          var formData = new FormData(form);
+          var webhookUrl = 'https://script.google.com/macros/s/AKfycbx41GRUXppT2pszgor1UeM-5-_HvfkkTBMKjC6jev0EY3ZeeBzNIttrq7_3x-RUOrdN/exec';
+
+          fetch(webhookUrl, { method: 'POST', body: formData, mode: 'no-cors' })
+            .then(function () {
+              window.location.href = '../thank-you.html';
+            })
+            .catch(function (err) {
+              console.error('Form error:', err);
+              btn.disabled = false;
+              btnTxt.textContent = 'Send Message';
+              btn.style.opacity = '1';
+              errEl.textContent = 'Something went wrong. Please call Lee directly on 07940 568877.';
+              errEl.classList.remove('hidden');
+            });
+        });
+      });
+    })();
+    </script>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../global.js"></script>
+
+</body>
+</html>
