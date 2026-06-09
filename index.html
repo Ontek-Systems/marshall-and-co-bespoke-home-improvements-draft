@@ -35,6 +35,7 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="style.css">
@@ -47,31 +48,47 @@
       --color-brand-alice: #ffffff;
       --color-brand-beige: #fff9eb;
       --color-brand-text:  #303030;
-      --font-heading: 'Cormorant', Georgia, serif;
+      --font-heading: 'Ballantines Serial', Georgia, serif;
       --font-body:    'Montserrat', sans-serif;
-      --font-script:  'Elicit Script', cursive;
+      --font-script:  'Ballantines Serial', cursive;
     }
 
     @media (min-width: 1280px) { #slide3-quote-btn { display: none !important; } }
 
-    /* Laptop / Mac — reduce hero top padding so content is visible */
-    @media (min-width: 1024px) and (max-height: 900px) {
-      .hero-section-wrapper { padding-top: 140px !important; padding-bottom: 2rem !important; }
+    /* Laptop / Mac — compress hero so all content fits in viewport */
+    @media (min-width: 1024px) and (max-height: 860px) {
+      .hero-section-wrapper { padding-top: 140px !important; padding-bottom: 1.5rem !important; }
+      .hero-section-wrapper h1,
+      .hero-section-wrapper h2 { font-size: 3.78rem !important; margin-bottom: 0.5rem !important; line-height: 1.05 !important; }
+      .hero-content-panel p.font-body { font-size: 0.875rem !important; line-height: 1.5 !important; margin-bottom: 0.6rem !important; }
+      #hero-form > div { padding: 1rem 1.25rem !important; }
+      #hero-form h3 { font-size: 1.3rem !important; margin-bottom: 0.4rem !important; }
+      .hero-form-input { padding: 0.45rem 0.75rem !important; font-size: 0.8rem !important; }
+      #hero-message { height: 52px !important; }
+      #hero-form form { gap: 0.5rem !important; }
     }
-    @media (min-width: 1024px) and (max-height: 780px) {
-      .hero-section-wrapper { padding-top: 110px !important; padding-bottom: 1rem !important; }
+    @media (min-width: 1024px) and (max-height: 720px) {
+      .hero-section-wrapper { padding-top: 110px !important; padding-bottom: 0.75rem !important; }
+      .hero-section-wrapper h1,
+      .hero-section-wrapper h2 { font-size: 2.4rem !important; margin-bottom: 0.4rem !important; line-height: 1.05 !important; }
+      .hero-content-panel p.font-body { font-size: 0.8rem !important; line-height: 1.45 !important; margin-bottom: 0.4rem !important; }
+      #hero-form > div { padding: 0.75rem 1rem !important; }
+      #hero-form h3 { font-size: 1.1rem !important; margin-bottom: 0.3rem !important; }
+      .hero-form-input { padding: 0.35rem 0.65rem !important; font-size: 0.75rem !important; }
+      #hero-message { height: 40px !important; }
+      #hero-form form { gap: 0.4rem !important; }
     }
 
     /* PAGE-WIDE: Solid buttons — gold resting, dark hover */
     .btn-primary {
       background-color: #e8b238 !important;
-      color: #303030 !important;
+      color: #ffffff !important;
       border-color: transparent !important;
       align-self: flex-start;
       width: auto !important;
     }
     .btn-primary:hover {
-      background-color: #303030 !important;
+      background-color: #000000 !important;
       border-color: transparent !important;
       color: #ffffff !important;
     }
@@ -84,9 +101,9 @@
       width: auto !important;
     }
     .btn-ghost:hover {
-      background-color: #e8b238 !important;
-      border-color: #e8b238 !important;
-      color: #303030 !important;
+      background-color: #000000 !important;
+      border-color: #000000 !important;
+      color: #ffffff !important;
     }
   </style>
 </head>
@@ -174,6 +191,7 @@
           .hero-content-panel[data-anim="left"].active,
           .hero-content-panel[data-anim="right"].active { transform: translateX(0); }
           .hero-dot.dot-active { background: #e8b238; transform: scale(1.35); }
+          .btn-ghost-gold:hover { background-color: #e8b238 !important; border-color: #e8b238 !important; color: #ffffff !important; }
 
           /* Mouse scroll indicator */
           @keyframes mouseFloat {
@@ -216,7 +234,6 @@
         <img src="assets/imgs/hero_imgs/hero3.jpg" alt="Bespoke joinery and interior craftsmanship by Marshall & Co."
           class="hero-zoom-slide absolute inset-0 w-full h-full object-cover" style="filter:saturate(1.2) brightness(1.05)">
 
-        <div class="absolute inset-0 bg-black/30 z-20 pointer-events-none"></div>
         <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/75 to-transparent z-20 pointer-events-none"></div>
         <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/40 to-transparent z-20 pointer-events-none"></div>
       </div>
@@ -224,10 +241,10 @@
       <!-- Content panels container -->
       <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 z-30 relative flex-1">
 
-        <!-- Slide 1: Welcome (text slides in from left) -->
+        <!-- Slide 1: Welcome (centred) -->
         <div class="hero-content-panel" data-anim="left">
-          <div class="flex flex-col justify-center max-w-2xl mx-auto xl:mx-0 items-center xl:items-start text-center xl:text-left" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
-            <div class="flex items-center justify-center xl:justify-start gap-1.5 mb-6">
+          <div class="flex flex-col justify-center max-w-2xl mx-auto items-center text-center" style="filter: drop-shadow(0 6px 89px rgba(0,0,0,0.54)) drop-shadow(0 3px 27px rgba(0,0,0,0.48))">
+            <div class="flex items-center justify-center gap-1.5 mb-6 hero-shadow">
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -235,18 +252,16 @@
               <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <span class="font-body text-white/90 text-xs sm:text-sm ml-2 font-medium leading-none translate-y-[1px]">5-Star Google Rated</span>
             </div>
-            <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2" style="transform: rotate(-2deg);">Perth's Premier Builders</p>
-            <h1 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl">
+            <h1 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white mb-6 cursor-default hero-shadow">
               Welcome to<br>Marshall &amp; Co.
             </h1>
-            <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 drop-shadow-md">
+            <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 hero-shadow">
               Transforming Perthshire's finest properties. We blend architectural vision with master craftsmanship to create spaces that perfectly reflect your lifestyle.
             </p>
-            <div class="flex flex-row items-center gap-5 sm:gap-8">
-              <a href="contact.html" class="btn-ghost" style="font-size:0.85rem; background:rgba(0,0,0,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.55);">Get a Free Quote</a>
+            <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 hero-shadow">
+              <a href="#services-section" class="btn-ghost btn-ghost-gold" style="font-size:0.85rem; background:rgba(0,0,0,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.55);">What We Build</a>
               <a href="tel:07940568877"
-                class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap"
-                style="text-shadow:0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9);">
+                class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap">
                 or Call Lee
               </a>
             </div>
@@ -255,12 +270,11 @@
 
         <!-- Slide 2: Craftsmanship (text slides in from right, right-aligned) -->
         <div class="hero-content-panel" data-anim="right">
-          <div class="flex flex-col justify-center items-center xl:items-end mx-auto xl:ml-auto xl:mr-0 max-w-2xl text-center xl:text-right" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
-            <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2" style="transform: rotate(-2deg);">Excellence Without Compromise</p>
-            <h2 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl">
+          <div class="flex flex-col justify-center items-center xl:items-end mx-auto xl:ml-auto xl:mr-0 max-w-2xl text-center xl:text-right" style="filter: drop-shadow(0 6px 89px rgba(0,0,0,0.54)) drop-shadow(0 3px 27px rgba(0,0,0,0.48))">
+            <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white mb-6 cursor-default hero-shadow">
               Unrivaled<br>Craftsmanship
             </h2>
-            <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 drop-shadow-md">
+            <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 hero-shadow">
               From seamless structural extensions to precision-crafted bespoke joinery, our in-house team executes every phase of your project with uncompromising standards.
             </p>
           </div>
@@ -271,8 +285,8 @@
           <div class="flex flex-col xl:flex-row items-center xl:items-stretch gap-8 xl:gap-16 w-full">
 
             <!-- Left: headline + copy + CTAs -->
-            <div class="w-full xl:w-3/5 flex flex-col justify-center items-center xl:items-start text-center xl:text-left split-left" style="filter: drop-shadow(0 4px 59px rgba(0,0,0,0.9)) drop-shadow(0 2px 18px rgba(0,0,0,0.8))">
-              <div class="flex items-center justify-center xl:justify-start gap-1.5 mb-6">
+            <div class="w-full xl:w-3/5 flex flex-col justify-center items-center xl:items-start text-center xl:text-left split-left" style="filter: drop-shadow(0 6px 89px rgba(0,0,0,0.54)) drop-shadow(0 3px 27px rgba(0,0,0,0.48))">
+              <div class="flex items-center justify-center xl:justify-start gap-1.5 mb-6 hero-shadow">
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -281,20 +295,18 @@
                 <span class="font-body text-white/90 text-xs sm:text-sm ml-2 font-medium leading-none translate-y-[1px]">5-Star Google Rated</span>
               </div>
 
-              <p class="font-script text-3xl sm:text-4xl text-[#e8b238] drop-shadow-md capitalize mb-2" style="transform: rotate(-2deg);">Your Vision, Realised</p>
-              <h1 class="font-heading font-black text-[2.1rem] sm:text-[2.85rem] md:text-[3.5rem] text-white leading-[1.15] mb-6 cursor-default drop-shadow-xl">
+              <h1 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white mb-6 cursor-default hero-shadow">
                 Bespoke Home Improvements,<br>Crafted to the Highest Standard
               </h1>
 
-              <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 drop-shadow-md">
+              <p class="font-body text-base sm:text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-xl mb-10 hero-shadow">
                 Ready to unlock your home's true potential? Share the details of your upcoming project with us, and our team will be in touch to arrange a comprehensive consultation.
               </p>
 
-              <div class="flex flex-row items-center gap-5 sm:gap-8">
+              <div class="flex flex-row items-center gap-5 sm:gap-8 hero-shadow">
                 <a href="contact.html" class="btn-ghost" id="slide3-quote-btn" style="font-size:0.85rem; background:rgba(0,0,0,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.55);">Get a Free Quote</a>
                 <a href="tel:07940568877"
-                  class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap"
-                  style="text-shadow:0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9);">
+                  class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap">
                   or Call Lee
                 </a>
               </div>
@@ -302,10 +314,9 @@
 
             <!-- Right: Contact Form card (desktop only — hides on mobile/tablet to prevent overflow) -->
             <div id="hero-form" class="hidden xl:flex xl:w-2/5 flex-col justify-center split-right">
-              <div class="backdrop-blur-sm shadow-2xl" style="background:rgba(20,18,16,0.82); border-top: 2px solid #e8b238; padding: 2rem 2.25rem;">
-                <h3 class="font-heading font-bold text-2xl text-white mb-1">Start Your Project</h3>
-                <p class="font-body text-white/50 text-xs uppercase tracking-widest mb-6">Free consultation. No obligation.</p>
-                <form class="flex flex-col gap-4" novalidate>
+              <div class="backdrop-blur-sm shadow-2xl" style="background:rgba(20,18,16,0.82); border-top: 2px solid #e8b238; padding: 1.5rem 2rem;">
+                <h3 class="font-heading font-bold text-[2rem] text-white mb-4">Start Your Project</h3>
+                <form class="flex flex-col gap-3" novalidate>
                   <input type="text" name="website_url" style="display:none;" tabindex="-1" autocomplete="off">
 
                   <div class="flex flex-col gap-1.5">
@@ -325,7 +336,7 @@
 
                   <div class="flex flex-col gap-1.5">
                     <label for="hero-message" class="font-body text-[10px] uppercase tracking-widest text-[#e8b238] font-bold">Tell Us About Your Project</label>
-                    <textarea id="hero-message" name="message" rows="3" required class="hero-form-input resize-none" placeholder="Brief description of your project..."></textarea>
+                    <textarea id="hero-message" name="message" rows="2" required class="hero-form-input resize-none" placeholder="Brief description of your project..."></textarea>
                   </div>
 
                   <label class="flex items-start gap-3 cursor-pointer group mt-1">
@@ -385,6 +396,7 @@
             slides[current].classList.add("active");
             panels[current].classList.add("active");
             updateDots(current);
+            if (n === 2) { lockForever(); }
           }
 
           function startTimer() {
@@ -485,18 +497,339 @@
     </div>
 
     <!-- ================================================
+         GALLERY
+    ================================================ -->
+    <section id="gallery-snippet">
+
+      <style>
+        /* ── Gallery: mirrors Process section layout ── */
+        #gallery-scroll-wrapper { position: relative; background: #303030; }
+        #gallery-sticky {
+          position: sticky; top: 0; height: 100vh; overflow: hidden;
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          gap: 1.5rem; padding: 5rem 1.5rem 1.5rem;
+        }
+        #gallery-card-stage {
+          position: relative; width: 100%; height: 420px; flex-shrink: 0; overflow: hidden;
+        }
+        /* Laptop / smaller desktop — tighten layout so everything fits in viewport */
+        @media (min-width: 1024px) and (max-height: 860px) {
+          #gallery-sticky { gap: 1rem; padding: 5rem 1.5rem 1rem; }
+          #gallery-card-stage { height: 300px; }
+          #gallery-sticky h2 { font-size: 3.78rem !important; margin-bottom: 0.25rem !important; }
+          #gallery-sticky p.font-body { font-size: 0.8rem !important; }
+        }
+        @media (min-width: 1024px) and (max-height: 720px) {
+          #gallery-sticky { gap: 0.75rem; padding: 4.5rem 1.5rem 0.75rem; }
+          #gallery-card-stage { height: 240px; }
+          #gallery-sticky h2 { font-size: 2rem !important; margin-bottom: 0.2rem !important; }
+          #gallery-sticky p.font-body { font-size: 0.75rem !important; }
+        }
+        #gallery-card-stage::before, #gallery-card-stage::after {
+          content: ''; position: absolute; top: 0; bottom: 0; width: clamp(40px, 10vw, 180px); z-index: 2; pointer-events: none;
+        }
+        #gallery-card-stage::before { left: 0; background: linear-gradient(to right, #303030 30%, transparent 100%); }
+        #gallery-card-stage::after  { right: 0; background: linear-gradient(to left, #303030 30%, transparent 100%); }
+        #gallery-card-rail {
+          position: absolute; top: 0; left: 0; height: 100%;
+          display: flex; align-items: stretch; gap: 24px; will-change: transform;
+        }
+        .gallery-card {
+          flex-shrink: 0; width: clamp(260px, 28vw, 400px); height: 100%;
+          position: relative; overflow: hidden; cursor: pointer;
+          transition: border-color 350ms ease;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -webkit-mask-image: -webkit-radial-gradient(white, black);
+          mask-image: radial-gradient(white, black);
+        }
+        .gc-border-gold  { border-bottom: 2px solid rgba(232,178,56,0.3); }
+        .gc-border-brown { border-bottom: 2px solid rgba(232,178,56,0.3); }
+        .gallery-card img {
+          width: 100%; height: 100%; object-fit: cover; display: block;
+          transition: transform 700ms cubic-bezier(0.25,0.46,0.45,0.94);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+        .gallery-card-overlay {
+          position: absolute; inset: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 50%, transparent 100%);
+          pointer-events: none;
+        }
+        .gallery-card-label {
+          position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem 1.5rem;
+          transition: opacity 250ms ease;
+        }
+        .gallery-card-hover-content {
+          position: absolute; bottom: 0; left: 0; right: 0;
+          padding: 1.75rem; z-index: 1;
+          opacity: 0; pointer-events: none;
+          transform: translateY(14px);
+          transition: opacity 260ms ease, transform 360ms cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+        .gc-tag {
+          display: block; font-family: var(--font-body);
+          font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em;
+          text-transform: uppercase; color: #e8b238; margin-bottom: 0.5rem;
+          text-shadow: 0 1px 6px rgba(0,0,0,1), 0 2px 12px rgba(0,0,0,0.9);
+        }
+        .gc-title {
+          font-family: 'Cormorant', Georgia, serif; font-size: 1.45rem; font-weight: 700;
+          color: #fff; line-height: 1.2; margin-bottom: 0.5rem;
+          text-shadow: 0 2px 8px rgba(0,0,0,1), 0 4px 20px rgba(0,0,0,0.95), 0 1px 2px rgba(0,0,0,1);
+        }
+        .gc-divider {
+          display: none;
+        }
+        .gc-desc {
+          font-family: var(--font-body); font-size: 0.695rem; font-weight: 400;
+          color: rgba(255,255,255,0.92); line-height: 1.65; margin-bottom: 1rem;
+          text-shadow: 0 1px 6px rgba(0,0,0,1), 0 3px 14px rgba(0,0,0,0.95);
+        }
+        .gc-cta {
+          display: inline-flex; align-items: center; gap: 0.45rem;
+          font-family: var(--font-body); font-size: 0.6rem; font-weight: 700;
+          letter-spacing: 0.18em; text-transform: uppercase; color: #e8b238;
+          border-bottom: 1px solid rgba(232,178,56,0.45); padding-bottom: 2px;
+          transition: gap 0.25s ease, border-color 0.25s ease;
+          text-shadow: 0 1px 6px rgba(0,0,0,1), 0 2px 10px rgba(0,0,0,0.9);
+        }
+        @media (min-width: 1024px) and (max-width: 1366px) {
+          .gc-tag, .gc-title { text-align: center; }
+          .gallery-card-hover-content { display: flex; flex-direction: column; align-items: center; }
+          .gc-desc { text-align: left; align-self: flex-start; }
+        }
+        @media (hover: hover) and (pointer: fine) {
+          .gallery-card:hover img { transform: scale(1.06); }
+          .gallery-card:hover .gallery-card-label { opacity: 0; }
+          .gallery-card:hover .gallery-card-hover-content { opacity: 1; pointer-events: auto; transform: translateY(0); }
+          .gallery-card:hover .gc-divider { transform: scaleX(1); }
+          .gallery-card:hover .gc-cta { gap: 0.7rem; border-color: #e8b238; }
+        }
+        #gallery-section-num { color: rgba(255,255,255,0.35); transition: color 0.3s ease; }
+        #gallery-section-num:hover { color: #e8b238; }
+        .gallery-card-label span { font-family: 'Cormorant', Georgia, serif; }
+        .gallery-dot { transition: background 0.25s, transform 0.25s; }
+        .g-scrollbar-none { scrollbar-width: none; }
+        .g-scrollbar-none::-webkit-scrollbar { display: none; }
+        @media (max-width: 1023px) {
+          #gallery-scroll-wrapper { height: auto !important; }
+          #gallery-sticky {
+            position: relative; height: auto; overflow: visible;
+            padding: 5rem 1.5rem 3rem; gap: 2rem;
+          }
+          #gallery-card-stage { height: auto; overflow: visible; }
+          #gallery-card-stage::before, #gallery-card-stage::after { display: none; }
+          #gallery-card-rail {
+            position: relative; flex-direction: column;
+            height: auto; transform: none !important;
+          }
+          .gallery-card { width: 100%; height: 260px; }
+          #gallery-dots { display: none; }
+          .gallery-card-hover-content { opacity: 0 !important; pointer-events: none !important; }
+          .gallery-card-label { opacity: 1 !important; }
+          .gallery-card:active img { transform: scale(1.06); }
+        }
+      </style>
+
+      <!-- Unified layout — CSS @media handles mobile reflow (mirrors Process section) -->
+      <div id="gallery-scroll-wrapper">
+        <div id="gallery-sticky">
+
+          <!-- Centred heading block -->
+          <div class="w-full max-w-3xl mx-auto px-8 flex flex-col items-center text-center flex-shrink-0 reveal">
+            <span id="gallery-section-num" class="font-body font-medium text-base tracking-widest uppercase mb-4 cursor-pointer">Our Gallery</span>
+            <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white leading-tight mb-4 cursor-default flex flex-wrap justify-center gap-x-3">
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">What</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">We've</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Been</span></span>
+              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:400ms;">Building</span></span>
+            </h2>
+            <p class="font-body text-base text-white/55 max-w-lg leading-relaxed">
+              A selection of completed projects across Perth and Perthshire, finished to the same uncompromising standard.
+            </p>
+          </div>
+
+          <!-- Card stage (fade masks + sliding rail) -->
+          <div id="gallery-card-stage">
+            <div id="gallery-card-rail">
+
+              <a href="gallery.html" class="gallery-card gc-border-gold">
+                <img src="assets/imgs/service_imgs/home_renovations/home_renovations_1.jpeg" alt="Full home renovation completed by Marshall &amp; Co. in Perth, Scotland" loading="lazy">
+                <div class="gallery-card-overlay"></div>
+                <div class="gallery-card-label">
+                  <span class="font-heading font-bold text-[0.9rem] uppercase tracking-[0.22em] text-[#e8b238]">Home Renovations</span>
+                </div>
+                <div class="gallery-card-hover-content">
+                  <span class="gc-tag">Home Renovations</span>
+                  <h3 class="gc-title">Total Transformation</h3>
+                  <p class="gc-desc">From gutted shells to beautifully finished homes, Lee Marshall personally oversees every renovation from first fix to final finish.</p>
+                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
+                </div>
+              </a>
+
+              <a href="gallery.html" class="gallery-card gc-border-brown">
+                <img src="assets/imgs/service_imgs/decking/decking_1.jpeg" alt="Bespoke timber decking installed by Marshall &amp; Co., Perthshire" loading="lazy">
+                <div class="gallery-card-overlay"></div>
+                <div class="gallery-card-label">
+                  <span class="font-heading font-bold text-[0.9rem] uppercase tracking-[0.22em] text-[#e8b238]">Decking</span>
+                </div>
+                <div class="gallery-card-hover-content">
+                  <span class="gc-tag">Decking</span>
+                  <h3 class="gc-title">Handcrafted Decking</h3>
+                  <p class="gc-desc">Precision-built timber decking designed to complement your garden and built to withstand the Scottish climate for years to come.</p>
+                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
+                </div>
+              </a>
+
+              <a href="gallery.html" class="gallery-card gc-border-gold">
+                <img src="assets/imgs/service_imgs/bathroom_renovations/bathroom_renovations_1.jpeg" alt="Luxury bathroom renovation by Marshall &amp; Co. in Perth" loading="lazy">
+                <div class="gallery-card-overlay"></div>
+                <div class="gallery-card-label">
+                  <span class="font-heading font-bold text-[0.9rem] uppercase tracking-[0.22em] text-[#e8b238]">Bathroom Renovations</span>
+                </div>
+                <div class="gallery-card-hover-content">
+                  <span class="gc-tag">Bathroom Renovations</span>
+                  <h3 class="gc-title">Luxury Bathrooms</h3>
+                  <p class="gc-desc">Fully redesigned bathrooms planned around your space and finished with premium fixtures, seamless tiling, and bespoke joinery.</p>
+                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
+                </div>
+              </a>
+
+              <a href="gallery.html" class="gallery-card gc-border-brown">
+                <img src="assets/imgs/service_imgs/windows_and_doors/windows_and_doors_1.jpeg" alt="Premium windows and doors installed by Marshall &amp; Co., Perthshire" loading="lazy">
+                <div class="gallery-card-overlay"></div>
+                <div class="gallery-card-label">
+                  <span class="font-heading font-bold text-[0.9rem] uppercase tracking-[0.22em] text-[#e8b238]">Windows &amp; Doors</span>
+                </div>
+                <div class="gallery-card-hover-content">
+                  <span class="gc-tag">Windows &amp; Doors</span>
+                  <h3 class="gc-title">Windows &amp; Doors</h3>
+                  <p class="gc-desc">High-performance windows and precision-fitted doors installed to enhance your home's thermal efficiency, security, and kerb appeal.</p>
+                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
+                </div>
+              </a>
+
+              <a href="gallery.html" class="gallery-card gc-border-gold">
+                <img src="assets/imgs/service_imgs/garage_conversions/garage_conversions_1.jpg" alt="Garage conversion project by Marshall &amp; Co. in Perth, Scotland" loading="lazy">
+                <div class="gallery-card-overlay"></div>
+                <div class="gallery-card-label">
+                  <span class="font-heading font-bold text-[0.9rem] uppercase tracking-[0.22em] text-[#e8b238]">Garage Conversions</span>
+                </div>
+                <div class="gallery-card-hover-content">
+                  <span class="gc-tag">Garage Conversions</span>
+                  <h3 class="gc-title">Garage Conversions</h3>
+                  <p class="gc-desc">Transform underused garage space into a fully habitable room, home office, or utility area, built to the same standard as the main house.</p>
+                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
+                </div>
+              </a>
+
+              <a href="gallery.html" class="gallery-card gc-border-brown">
+                <img src="assets/imgs/service_imgs/home_renovations/home_renovations_5.jpeg" alt="Bespoke home renovation craftsmanship by Marshall &amp; Co., Perthshire" loading="lazy">
+                <div class="gallery-card-overlay"></div>
+                <div class="gallery-card-label">
+                  <span class="font-heading font-bold text-[0.9rem] uppercase tracking-[0.22em] text-[#e8b238]">Home Renovations</span>
+                </div>
+                <div class="gallery-card-hover-content">
+                  <span class="gc-tag">Home Renovations</span>
+                  <h3 class="gc-title">Craftsmanship at Every Stage</h3>
+                  <p class="gc-desc">No shortcuts, no subcontractors. Every detail of every project is managed personally by Lee Marshall, ensuring a finish that stands the test of time.</p>
+                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Progress dots -->
+          <div id="gallery-dots" class="flex gap-3 items-center flex-shrink-0 mb-12">
+            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
+            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
+            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
+            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
+            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
+            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex-shrink-0">
+            <a href="gallery.html" class="btn-primary" style="font-size:0.78rem; padding:0.6rem 1.6rem;">View Full Gallery</a>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          // Pinned lerp scroll (desktop only) — same pattern as Process section
+          if (window.innerWidth < 1024) return;
+          var wrapper = document.getElementById('gallery-scroll-wrapper');
+          var rail    = document.getElementById('gallery-card-rail');
+          var stage   = document.getElementById('gallery-card-stage');
+          var cards   = Array.prototype.slice.call(rail.querySelectorAll('.gallery-card'));
+          var dots    = Array.prototype.slice.call(document.querySelectorAll('.gallery-dot'));
+          var n   = cards.length;
+          var GAP = 24;
+          var targetP = 0, currentP = 0;
+
+          function setHeight() {
+            var sW = stage.offsetWidth;
+            var cW = cards[0].offsetWidth;
+            var maskW = Math.min(180, Math.max(40, window.innerWidth * 0.1));
+            var travel = Math.abs(-((n - 1) * (cW + GAP) + cW / 2) - (sW - maskW));
+            wrapper.style.height = (window.innerHeight + Math.round(travel * 1.5)) + 'px';
+          }
+          setHeight();
+          window.addEventListener('resize', setHeight, { passive: true });
+
+          function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+          function render(p) {
+            var stageW = stage.offsetWidth;
+            var cardW  = cards[0].offsetWidth;
+            var maskW = Math.min(180, Math.max(40, window.innerWidth * 0.1));
+            var txStart = stageW - maskW;
+            var txEnd   = -((n - 1) * (cardW + GAP) + cardW / 2);
+            rail.style.transform = 'translateX(' + (txStart + p * (txEnd - txStart)).toFixed(2) + 'px)';
+            var idx = Math.min(n - 1, Math.round(p * (n - 1)));
+            dots.forEach(function (dot, i) {
+              dot.style.background = i === idx ? '#e8b238' : 'rgba(255,255,255,0.25)';
+              dot.style.transform  = i === idx ? 'scale(1.5)' : 'scale(1)';
+            });
+          }
+
+          function onScroll() {
+            var maxScroll = wrapper.offsetHeight - window.innerHeight;
+            targetP = clamp(-wrapper.getBoundingClientRect().top / maxScroll);
+          }
+
+          function tick() {
+            currentP += (targetP - currentP) * 0.14;
+            render(currentP);
+            requestAnimationFrame(tick);
+          }
+
+          render(0);
+          window.addEventListener('scroll', onScroll, { passive: true });
+          requestAnimationFrame(tick);
+        })();
+      </script>
+    </section>
+
+    <!-- ================================================
          ABOUT / TRUST SECTION
     ================================================ -->
-    <section id="about-parallax-section" class="relative py-16 lg:py-20 xl:py-24 flex flex-col items-center justify-center overflow-hidden" style="background:#fff9eb;">
+    <section id="about-parallax-section" class="relative py-16 lg:py-20 xl:py-24 flex flex-col items-center justify-center overflow-hidden" style="background:#ffffff;">
       <style>
         .word-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
-        .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
+        .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease; will-change: transform; }
+        h1 .word-mask-inner, h2 .word-mask-inner, h3 .word-mask-inner, h4 .word-mask-inner, h5 .word-mask-inner, h6 .word-mask-inner { transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important; }
         .reveal.active .word-mask-inner { transform: translateY(0); }
         .title-underline-anim { opacity: 0; }
         .reveal.active .title-underline-anim { animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards; }
         @keyframes revealUnderline { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        #about-parallax-section .btn-primary { background-color: #e8b238; color: #303030; border-color: transparent; }
-        #about-parallax-section .btn-primary:hover { background-color: #303030; border-color: transparent; color: #ffffff; }
+        #about-parallax-section .btn-primary { background-color: #e8b238; color: #ffffff; border-color: transparent; }
+        #about-parallax-section .btn-primary:hover { background-color: #000000; border-color: transparent; color: #ffffff; }
       </style>
 
       <div class="absolute right-0 top-0 bottom-0 w-full lg:w-[40vw] overflow-hidden z-0">
@@ -516,9 +849,7 @@
 
         <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left reveal z-20">
 
-          <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">
-            <span class="border-b-[1.5px] border-current pb-0.5">01</span>
-          </span>
+          <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">Our Story</span>
 
           <h2 class="gs-heading group mb-[22px] flex flex-col items-center lg:items-start w-full">
             <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
@@ -537,25 +868,25 @@
           </div>
 
           <div class="mt-6 mb-10 w-full flex justify-center lg:justify-start pr-0 lg:pr-0">
-            <div class="inline-flex flex-col items-start transform -rotate-2">
+            <div class="inline-flex flex-col items-start">
               <span class="font-script text-4xl text-[#303030] inline-block opacity-90">Lee Marshall</span>
               <div class="h-px w-full mt-1 opacity-40" style="background:#303030;"></div>
             </div>
           </div>
 
-          <div id="about-stats" class="title-underline-anim flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-10 mb-8 w-full max-w-2xl mx-auto lg:mx-0" style="animation-delay: 800ms;">
+          <div id="about-stats" class="title-underline-anim grid grid-cols-2 place-items-center gap-y-8 gap-x-4 sm:gap-x-8 md:grid-cols-4 lg:flex lg:flex-wrap lg:items-center lg:justify-start lg:gap-10 mb-8 w-full max-w-2xl mx-auto lg:mx-0" style="animation-delay: 800ms;">
             <div class="group flex flex-col items-center cursor-default">
-              <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#303030] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#e8b238] whitespace-nowrap">
+              <p class="font-heading font-semibold tracking-tight text-[3.2rem] sm:text-[4rem] md:text-[4.83rem] text-[#303030] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#e8b238] whitespace-nowrap">
                 <span class="auto-counter" data-target="20">0</span>+
               </p>
               <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#303030]/60">Years Experience</p>
             </div>
             <div class="group flex flex-col items-center cursor-default">
-              <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#303030] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#e8b238] whitespace-nowrap">5-Star</p>
+              <p class="font-heading font-semibold tracking-tight text-[3.2rem] sm:text-[4rem] md:text-[4.83rem] text-[#303030] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#e8b238] whitespace-nowrap">5-Star</p>
               <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#303030]/60">Google Rated</p>
             </div>
             <div class="group flex flex-col items-center cursor-default">
-              <p class="font-heading font-semibold tracking-tight text-4xl sm:text-5xl text-[#303030] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#e8b238] whitespace-nowrap">
+              <p class="font-heading font-semibold tracking-tight text-[3.2rem] sm:text-[4rem] md:text-[4.83rem] text-[#303030] transition-all duration-500 group-hover:-translate-y-1 group-hover:text-[#e8b238] whitespace-nowrap">
                 <span class="auto-counter" data-target="100">0</span>%
               </p>
               <p class="font-body text-[10px] sm:text-xs uppercase tracking-widest mt-1 font-bold text-[#303030]/60">Personally Led</p>
@@ -633,376 +964,14 @@
     </section>
 
     <!-- ================================================
-         GALLERY
-    ================================================ -->
-    <section id="gallery-snippet">
-
-      <style>
-        /* ── Gallery: mirrors Process section layout ── */
-        #gallery-scroll-wrapper { position: relative; background: #303030; }
-        #gallery-sticky {
-          position: sticky; top: 0; height: 100vh; overflow: hidden;
-          display: flex; flex-direction: column; align-items: center; justify-content: center;
-          gap: 1.5rem; padding: 8rem 0 1.5rem;
-        }
-        #gallery-card-stage {
-          position: relative; width: 100%; height: 420px; flex-shrink: 0; overflow: hidden;
-        }
-        /* Laptop / smaller desktop — tighten layout so everything fits in viewport */
-        @media (min-width: 1024px) and (max-height: 860px) {
-          #gallery-sticky { gap: 1rem; padding: 7rem 0 1rem; }
-          #gallery-card-stage { height: 300px; }
-        }
-        @media (min-width: 1024px) and (max-height: 720px) {
-          #gallery-sticky { gap: 0.75rem; padding: 6rem 0 0.75rem; }
-          #gallery-card-stage { height: 240px; }
-        }
-        #gallery-card-stage::before, #gallery-card-stage::after {
-          content: ''; position: absolute; top: 0; bottom: 0; width: 180px; z-index: 2; pointer-events: none;
-        }
-        #gallery-card-stage::before { left: 0; background: linear-gradient(to right, #303030 30%, transparent 100%); }
-        #gallery-card-stage::after  { right: 0; background: linear-gradient(to left, #303030 30%, transparent 100%); }
-        #gallery-card-rail {
-          position: absolute; top: 0; left: 0; height: 100%;
-          display: flex; align-items: stretch; gap: 24px; will-change: transform;
-        }
-        .gallery-card {
-          flex-shrink: 0; width: 380px; height: 100%;
-          position: relative; overflow: hidden; cursor: pointer;
-          transition: border-color 350ms ease;
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-          -webkit-mask-image: -webkit-radial-gradient(white, black);
-          mask-image: radial-gradient(white, black);
-        }
-        .gc-border-gold  { border-bottom: 2px solid #e8b238; }
-        .gc-border-brown { border-bottom: 2px solid #5b4a36; }
-        .gallery-card img {
-          width: 100%; height: 100%; object-fit: cover; display: block;
-          transition: transform 700ms cubic-bezier(0.25,0.46,0.45,0.94);
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-        }
-        .gallery-card-overlay {
-          position: absolute; inset: 0;
-          background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 50%, transparent 100%);
-          pointer-events: none;
-        }
-        .gallery-card-label {
-          position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem 1.5rem;
-          transition: opacity 250ms ease;
-        }
-        .gallery-card-hover-content {
-          position: absolute; bottom: 0; left: 0; right: 0;
-          padding: 1.75rem; z-index: 1;
-          opacity: 0; pointer-events: none;
-          transform: translateY(14px);
-          transition: opacity 260ms ease, transform 360ms cubic-bezier(0.25,0.46,0.45,0.94);
-        }
-        .gc-tag {
-          display: block; font-family: var(--font-body);
-          font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em;
-          text-transform: uppercase; color: #e8b238; margin-bottom: 0.5rem;
-          text-shadow: 0 1px 6px rgba(0,0,0,1), 0 2px 12px rgba(0,0,0,0.9);
-        }
-        .gc-title {
-          font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700;
-          color: #fff; line-height: 1.2; margin-bottom: 0.5rem;
-          text-shadow: 0 2px 8px rgba(0,0,0,1), 0 4px 20px rgba(0,0,0,0.95), 0 1px 2px rgba(0,0,0,1);
-        }
-        .gc-divider {
-          width: 28px; height: 1px; background: rgba(232,178,56,0.7);
-          margin-bottom: 0.7rem;
-          transform: scaleX(0); transform-origin: left;
-          transition: transform 360ms 80ms cubic-bezier(0.25,0.46,0.45,0.94);
-        }
-        .gc-desc {
-          font-family: var(--font-body); font-size: 0.695rem; font-weight: 400;
-          color: rgba(255,255,255,0.92); line-height: 1.65; margin-bottom: 1rem;
-          text-shadow: 0 1px 6px rgba(0,0,0,1), 0 3px 14px rgba(0,0,0,0.95);
-        }
-        .gc-cta {
-          display: inline-flex; align-items: center; gap: 0.45rem;
-          font-family: var(--font-body); font-size: 0.6rem; font-weight: 700;
-          letter-spacing: 0.18em; text-transform: uppercase; color: #e8b238;
-          border-bottom: 1px solid rgba(232,178,56,0.45); padding-bottom: 2px;
-          transition: gap 0.25s ease, border-color 0.25s ease;
-          text-shadow: 0 1px 6px rgba(0,0,0,1), 0 2px 10px rgba(0,0,0,0.9);
-        }
-        @media (min-width: 1024px) and (max-width: 1366px) {
-          .gc-tag, .gc-title { text-align: center; }
-          .gallery-card-hover-content { display: flex; flex-direction: column; align-items: center; }
-          .gc-desc { text-align: left; align-self: flex-start; }
-        }
-        @media (hover: hover) and (pointer: fine) {
-          .gallery-card:hover { border-bottom-color: transparent !important; }
-          .gallery-card:hover img { transform: scale(1.06); }
-          .gallery-card:hover .gallery-card-label { opacity: 0; }
-          .gallery-card:hover .gallery-card-hover-content { opacity: 1; pointer-events: auto; transform: translateY(0); }
-          .gallery-card:hover .gc-divider { transform: scaleX(1); }
-          .gallery-card:hover .gc-cta { gap: 0.7rem; border-color: #e8b238; }
-        }
-        #gallery-section-num { color: rgba(255,255,255,0.35); transition: color 0.3s ease; }
-        #gallery-section-num:hover { color: #e8b238; }
-        .gallery-dot { transition: background 0.25s, transform 0.25s; }
-        #gallery-lightbox {
-          display: none; position: fixed; inset: 0;
-          background: rgba(0,0,0,0.93); z-index: 9999;
-          align-items: center; justify-content: center; cursor: zoom-out;
-        }
-        #gallery-lightbox.open { display: flex; }
-        #gallery-lightbox img { max-width: 92vw; max-height: 90vh; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,0.8); }
-        #gallery-lightbox-close {
-          position: absolute; top: 1.25rem; right: 1.5rem;
-          color: #fff; font-size: 2rem; line-height: 1; cursor: pointer;
-          background: none; border: none; opacity: 0.7; transition: opacity 0.2s;
-        }
-        #gallery-lightbox-close:hover { opacity: 1; }
-        .g-scrollbar-none { scrollbar-width: none; }
-        .g-scrollbar-none::-webkit-scrollbar { display: none; }
-        @media (max-width: 1023px) {
-          #gallery-scroll-wrapper { height: auto !important; }
-          #gallery-sticky {
-            position: relative; height: auto; overflow: visible;
-            padding: 5rem 1.5rem 3rem; gap: 2rem;
-          }
-          #gallery-card-stage { height: auto; overflow: visible; }
-          #gallery-card-stage::before, #gallery-card-stage::after { display: none; }
-          #gallery-card-rail {
-            position: relative; flex-direction: column;
-            height: auto; transform: none !important;
-          }
-          .gallery-card { width: 100%; height: 260px; }
-          #gallery-dots { display: none; }
-          .gallery-card-hover-content { opacity: 0 !important; pointer-events: none !important; }
-          .gallery-card-label { opacity: 1 !important; }
-          .gallery-card:active img { transform: scale(1.06); }
-        }
-      </style>
-
-      <!-- Unified layout — CSS @media handles mobile reflow (mirrors Process section) -->
-      <div id="gallery-scroll-wrapper">
-        <div id="gallery-sticky">
-
-          <!-- Centred heading block -->
-          <div class="w-full max-w-3xl mx-auto px-8 flex flex-col items-center text-center flex-shrink-0 reveal">
-            <span id="gallery-section-num" class="font-body font-extrabold text-base tracking-widest uppercase mb-4 cursor-pointer">
-              <span class="border-b-[1.5px] border-current pb-0.5">02</span>
-            </span>
-            <h2 class="font-heading font-black text-4xl sm:text-5xl text-white leading-tight mb-4 cursor-default flex flex-wrap justify-center gap-x-3">
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Our</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">Recent</span></span>
-              <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Works</span></span>
-            </h2>
-            <p class="font-body text-base text-white/55 max-w-lg leading-relaxed">
-              A selection of completed projects across Perth and Perthshire, finished to the same uncompromising standard.
-            </p>
-          </div>
-
-          <!-- Card stage (fade masks + sliding rail) -->
-          <div id="gallery-card-stage">
-            <div id="gallery-card-rail">
-
-              <div class="gallery-card gc-border-gold">
-                <img src="assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.47.57 (1).jpeg" alt="Bespoke home improvement project by Marshall &amp; Co., Perth" loading="lazy">
-                <div class="gallery-card-overlay"></div>
-                <div class="gallery-card-label">
-                  <span class="font-heading font-bold text-[0.6rem] uppercase tracking-[0.22em] text-[#e8b238]">Bespoke Home Improvements</span>
-                </div>
-                <div class="gallery-card-hover-content">
-                  <span class="gc-tag">Bespoke Home Improvements</span>
-                  <h3 class="gc-title">Crafted to Your Vision</h3>
-                  <div class="gc-divider"></div>
-                  <p class="gc-desc">Lee personally oversees every project from first fix to final finish, ensuring a standard that no subcontractor can match.</p>
-                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
-                </div>
-              </div>
-
-              <div class="gallery-card gc-border-brown">
-                <img src="assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.47.58 (3).jpeg" alt="Structural renovation work by Marshall &amp; Co., Perthshire" loading="lazy">
-                <div class="gallery-card-overlay"></div>
-                <div class="gallery-card-label">
-                  <span class="font-heading font-bold text-[0.6rem] uppercase tracking-[0.22em] text-[#e8b238]">Structural Renovation</span>
-                </div>
-                <div class="gallery-card-hover-content">
-                  <span class="gc-tag">Structural Renovation</span>
-                  <h3 class="gc-title">Built to Last</h3>
-                  <div class="gc-divider"></div>
-                  <p class="gc-desc">From load-bearing alterations to full structural overhauls, we bring precision engineering to every renovation across Perthshire.</p>
-                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
-                </div>
-              </div>
-
-              <div class="gallery-card gc-border-gold">
-                <img src="assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.47.59 (2).jpeg" alt="Interior joinery installation by Marshall &amp; Co., Perthshire" loading="lazy">
-                <div class="gallery-card-overlay"></div>
-                <div class="gallery-card-label">
-                  <span class="font-heading font-bold text-[0.6rem] uppercase tracking-[0.22em] text-[#e8b238]">Interior Joinery</span>
-                </div>
-                <div class="gallery-card-hover-content">
-                  <span class="gc-tag">Interior Joinery</span>
-                  <h3 class="gc-title">Precision Joinery</h3>
-                  <div class="gc-divider"></div>
-                  <p class="gc-desc">Bespoke staircases, fitted furniture, and architectural millwork handcrafted with traditional techniques and modern finesse.</p>
-                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
-                </div>
-              </div>
-
-              <div class="gallery-card gc-border-brown">
-                <img src="assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.48.00 (4).jpeg" alt="Home renovation completed by Marshall &amp; Co." loading="lazy">
-                <div class="gallery-card-overlay"></div>
-                <div class="gallery-card-label">
-                  <span class="font-heading font-bold text-[0.6rem] uppercase tracking-[0.22em] text-[#e8b238]">Home Renovation</span>
-                </div>
-                <div class="gallery-card-hover-content">
-                  <span class="gc-tag">Home Renovation</span>
-                  <h3 class="gc-title">Total Transformation</h3>
-                  <div class="gc-divider"></div>
-                  <p class="gc-desc">Full home renovations managed end-to-end by Lee Marshall, turning tired properties into exceptional living spaces across Scotland.</p>
-                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
-                </div>
-              </div>
-
-              <div class="gallery-card gc-border-gold">
-                <img src="assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.48.01 (2).jpeg" alt="Bespoke joinery and cabinetry by Marshall &amp; Co." loading="lazy">
-                <div class="gallery-card-overlay"></div>
-                <div class="gallery-card-label">
-                  <span class="font-heading font-bold text-[0.6rem] uppercase tracking-[0.22em] text-[#e8b238]">Bespoke Cabinetry</span>
-                </div>
-                <div class="gallery-card-hover-content">
-                  <span class="gc-tag">Bespoke Cabinetry</span>
-                  <h3 class="gc-title">Handcrafted Cabinetry</h3>
-                  <div class="gc-divider"></div>
-                  <p class="gc-desc">Custom-built storage and kitchen cabinetry designed around your space, finished to a standard you simply will not find elsewhere.</p>
-                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
-                </div>
-              </div>
-
-              <div class="gallery-card gc-border-brown">
-                <img src="assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.48.02 (5).jpeg" alt="Extension and conversion project by Marshall &amp; Co., Perth" loading="lazy">
-                <div class="gallery-card-overlay"></div>
-                <div class="gallery-card-label">
-                  <span class="font-heading font-bold text-[0.6rem] uppercase tracking-[0.22em] text-[#e8b238]">Property Extension</span>
-                </div>
-                <div class="gallery-card-hover-content">
-                  <span class="gc-tag">Property Extension</span>
-                  <h3 class="gc-title">Seamless Extensions</h3>
-                  <div class="gc-divider"></div>
-                  <p class="gc-desc">Single and double-storey extensions that integrate perfectly with your existing home, adding space and lasting value to your property.</p>
-                  <span class="gc-cta">View Gallery &nbsp;&#8594;</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Progress dots -->
-          <div id="gallery-dots" class="flex gap-3 items-center flex-shrink-0">
-            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
-            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
-            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
-            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
-            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
-            <div class="gallery-dot w-2 h-2 rounded-full" style="background:rgba(255,255,255,0.25);"></div>
-          </div>
-
-          <!-- CTA -->
-          <div class="flex-shrink-0">
-            <a href="gallery.html" class="btn-primary" style="font-size:0.78rem; padding:0.6rem 1.6rem;">View Full Gallery</a>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Lightbox -->
-      <div id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-        <button id="gallery-lightbox-close" aria-label="Close image viewer">&times;</button>
-        <img id="gallery-lightbox-img" src="" alt="">
-      </div>
-
-      <script>
-        (function () {
-          // Lightbox
-          var lb      = document.getElementById('gallery-lightbox');
-          var lbImg   = document.getElementById('gallery-lightbox-img');
-          var lbClose = document.getElementById('gallery-lightbox-close');
-          document.querySelectorAll('.gallery-card').forEach(function (card) {
-            card.addEventListener('click', function () {
-              var img = card.querySelector('img');
-              lbImg.src = img.src; lbImg.alt = img.alt;
-              lb.classList.add('open'); document.body.style.overflow = 'hidden';
-            });
-          });
-          function closeLb() { lb.classList.remove('open'); lbImg.src = ''; document.body.style.overflow = ''; }
-          lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
-          lbClose.addEventListener('click', closeLb);
-          document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
-
-          // Pinned lerp scroll (desktop only) — same pattern as Process section
-          if (window.innerWidth < 1024) return;
-          var wrapper = document.getElementById('gallery-scroll-wrapper');
-          var rail    = document.getElementById('gallery-card-rail');
-          var stage   = document.getElementById('gallery-card-stage');
-          var cards   = Array.prototype.slice.call(rail.querySelectorAll('.gallery-card'));
-          var dots    = Array.prototype.slice.call(document.querySelectorAll('.gallery-dot'));
-          var n   = cards.length;
-          var GAP = 24;
-          var targetP = 0, currentP = 0;
-
-          function setHeight() {
-            var sW = stage.offsetWidth;
-            var cW = cards[0].offsetWidth;
-            var travel = Math.abs(-((n - 1) * (cW + GAP) + cW / 2) - (sW - 180));
-            wrapper.style.height = (window.innerHeight + Math.round(travel * 1.5)) + 'px';
-          }
-          setHeight();
-          window.addEventListener('resize', setHeight, { passive: true });
-
-          function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
-
-          function render(p) {
-            var stageW = stage.offsetWidth;
-            var cardW  = cards[0].offsetWidth;
-            var txStart = stageW - 180;
-            var txEnd   = -((n - 1) * (cardW + GAP) + cardW / 2);
-            rail.style.transform = 'translateX(' + (txStart + p * (txEnd - txStart)).toFixed(2) + 'px)';
-            var idx = Math.min(n - 1, Math.round(p * (n - 1)));
-            dots.forEach(function (dot, i) {
-              dot.style.background = i === idx ? '#e8b238' : 'rgba(255,255,255,0.25)';
-              dot.style.transform  = i === idx ? 'scale(1.5)' : 'scale(1)';
-            });
-          }
-
-          function onScroll() {
-            var maxScroll = wrapper.offsetHeight - window.innerHeight;
-            targetP = clamp(-wrapper.getBoundingClientRect().top / maxScroll);
-          }
-
-          function tick() {
-            currentP += (targetP - currentP) * 0.14;
-            render(currentP);
-            requestAnimationFrame(tick);
-          }
-
-          render(0);
-          window.addEventListener('scroll', onScroll, { passive: true });
-          requestAnimationFrame(tick);
-        })();
-      </script>
-    </section>
-
-    <!-- ================================================
          SERVICES SECTION
     ================================================ -->
-    <section id="services-section" class="relative pt-16 lg:pt-20 xl:pt-24 pb-0 overflow-hidden" style="background:#fff9eb; border-top: 1px solid rgba(48,48,48,0.05);">
+    <section id="services-section" class="relative pt-16 lg:pt-20 xl:pt-24 pb-0 overflow-hidden" style="background:#ffffff; border-top: 1px solid rgba(48,48,48,0.05);">
 
       <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20">
         <div class="flex flex-col items-center text-center mb-8 md:mb-12 reveal">
-          <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-4 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">
-            <span class="border-b-[1.5px] border-current pb-0.5">03</span>
-          </span>
-          <span class="font-script text-3xl md:text-4xl text-[#e8b238] mb-3 inline-block" style="transform: rotate(-2deg);">What we do best</span>
-          <h2 class="group font-heading font-black text-4xl sm:text-5xl text-[#303030] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full">
+          <span class="word-mask-inner inline-block font-body font-medium text-base tracking-widest uppercase mb-4 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">What We Build</span>
+          <h2 class="gs-heading group mb-[22px] flex flex-col items-center text-center cursor-default w-full">
             <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Our</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Core</span></span>
@@ -1017,47 +986,47 @@
 
       <div class="flex flex-col w-full gap-y-0">
 
-        <!-- 1: Structural Extensions — Content Left, Image Right -->
+        <!-- 1: House Extensions — Content Left, Image Right -->
         <div class="flex flex-col lg:flex-row-reverse items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
           <div class="w-full lg:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-0">
-            <img src="assets/imgs/service_imgs/service1.jpg" alt="Structural home extension and conversion by Marshall & Co. in Perth"
-              class="absolute inset-0 w-full h-full object-cover scale-[1.15] js-parallax-fast will-change-transform" data-speed="0.15" loading="lazy">
-          </div>
-          <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-[#fff9eb] reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
-            <div class="absolute top-0 right-0 w-1.5 h-full bg-[#e8b238]/20 transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
-            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">01</span></span>
-            <h3 class="title-underline-anim font-heading font-black text-4xl sm:text-5xl text-[#303030] mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Structural Extensions &amp; Conversions</h3>
-            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Single and double-storey extensions, loft conversions, and structural alterations carried out to the highest building standards. Every project is fully project-managed from planning approval through to final finish.</p>
-            <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
-          </div>
-        </div>
-
-        <!-- 2: Bespoke Joinery — Image Left, Content Right -->
-        <div class="flex flex-col lg:flex-row items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
-          <div class="w-full lg:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-0">
-            <img src="assets/imgs/service_imgs/service2.jpg" alt="Bespoke joinery and fitted interior installations by Marshall & Co., Perth"
+            <img src="assets/imgs/service_imgs/home_extensions/home_extensions_1.jpeg" alt="Bespoke house extension completed by Marshall & Co. in Perth, Scotland"
               class="absolute inset-0 w-full h-full object-cover scale-[1.15] js-parallax-fast will-change-transform" data-speed="0.15" loading="lazy">
           </div>
           <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-white reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
-            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#e8b238]/20 transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
-            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">02</span></span>
-            <h3 class="title-underline-anim font-heading font-black text-4xl sm:text-5xl text-[#303030] mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Bespoke Joinery &amp; Interior Installations</h3>
-            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Handcrafted staircases, fitted wardrobes, bespoke cabinetry, and precision door sets designed and built to exact specification. The finishing craftsmanship that sets a truly outstanding home apart from the rest.</p>
+            <div class="absolute top-0 right-0 w-1.5 h-full bg-[#e8b238]/20 transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
+            <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">01</span>
+            <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">House Extensions</h3>
+            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Expand your home with a structurally sound extension that integrates seamlessly into your existing property. Our in-house team handles everything from planning approval and groundwork through to the final bespoke interior finish, with no subcontractors and no compromise on quality.</p>
             <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
           </div>
         </div>
 
-        <!-- 3: Comprehensive Renovations — Content Left, Image Right -->
-        <div class="flex flex-col lg:flex-row-reverse items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
+        <!-- 2: Loft Conversions — Image Left, Content Right -->
+        <div class="flex flex-col lg:flex-row items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
           <div class="w-full lg:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-0">
-            <img src="assets/imgs/service_imgs/service3.jpg" alt="Comprehensive home renovation by Marshall & Co. Bespoke Home Improvements"
+            <img src="assets/imgs/service_imgs/loft_conversions/loft_conversions_1.jpeg" alt="Loft conversion with dormer window installed by Marshall & Co., Perthshire"
               class="absolute inset-0 w-full h-full object-cover scale-[1.15] js-parallax-fast will-change-transform" data-speed="0.15" loading="lazy">
           </div>
           <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-[#fff9eb] reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
+            <div class="absolute top-0 left-0 w-1.5 h-full bg-[#e8b238]/20 transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
+            <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">02</span>
+            <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Loft Conversions</h3>
+            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Unlock the full potential of your roof space with a precision-engineered loft conversion that adds a genuine bedroom, office, or suite without sacrificing a square metre of your garden. Every conversion is structurally engineered, thermally efficient, and finished to the same standard as the rest of your home.</p>
+            <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
+          </div>
+        </div>
+
+        <!-- 3: Kitchen Renovations — Content Left, Image Right -->
+        <div class="flex flex-col lg:flex-row-reverse items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
+          <div class="w-full lg:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-0">
+            <img src="assets/imgs/service_imgs/kitchen_renovations/kitchen_renovations_1.jpeg" alt="Bespoke kitchen renovation fitted by Marshall & Co. in Perth"
+              class="absolute inset-0 w-full h-full object-cover scale-[1.15] js-parallax-fast will-change-transform" data-speed="0.15" loading="lazy">
+          </div>
+          <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-white reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
             <div class="absolute top-0 right-0 w-1.5 h-full bg-[#e8b238]/20 transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
-            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">03</span></span>
-            <h3 class="title-underline-anim font-heading font-black text-4xl sm:text-5xl text-[#303030] mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Comprehensive Home Renovations</h3>
-            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Full property renovations from gutted shells to beautifully finished family homes. Whether you have a traditional sandstone house or a modern new build, Marshall & Co. will transform it to the standard it deserves.</p>
+            <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">03</span>
+            <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Kitchen Renovations</h3>
+            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Transform the heart of your home with a fully bespoke kitchen renovation planned around how you actually live. Every cabinet, worktop, and fitting is specified to exact dimensions and installed with the precision craftsmanship Marshall & Co. is known for across Perthshire.</p>
             <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
           </div>
         </div>
@@ -1065,14 +1034,14 @@
         <!-- 4: Garden Rooms — Image Left, Content Right -->
         <div class="flex flex-col lg:flex-row items-stretch w-full lg:min-h-[500px] xl:min-h-[600px] group">
           <div class="w-full lg:w-1/2 relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-0">
-            <img src="assets/imgs/service_imgs/service4.jpg" alt="Bespoke garden room and exterior timberwork by Marshall & Co., Perthshire"
+            <img src="assets/imgs/service_imgs/garden_rooms/garden_rooms_1.jpeg" alt="Bespoke insulated garden room built by Marshall & Co. in Perthshire"
               class="absolute inset-0 w-full h-full object-cover scale-[1.15] js-parallax-fast will-change-transform" data-speed="0.15" loading="lazy">
           </div>
-          <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-white reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
+          <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-10 lg:p-16 xl:p-24 bg-[#fff9eb] reveal reveal-right relative overflow-hidden" style="transition-delay:0.4s">
             <div class="absolute top-0 left-0 w-1.5 h-full bg-[#e8b238]/20 transform scale-y-0 origin-bottom transition-transform duration-700 group-hover:scale-y-100"></div>
-            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-6 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300"><span class="border-b-[1.5px] border-current pb-0.5">04</span></span>
-            <h3 class="title-underline-anim font-heading font-black text-4xl sm:text-5xl text-[#303030] mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Garden Rooms &amp; Exterior Timberwork</h3>
-            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Purpose-built garden rooms, timber outbuildings, decking, cladding, and all forms of exterior woodwork crafted to last. The perfect way to extend your living space and add lasting value to your property.</p>
+            <span class="word-mask-inner inline-block font-body font-medium text-sm tracking-widest mb-6 cursor-default rounded-full px-5 py-1.5 text-[#303030] transition-colors duration-300 hover:text-[#e8b238]">04</span>
+            <h3 class="title-underline-anim gs-heading mb-[22px] leading-[1.15] cursor-default" style="animation-delay: 500ms;">Garden Rooms</h3>
+            <p class="title-underline-anim font-body text-base sm:text-lg text-[#303030]/80 leading-relaxed mb-7" style="animation-delay: 700ms;">Purpose-built garden rooms designed for year-round use and finished to the same interior standard as your home. Whether you need a home office, a studio, or a private retreat, we build it fully insulated, wired, and ready to use from day one.</p>
             <a href="contact.html" class="title-underline-anim btn-primary inline-block" style="animation-delay: 850ms;">Get a Quote</a>
           </div>
         </div>
@@ -1103,86 +1072,14 @@
 
     </section>
 
-    <!-- ================================================
-         INSPIRATION SECTION
-    ================================================ -->
-    <section id="inspiration-banner-section" class="section-dark relative min-h-[80vh] flex items-center justify-end overflow-hidden px-4 sm:px-8 lg:px-12" style="border-top: 4px solid #5b4a36; border-bottom: 4px solid #5b4a36;">
-
-      <!-- Full-bleed background image with parallax -->
-      <img src="assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.48.01 (2).jpeg"
-        alt="Bespoke home improvements by Marshall &amp; Co., Perth"
-        class="absolute inset-0 w-full h-full object-cover js-parallax-fast will-change-transform scale-[1.12]"
-        data-speed="0.12" loading="lazy">
-
-      <!-- Gradient overlay: transparent left → dark right for text legibility -->
-      <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#303030]/90 pointer-events-none z-10"></div>
-
-      <!-- Frosted glass card — anchored right -->
-      <div class="w-full lg:w-[45%] bg-[#303030]/60 backdrop-blur-xl border border-white/10 border-t-4 border-t-[#e8b238] p-10 lg:p-16 z-20 shadow-2xl relative my-16 lg:my-20 reveal">
-
-        <div class="flex flex-col items-center lg:items-start mb-1">
-          <span class="gs-tagline word-mask-inner" style="transition-delay: 50ms;">
-            <span class="border-b-[1.5px] border-current pb-0.5">04</span>
-          </span>
-          <span class="font-script text-3xl md:text-4xl text-[#e8b238] mb-3 inline-block" style="transform: rotate(-2deg);">Inspired Living</span>
-        </div>
-
-        <h2 class="gs-heading group mb-[22px] flex flex-col items-center lg:items-start w-full">
-          <span class="flex flex-wrap justify-center lg:justify-start gap-x-3 lg:gap-x-4 leading-tight">
-            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Your</span></span>
-            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Vision,</span></span>
-            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Crafted</span></span>
-            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">to</span></span>
-            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Perfection</span></span>
-          </span>
-        </h2>
-
-        <div class="gs-body title-underline-anim space-y-5 mb-7" style="animation-delay: 700ms;">
-          <p>Whether you are envisioning a structural extension, a luxury remodel, or bespoke joinery tailored to your lifestyle, our team is ready to bring your ideas to life. Every project starts with a conversation, and every conversation leads to something extraordinary.</p>
-          <p>From the structural bones of a ground-floor extension to the fine detail of a hand-crafted fitted wardrobe, Marshall &amp; Co. approaches each commission with the same uncompromising commitment to quality. No shortcuts, no compromises, no exceptions.</p>
-          <p>Discover the full extent of what Marshall &amp; Co. can achieve for your property, and take the first step towards a home that truly reflects your vision.</p>
-        </div>
-
-        <div class="title-underline-anim mb-8" style="animation-delay: 900ms;">
-          <a href="contact.html" class="btn-adaptive">View All Services</a>
-        </div>
-
-        <div class="title-underline-anim pt-8 border-t border-white/10" style="animation-delay: 1050ms;">
-          <p class="font-body text-xs uppercase tracking-widest text-[#e8b238] font-bold text-center lg:text-left">Serving Across Perthshire &amp; Beyond</p>
-        </div>
-
-      </div>
-
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          var section = document.getElementById('inspiration-banner-section');
-          var bgImg = section ? section.querySelector('.js-parallax-fast') : null;
-          if (!section || !bgImg || window.innerWidth < 1024) return;
-          var ticking = false;
-          function updateParallax() {
-            var rect = section.getBoundingClientRect();
-            var offset = (rect.top + rect.height / 2) - (window.innerHeight / 2);
-            var speed = parseFloat(bgImg.dataset.speed) || 0.12;
-            bgImg.style.transform = 'scale(1.12) translate3d(0, ' + (offset * speed) + 'px, 0)';
-            ticking = false;
-          }
-          window.addEventListener('scroll', function () {
-            if (!ticking) { window.requestAnimationFrame(updateParallax); ticking = true; }
-          }, { passive: true });
-          updateParallax();
-        });
-      </script>
-    </section>
-
-
 
     <!-- ================================================
          HOW WE WORK — STICKY CARD STACK
     ================================================ -->
-    <section id="process-section" class="relative" style="background:#303030;">
+    <section id="process-section" class="relative" style="background:#1e1e1e;">
       <style>
         /* ── Stack wrapper: tall enough for 4 card reveals ── */
-        #stack-scroll-wrapper { position: relative; height: 350vh; background: #303030; }
+        #stack-scroll-wrapper { position: relative; height: 350vh; background: #1e1e1e; }
 
         /* ── Sticky viewport: locks in place while scrolling ── */
         #stack-sticky {
@@ -1205,7 +1102,7 @@
           #stack-sticky { padding: 5rem 1.5rem 1rem; }
           #stack-header { padding: 0 0 1.25rem 0; }
           #stack-header .font-script { font-size: 1.75rem !important; margin-bottom: 0.5rem !important; }
-          #stack-header h2 { font-size: 2.5rem !important; margin-bottom: 0.5rem !important; }
+          #stack-header h2 { font-size: 3.78rem !important; margin-bottom: 0.5rem !important; }
           #stack-card-stage { height: clamp(240px, 36vh, 340px); }
         }
         @media (min-width: 1024px) and (max-height: 720px) {
@@ -1222,6 +1119,8 @@
           position: relative;
           width: 100%; max-width: 760px;
           height: clamp(300px, 42vh, 420px);
+          /* Fixed gap between heading and card area — prevents receded cards colliding with header */
+          margin-top: 3.5rem;
         }
 
         /* ── Individual stacked cards ── */
@@ -1243,10 +1142,25 @@
         }
 
         /* Card colour variants */
-        .stack-card:nth-child(1) { background: #3a3a3a; }
-        .stack-card:nth-child(2) { background: #333333; }
-        .stack-card:nth-child(3) { background: #2d2d2d; }
-        .stack-card:nth-child(4) { background: #272727; }
+        .stack-card:nth-child(1) { background: #2c2c2c; }
+        .stack-card:nth-child(2) { background: #282828; }
+        .stack-card:nth-child(3) { background: #242424; }
+        .stack-card:nth-child(4) { background: #202020; }
+
+        /* Card hover — warm brown */
+        @media (hover: hover) and (pointer: fine) {
+          .stack-card {
+            transition: background 0.35s ease, border-color 0.35s ease;
+          }
+          .stack-card:hover {
+            background: #3d2f1a !important;
+            border-top-color: #c49a3c;
+          }
+          .stack-card:hover .stack-card-btn {
+            border-color: #e8b238;
+            color: #e8b238;
+          }
+        }
 
         /* Step number pill */
         .stack-step-num {
@@ -1267,6 +1181,22 @@
           color: #303030;
           transform: scale(1.12);
         }
+
+        /* Small card button */
+        .stack-card-btn {
+          display: inline-flex; align-items: center; gap: 0.4rem;
+          margin-top: auto; padding-top: 1.25rem;
+          font-family: var(--font-body, 'Montserrat', sans-serif);
+          font-size: 0.6rem; font-weight: 700;
+          letter-spacing: 0.18em; text-transform: uppercase;
+          color: rgba(255,255,255,0.45);
+          border: none; background: none; cursor: pointer;
+          border-bottom: 1px solid rgba(255,255,255,0.18);
+          padding-bottom: 2px;
+          transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+          text-decoration: none;
+        }
+        .stack-card-btn:hover { gap: 0.65rem; }
 
         /* Scroll hint — sits above the dots, never near the card */
         #stack-scroll-hint {
@@ -1307,6 +1237,7 @@
           #stack-dots { display: none; }
           #stack-scroll-hint { display: none; }
           .stack-step-num { margin-left: auto; margin-right: auto; }
+          .stack-card-btn { align-self: center; }
         }
       </style>
 
@@ -1315,15 +1246,13 @@
 
           <!-- Heading -->
           <div id="stack-header" class="reveal">
-            <span class="word-mask-inner inline-block font-body font-extrabold text-base tracking-widest uppercase mb-4 cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay:50ms;">
-              <span class="border-b-[1.5px] border-current pb-0.5">05</span>
-            </span>
-            <span class="font-script text-3xl md:text-4xl text-[#e8b238] mb-3 inline-block" style="transform: rotate(-2deg);">Our Process</span>
-            <h2 class="font-heading font-black text-4xl sm:text-5xl text-white leading-tight mb-0 cursor-default flex flex-wrap justify-center gap-x-3">
+            <span class="word-mask-inner inline-block font-body font-medium text-base tracking-widest uppercase mb-4 cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay:50ms;">How We Work</span>
+            <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white leading-tight mb-3 cursor-default flex flex-wrap justify-center gap-x-3">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">How</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">We</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Work</span></span>
             </h2>
+            <p class="font-body text-sm text-white/45 tracking-wide leading-relaxed max-w-md text-center mt-1" style="border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 0.6rem;">A transparent, straightforward process from first conversation to final handover.</p>
           </div>
 
           <!-- Card stage -->
@@ -1331,26 +1260,30 @@
 
             <div class="stack-card" id="scard-1">
               <span class="stack-step-num">01</span>
-              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(1.5rem,3vw,2rem);">Initial Consultation</h3>
+              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(2.8rem,5vw,3.8rem);">Initial Consultation</h3>
               <p class="font-body text-white/65 leading-relaxed" style="font-size:clamp(0.9rem,1.5vw,1.05rem);">Reach out by phone or email to discuss your project. Lee will personally get back to you to arrange a completely free, no-obligation consultation at a time that suits you.</p>
+              <a href="contact.html" class="stack-card-btn">Get in Touch &nbsp;&#8594;</a>
             </div>
 
             <div class="stack-card" id="scard-2">
               <span class="stack-step-num">02</span>
-              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(1.5rem,3vw,2rem);">Site Survey &amp; Planning</h3>
+              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(2.8rem,5vw,3.8rem);">Site Survey &amp; Planning</h3>
               <p class="font-body text-white/65 leading-relaxed" style="font-size:clamp(0.9rem,1.5vw,1.05rem);">Lee visits your property, reviews your plans and requirements, and provides honest expert input on structural, practical, and design considerations before any work begins.</p>
+              <a href="contact.html" class="stack-card-btn">Book a Survey &nbsp;&#8594;</a>
             </div>
 
             <div class="stack-card" id="scard-3">
               <span class="stack-step-num">03</span>
-              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(1.5rem,3vw,2rem);">Clear, Fixed Quote</h3>
+              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(2.8rem,5vw,3.8rem);">Clear, Fixed Quote</h3>
               <p class="font-body text-white/65 leading-relaxed" style="font-size:clamp(0.9rem,1.5vw,1.05rem);">You receive a comprehensive, fully itemised quotation covering every aspect of the agreed works. No hidden costs, no vague estimates. Just honest pricing with complete transparency from day one.</p>
+              <a href="contact.html" class="stack-card-btn">Request a Quote &nbsp;&#8594;</a>
             </div>
 
             <div class="stack-card" id="scard-4">
               <span class="stack-step-num">04</span>
-              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(1.5rem,3vw,2rem);">Expert Delivery</h3>
+              <h3 class="font-heading font-bold text-white leading-snug mb-3" style="font-size:clamp(2.8rem,5vw,3.8rem);">Expert Delivery</h3>
               <p class="font-body text-white/65 leading-relaxed" style="font-size:clamp(0.9rem,1.5vw,1.05rem);">Lee and his trusted team deliver your project to the agreed programme and specification. You have a single point of contact throughout, keeping you informed at every milestone until final handover.</p>
+              <a href="contact.html" class="stack-card-btn">Start Your Project &nbsp;&#8594;</a>
             </div>
 
           </div>
@@ -1374,86 +1307,96 @@
         if (window.innerWidth < 1024) return;
 
         var wrapper = document.getElementById('stack-scroll-wrapper');
+        var stage   = document.getElementById('stack-card-stage');
         var cards   = Array.prototype.slice.call(document.querySelectorAll('.stack-card'));
         var dots    = Array.prototype.slice.call(document.querySelectorAll('.stack-dot'));
         var n       = cards.length;
 
-        /* Peek offset: how many px of the previous card show beneath the new one */
-        var PEEK = 18;
+        var PEEK_PX  = 14;
+        var SCALE_DN = 0.025;
 
         function setInitial() {
+          var stageH = stage.offsetHeight;
           cards.forEach(function (card, i) {
-            /* Cards start fully below — translateY(100%) — and scale slightly larger */
-            card.style.transition = 'none';
-            card.style.transform  = i === 0
-              ? 'translateY(0) scale(1)'
-              : 'translateY(100%) scale(1)';
-            card.style.opacity = i === 0 ? '1' : '0';
-            card.style.zIndex  = i + 1;
+            card.style.zIndex = i + 1;
+            card.style.transform = 'translateY(' + (i === 0 ? 0 : stageH) + 'px) scale(1)';
+            card.style.opacity   = i === 0 ? '1' : '0';
           });
         }
+
+        /* Shared easing: ease-in-out quad */
+        function eio(t) { return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2; }
 
         function render(p) {
-          /* p: 0 → 1 across the full scroll height of the wrapper */
-          /* Each card transition occupies 1/(n-1) of p */
-          var segment = 1 / (n - 1);
+          var stageH  = stage.offsetHeight;
+          /*
+           * Each card's entry occupies 1/n of the scroll range.
+           * Recession of card i is driven by the *continuous* eased progress
+           * of every subsequent card j — same curve, perfectly in sync.
+           * This eliminates the Math.floor snap that caused sudden jumps.
+           */
+          var segment = 1 / n;
 
           cards.forEach(function (card, i) {
-            if (i === 0) {
-              /* First card: slides up and scales down as second card arrives */
-              var localP = Math.min(1, p / segment);
-              var peekTY  = -(PEEK * localP);
-              var scaleV  = 1 - 0.018 * localP;
-              card.style.transform = 'translateY(' + peekTY.toFixed(2) + 'px) scale(' + scaleV.toFixed(4) + ')';
-              card.style.opacity   = (1 - 0.25 * localP).toFixed(3);
-            } else {
-              var start   = (i - 1) * segment;
-              var localP2 = Math.max(0, Math.min(1, (p - start) / segment));
+            var entryP  = Math.max(0, Math.min(1, (p - i * segment) / segment));
 
-              /* Slide up from 100% to peeked resting position */
-              var peekOffset = PEEK * (n - 1 - i);
-              var fromY = 100; /* percent */
-              /* When localP2 === 1, card is fully covering previous with peek showing */
-              var toY   = -(peekOffset); /* negative px to pull up */
-
-              /* We animate from translateY(100%) to translateY(-peekOffset px) */
-              /* But to avoid mixing % and px, do it purely in px after layout */
-              var stageH = document.getElementById('stack-card-stage').offsetHeight;
-              var fromPx = stageH;
-              var toPx   = -peekOffset;
-              var currentY = fromPx + localP2 * (toPx - fromPx);
-              var scaleV2  = 1 - 0.018 * Math.max(0, (p - i * segment) / segment);
-
-              card.style.transform = 'translateY(' + currentY.toFixed(2) + 'px) scale(' + Math.max(0.94, scaleV2).toFixed(4) + ')';
-              card.style.opacity   = localP2 > 0.05 ? '1' : '0';
+            if (entryP <= 0) {
+              card.style.transform = 'translateY(' + stageH + 'px) scale(1)';
+              card.style.opacity   = '0';
+              return;
             }
+
+            var eEntryP = eio(entryP);
+
+            /* Entry slide: stageH → 0 */
+            var entryY = stageH * (1 - eEntryP);
+
+            /* Continuous recession: sum over all later cards' eased entry progress */
+            var recession = 0, opacityLoss = 0, continuousDepth = 0;
+            for (var j = i + 1; j < n; j++) {
+              var nextP  = Math.max(0, Math.min(1, (p - j * segment) / segment));
+              var eNextP = eio(nextP);
+              recession       += PEEK_PX * eNextP;
+              opacityLoss     += 0.10    * eNextP;
+              continuousDepth += eNextP;
+            }
+
+            var scaleV   = Math.max(0.90, 1 - continuousDepth * SCALE_DN);
+            /* Clamp upward drift: cards must not float higher than max recession peek */
+            var maxUp    = -(PEEK_PX * (n - 1));
+            var finalY   = Math.max(maxUp, entryY - recession);
+            var finalOpa = Math.max(0.25, Math.min(1, eEntryP) - opacityLoss);
+
+            card.style.transform = 'translateY(' + finalY.toFixed(2) + 'px) scale(' + scaleV.toFixed(4) + ')';
+            card.style.opacity   = finalOpa.toFixed(3);
           });
 
-          /* Active dot */
-          var idx = Math.min(n - 1, Math.floor(p * n));
-          dots.forEach(function (dot, i) {
-            dot.classList.toggle('sd-active', i === idx);
-          });
+          /* Dot advances when a card's entry is more than halfway done */
+          var activeIdx = 0;
+          for (var k = 0; k < n; k++) {
+            if (Math.max(0, Math.min(1, (p - k * segment) / segment)) > 0.5) activeIdx = k;
+          }
+          dots.forEach(function (dot, i) { dot.classList.toggle('sd-active', i === activeIdx); });
         }
 
-        var targetP = 0, currentP = 0, rafId;
+        var targetP = 0, currentP = 0;
 
         function onScroll() {
-          var rect     = wrapper.getBoundingClientRect();
           var maxScroll = wrapper.offsetHeight - window.innerHeight;
-          targetP = Math.max(0, Math.min(1, -rect.top / maxScroll));
+          targetP = Math.max(0, Math.min(1, -wrapper.getBoundingClientRect().top / maxScroll));
         }
 
         function tick() {
-          currentP += (targetP - currentP) * 0.12;
+          currentP += (targetP - currentP) * 0.10;
           render(currentP);
-          rafId = requestAnimationFrame(tick);
+          requestAnimationFrame(tick);
         }
 
         setInitial();
         render(0);
         window.addEventListener('scroll', onScroll, { passive: true });
-        rafId = requestAnimationFrame(tick);
+        window.addEventListener('resize', setInitial, { passive: true });
+        requestAnimationFrame(tick);
       })();
       </script>
     </section>
@@ -1463,22 +1406,13 @@
          REVIEWS SECTION
     ================================================ -->
     <section id="testimonials" class="relative py-16 lg:py-20 xl:py-24 bg-white" style="border-top: 1px solid rgba(48,48,48,0.05);">
-      <style>
-        .review-stars { display: flex; align-items: center; gap: 3px; margin-bottom: 1.25rem; }
-        .review-stars span { color: #e8b238; font-size: 1.1rem; }
-        .review-attribution { display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 1px solid rgba(91,74,54,0.15); }
-        .review-author { font-family: var(--font-heading, 'Marcus Traianus', Georgia, serif); font-weight: 700; font-size: 1rem; color: #303030; }
-        .review-verified { font-family: var(--font-body, 'Montserrat', sans-serif); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #e8b238; font-weight: 700; margin-top: 2px; }
-      </style>
 
       <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
         <!-- Section header -->
         <div class="flex flex-col items-center text-center mb-16 lg:mb-20 reveal w-full">
-          <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">
-            <span class="border-b-[1.5px] border-current pb-0.5">06</span>
-          </span>
-          <h2 class="group font-heading font-black text-4xl sm:text-5xl text-[#303030] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full">
+          <span class="word-mask-inner inline-block font-body font-medium text-xl tracking-widest uppercase mb-8 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Happy Clients</span>
+          <h2 class="group font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-[#303030] mb-[22px] leading-[1.15] flex flex-col items-center text-center cursor-default w-full">
             <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">What</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Our</span></span>
@@ -1492,30 +1426,6 @@
           </p>
         </div>
 
-        <!-- Featured Review: James & Sarah T. -->
-        <div class="reveal reveal-up mb-0">
-          <div class="flex flex-col lg:flex-row items-start gap-8 lg:gap-20 py-12 lg:py-16" style="border-top: 1px solid rgba(91,74,54,0.12);">
-            <div class="flex-shrink-0 w-full lg:w-auto">
-              <div class="review-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p class="font-heading font-bold text-[2.2rem] sm:text-[2.6rem] lg:text-[3rem] text-[#303030] leading-[1.2]" style="max-width: 52rem; letter-spacing: -0.01em;">
-                "Marshall &amp; Co. managed our full extension from start to finish. Immaculate work throughout, fantastic communication, and the finished result is beyond what we hoped for."
-              </p>
-            </div>
-            <div class="flex-shrink-0 lg:ml-auto lg:w-[220px] pt-2 lg:pt-8">
-              <div class="review-attribution flex-col items-start gap-2 border-0 pt-0">
-                <div>
-                  <p class="review-author">James &amp; Sarah T.</p>
-                  <p class="review-verified">Verified Google Review</p>
-                </div>
-                <div class="h-px w-10 mt-3" style="background:#5b4a36;"></div>
-                <svg class="w-6 h-6 mt-3 opacity-60" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Divider -->
-        <div class="h-px w-full my-2" style="background:rgba(91,74,54,0.12);"></div>
 
         <!-- ── Infinite marquee loop ── -->
         <style>
@@ -1540,9 +1450,11 @@
           .rv-stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
           .rv-stars span { color: #e8b238; font-size: 1rem; }
           .rv-quote {
-            font-family: var(--font-body, 'Montserrat', sans-serif);
-            font-size: clamp(0.88rem, 1.3vw, 1rem);
-            font-style: italic; line-height: 1.75;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.15rem, 1.65vw, 1.4rem);
+            line-height: 1.65;
             color: rgba(48,48,48,0.78);
             margin-bottom: 1.5rem; flex: 1;
             position: relative; padding-left: 0.25rem;
@@ -1560,8 +1472,8 @@
             margin-top: auto;
           }
           .rv-author {
-            font-family: var(--font-heading, 'Marcus Traianus', Georgia, serif);
-            font-weight: 700; font-size: 0.95rem; color: #303030;
+            font-family: var(--font-heading, 'Ballantines Serial', Georgia, serif);
+            font-weight: 700; font-size: 1.5rem; color: #303030;
           }
           .rv-verified {
             font-family: var(--font-body, 'Montserrat', sans-serif);
@@ -1702,32 +1614,6 @@
       })();
       </script>
 
-      <!-- Divider -->
-      <div class="h-px w-full mt-2 mb-0" style="background:rgba(91,74,54,0.12);"></div>
-
-      <!-- Featured Review: Anna W. -->
-      <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
-        <div class="reveal reveal-up">
-          <div class="flex flex-col lg:flex-row-reverse items-start gap-8 lg:gap-20 py-12 lg:py-16" style="border-bottom: 1px solid rgba(91,74,54,0.12);">
-            <div class="flex-shrink-0 w-full lg:w-auto">
-              <div class="review-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p class="font-heading font-bold text-[2.2rem] sm:text-[2.6rem] lg:text-[3rem] text-[#303030] leading-[1.2]" style="max-width: 52rem; letter-spacing: -0.01em;">
-                "The bespoke staircase and fitted wardrobes Lee designed and installed are exactly what we wanted. The quality of the woodwork is exceptional and the attention to detail is something you simply don't see from larger companies."
-              </p>
-            </div>
-            <div class="flex-shrink-0 lg:mr-auto lg:w-[220px] pt-2 lg:pt-8">
-              <div class="review-attribution flex-col items-start gap-2 border-0 pt-0">
-                <div>
-                  <p class="review-author">Anna W.</p>
-                  <p class="review-verified">Verified Google Review</p>
-                </div>
-                <div class="h-px w-10 mt-3" style="background:#5b4a36;"></div>
-                <svg class="w-6 h-6 mt-3 opacity-60" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </section>
     <!-- Review Request / QR -->
@@ -1737,10 +1623,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-28 items-center reveal reveal-up">
 
           <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
-            <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-white hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">
-              <span class="border-b-[1.5px] border-current pb-0.5">07</span>
-            </span>
-            <h2 class="font-heading font-black text-4xl sm:text-5xl text-white mb-7 leading-[1.15] flex flex-wrap items-center lg:items-start justify-center lg:justify-start gap-x-3 cursor-default">
+            <span class="word-mask-inner inline-block font-body font-medium text-xl tracking-widest uppercase mb-8 cursor-default text-white hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Leave a Review</span>
+            <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white mb-7 leading-[1.15] flex flex-wrap items-center lg:items-start justify-center lg:justify-start gap-x-3 cursor-default">
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Leave</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Us</span></span>
               <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">a</span></span>
@@ -1785,22 +1669,20 @@
     <!-- ================================================
          FAQ SECTION
     ================================================ -->
-    <section id="faq" class="relative py-16 lg:py-20 xl:py-24 flex items-center justify-center" style="background:#fff9eb;">
+    <section id="faq" class="relative py-16 lg:py-20 xl:py-24 flex items-center justify-center" style="background:#1a1a1a;">
       <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 relative w-full">
 
           <div class="w-full lg:w-1/3 relative">
             <div class="lg:sticky lg:top-28 xl:top-48 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-8 lg:mt-0">
-              <span class="word-mask-inner inline-block font-body font-extrabold text-xl tracking-widest uppercase mb-8 cursor-default text-[#303030] hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">
-                <span class="border-b-[1.5px] border-current pb-0.5">08</span>
-              </span>
-              <h2 class="font-heading font-black text-4xl sm:text-5xl text-[#303030] leading-[1.15] flex flex-wrap items-center lg:items-start justify-center lg:justify-start gap-x-3 mb-8 cursor-default">
+              <span class="word-mask-inner inline-block font-body font-medium text-xl tracking-widest uppercase mb-8 cursor-default text-white/40 hover:text-[#e8b238] transition-colors duration-300" style="transition-delay: 50ms;">Your Questions</span>
+              <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[6.33rem] text-white leading-[1.15] flex flex-wrap items-center lg:items-start justify-center lg:justify-start gap-x-3 mb-8 cursor-default">
                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Frequently</span></span>
                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 250ms;">Asked</span></span>
                 <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Questions</span></span>
               </h2>
-              <p class="title-underline-anim font-body text-base sm:text-lg md:text-xl text-[#303030]/80 mb-10 max-w-sm leading-relaxed" style="animation-delay: 700ms;">
+              <p class="title-underline-anim font-body text-base sm:text-lg md:text-xl text-white/55 mb-10 max-w-sm leading-relaxed" style="animation-delay: 700ms;">
                 Everything you need to know about working with Marshall & Co. Can't find your answer? Give Lee a call and he'll be happy to help.
               </p>
               <a href="contact.html" class="title-underline-anim btn-primary" style="animation-delay: 900ms;">Get in Touch</a>
@@ -1808,104 +1690,104 @@
           </div>
 
           <div class="w-full lg:w-2/3 reveal reveal-up" style="transition-delay: 150ms;" itemscope itemtype="https://schema.org/FAQPage">
-            <div class="space-y-0 font-body border-t border-[#303030]/10">
+            <div class="space-y-0 font-body border-t border-white/10">
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay: 200ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay: 200ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">What types of projects do you undertake?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">What types of projects do you undertake?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Marshall & Co. undertakes a wide range of home improvement projects including structural extensions, loft conversions, full property renovations, bespoke joinery and interior fit-outs, and garden rooms. Whether it's a single-room transformation or a complete whole-house renovation, Lee has the expertise to deliver.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:320ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:320ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">Do you work on both traditional and modern properties?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Do you work on both traditional and modern properties?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Yes. Over 20 years working across Perth and Perthshire means Lee has extensive experience with traditional sandstone properties, Victorian terraces, and modern new builds alike. Each property type has its own character and requirements, and Marshall & Co. has the knowledge to approach them correctly.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:440ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:440ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">How is project pricing determined?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How is project pricing determined?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">All pricing is tailored to the specific scope of each project. Following an initial consultation and site visit, Lee provides a fully itemised, transparent quotation that covers all agreed works. There are no vague estimates and no hidden costs. Every charge is explained upfront before any work begins.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:560ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:560ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">Can you assist with planning permission applications?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Can you assist with planning permission applications?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Marshall & Co. regularly works alongside architects and planning consultants and can guide you through the process or introduce you to trusted professionals. Lee understands local planning requirements in Perth and Perthshire and can advise on what approvals are likely needed before you commit to your project.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:680ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:680ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">Are you fully insured?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Are you fully insured?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Yes. Marshall & Co. carries full public liability insurance and all works are carried out in compliance with current building regulations and health and safety requirements. You can have complete confidence in the professional standards applied to every project.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:800ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:800ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">How long does a typical project take?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How long does a typical project take?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Project duration varies depending on scope and complexity. A single-room renovation or joinery installation might take a few days to a couple of weeks. A full extension or whole-house renovation could take several months. A realistic, agreed programme is provided at the outset and progress is communicated clearly throughout.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:920ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:920ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">Will Lee Marshall be on site personally?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Will Lee Marshall be on site personally?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Yes. Lee is personally involved in every project Marshall & Co. takes on. He is the person who quoted the job, the person doing or directly overseeing the work, and the person responsible for the finished result. You won't be passed to a stranger or left chasing someone you've never met.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:1040ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:1040ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">Which areas do you cover?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">Which areas do you cover?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Marshall & Co. is based in Perth and regularly works throughout Perthshire and the surrounding region, including Dundee, Auchterarder, Kinross, Crieff, Blairgowrie, Dunblane, and Coupar Angus. If you are unsure whether your area is covered, call Lee directly and he will let you know.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:1160ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:1160ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">How quickly can work begin?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How quickly can work begin?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Start dates depend on the current programme and the scale of your project. Lee typically aims to provide a proposed start date within a few working days of completing the site visit and agreeing scope. For urgent projects, call directly and he will do his best to accommodate your timescale.</span>
                 </div>
               </details>
 
-              <details class="title-underline-anim group border-b border-[#303030]/10" style="animation-delay:1280ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <details class="title-underline-anim group border-b border-white/10" style="animation-delay:1280ms" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                  <span class="font-heading font-bold text-xl sm:text-[1.32rem] lg:text-[1.65rem] text-[#303030] pr-6">How do I get a quote?</span>
-                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#303030] shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
+                  <span class="font-heading font-bold text-2xl sm:text-[1.9rem] lg:text-[2.5rem] text-white pr-6">How do I get a quote?</span>
+                  <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-white shadow-sm transition-transform duration-300 group-open:rotate-180"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></span>
                 </summary>
-                <div class="text-[#303030]/80 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="text-white/65 pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                   <span itemprop="text">Simply call Lee on 07940 568877 or fill in the contact form on our contact page. He will get back to you promptly to arrange a free, no-obligation consultation. From there, a site visit and fully detailed written quotation follow. There is no commitment required at any stage.</span>
                 </div>
               </details>
@@ -1921,6 +1803,12 @@
       details > div { animation-name: slideDown; animation-duration: 350ms; animation-timing-function: ease-out; }
       @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
       details > summary::-webkit-details-marker { display: none; }
+      /* FAQ questions — Cormorant Garamond only */
+      #faq summary span.font-heading {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-weight: 600;
+      }
     </style>
 
   </main>
@@ -2009,69 +1897,51 @@
   <!-- ================================================
        PRE-FOOTER CTA
   ================================================ -->
-  <section id="cta-section" class="relative overflow-hidden" style="background:#303030;">
-    <style>
-      #cta-section .cta-img-panel {
-        position: absolute; top: 0; bottom: 0; width: 32%;
-        overflow: hidden;
-      }
-      #cta-section .cta-img-panel img {
-        width: 100%; height: 100%; object-fit: cover;
-        filter: brightness(0.55) saturate(1.1);
-        transform: scale(1);
-        transition: filter 0.8s ease, transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-      #cta-section:hover .cta-img-panel img {
-        filter: brightness(0.65) saturate(1.2);
-        transform: scale(1.08);
-      }
-      #cta-section .cta-img-panel.left  { left: 0; }
-      #cta-section .cta-img-panel.right { right: 0; }
-      #cta-section .cta-img-panel::after {
-        content: ''; position: absolute; inset: 0; pointer-events: none;
-      }
-      #cta-section .cta-img-panel.left::after  { background: linear-gradient(to right, #303030 0%, transparent 30%, transparent 55%, #303030 100%); }
-      #cta-section .cta-img-panel.right::after { background: linear-gradient(to left,  #303030 0%, transparent 30%, transparent 55%, #303030 100%); }
-      @media (max-width: 1023px) {
-        #cta-section .cta-img-panel.right { display: none; }
-        #cta-section .cta-img-panel.left {
-          width: 100%; left: 0; right: 0;
-        }
-        #cta-section .cta-img-panel.left img {
-          filter: brightness(0.35) saturate(1.1);
-        }
-        #cta-section .cta-img-panel.left::after {
-          background: linear-gradient(to bottom, transparent 40%, #303030 100%);
-        }
-      }
-    </style>
+  <section id="cta-section" style="background:#303030;">
+    <div class="w-full max-w-[96rem] mx-auto flex flex-col lg:flex-row">
 
-    <!-- Left image panel -->
-    <div class="cta-img-panel left">
-      <img src="assets/imgs/general_imgs/footer1.jpg" alt="Completed bespoke home extension by Marshall & Co. in Perthshire" loading="lazy">
-    </div>
-
-    <!-- Right image panel -->
-    <div class="cta-img-panel right hidden lg:block">
-      <img src="assets/imgs/general_imgs/footer2.jpg" alt="Bespoke timber extension and joinery by Marshall & Co., Perth" loading="lazy">
-    </div>
-
-    <!-- Central content -->
-    <div class="relative z-10 flex flex-col items-center text-center px-6 py-20 lg:py-28 lg:px-[36%] reveal">
-      <span class="font-script text-3xl text-[#e8b238] mb-3 inline-block word-mask-inner" style="transform:rotate(-2deg); transition-delay:50ms;">Let's Build Something</span>
-      <h2 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-5 cursor-default flex flex-wrap justify-center gap-x-3">
-        <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Ready</span></span>
-        <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">to</span></span>
-        <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Transform</span></span>
-        <span class="word-mask w-full mt-1"><span class="word-mask-inner" style="transition-delay:400ms;">Your Home?</span></span>
-      </h2>
-      <p class="title-underline-anim font-body text-base sm:text-lg text-white/65 leading-relaxed max-w-md mb-10" style="animation-delay:600ms;">
-        Every project starts with a free, no-obligation consultation. Lee will visit your property, listen to your vision, and give you honest expert advice; no pressure, no obligation.
-      </p>
-      <div class="title-underline-anim flex flex-col sm:flex-row items-center gap-4 sm:gap-6" style="animation-delay:750ms;">
-        <a href="contact.html" class="btn-primary font-body font-bold text-sm uppercase tracking-widest px-8 py-4">Get a Free Quote</a>
-        <a href="tel:07940568877" class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white/40 hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap">or Call Lee</a>
+      <!-- Left: sticky text content (matches FAQ container pattern) -->
+      <div class="w-full lg:w-1/2 relative">
+        <div class="lg:sticky lg:top-28 xl:top-48">
+          <div class="px-4 sm:px-8 lg:px-12 py-16 lg:py-20 xl:py-24 flex flex-col items-center text-center lg:items-start lg:text-left reveal">
+          
+          <h2 class="font-heading font-black text-[3.45rem] sm:text-[4.83rem] md:text-[5.5rem] text-white leading-tight mb-5 cursor-default flex flex-wrap justify-center lg:justify-start gap-x-3">
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Ready</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">to</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay:300ms;">Transform</span></span>
+            <span class="word-mask w-full mt-1"><span class="word-mask-inner" style="transition-delay:400ms;">Your Home?</span></span>
+          </h2>
+          <p class="title-underline-anim font-body text-base sm:text-lg text-white/70 leading-relaxed max-w-md mb-10" style="animation-delay:600ms;">
+            Every project starts with a free, no-obligation consultation. Lee will visit your property, listen to your vision, and give you honest expert advice; no pressure, no obligation.
+          </p>
+          <div class="title-underline-anim flex flex-col sm:flex-row items-center gap-4 sm:gap-6" style="animation-delay:750ms;">
+            <a href="contact.html" class="btn-primary font-body font-bold text-sm uppercase tracking-widest px-8 py-4">Start Today</a>
+            <a href="tel:07940568877" class="font-body font-bold text-base text-white tracking-wide underline underline-offset-[8px] decoration-2 decoration-white/40 hover:decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300 whitespace-nowrap">or Call Lee</a>
+          </div>
+        </div>
+        </div>
       </div>
+
+      <!-- Vertical gold divider -->
+      <div class="hidden lg:block w-px bg-[#e8b238] self-stretch shrink-0"></div>
+
+      <!-- Right: two stacked images with hover zoom -->
+      <div class="flex w-full lg:w-1/2 flex-col">
+        <div class="overflow-hidden relative group min-h-[300px] lg:min-h-[480px]">
+          <img src="assets/imgs/general_imgs/footer1.jpg" alt="Completed bespoke home extension by Marshall &amp; Co. in Perthshire"
+            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.07]"
+            loading="lazy">
+          <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#e8b238] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+        </div>
+        <div class="hidden lg:block h-px bg-[#e8b238] shrink-0"></div>
+        <div class="hidden lg:block overflow-hidden relative group" style="min-height:480px;">
+          <img src="assets/imgs/general_imgs/footer2.jpg" alt="Bespoke timber extension and joinery by Marshall &amp; Co., Perth"
+            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.07]"
+            loading="lazy">
+          <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#e8b238] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
