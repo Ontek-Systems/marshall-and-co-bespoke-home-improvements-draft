@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /process_form.html
+Disallow: /process_form.php
+Disallow: /thank-you.html
+Disallow: /pages/process_form.html
+Disallow: /pages/process_form.php
+Disallow: /pages/thank-you.html
+
+Sitemap: https://www.marshallandco.uk/sitemap.xml
