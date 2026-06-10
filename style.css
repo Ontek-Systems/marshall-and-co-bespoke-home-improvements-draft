@@ -512,6 +512,14 @@ span.pill-dark-bg:hover {
         text-align: center !important;
     }
 
+    .loc-svc-card > div.p-7 {
+        text-align: center !important;
+    }
+    
+    .loc-svc-card > div.p-7 > span {
+        display: inline-block !important;
+    }
+
     main section > div[class*="max-w-"],
     main section > div.container {
         padding-left: 1.5rem !important;
@@ -558,6 +566,11 @@ span.pill-dark-bg:hover {
         text-align: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        font-size: 0.85rem !important;
+        padding-top: 0.6rem !important;
+        padding-bottom: 0.6rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
 
     .flex-col .btn-ghost {
